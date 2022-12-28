@@ -1,0 +1,33 @@
+#resultsUpdate {
+    margin: 64px auto;
+    height: 2rem;
+}
+
+#resultsUpdate > div {
+    position: relative;
+}
+
+#resultsUpdate p + div {
+    position: absolute;
+    top: 0px;
+    right: -32px;
+}
+
+#resultsUpdate p {
+    text-align: center;
+    width: 100%;
+}
+
+#resultsUpdate div {
+    margin: auto;
+}
+
+#resultsUpdate div.small {
+    display: inline;
+    margin: 0;
+}
+
+#resultsUpdate div.small > div {
+    width: 1.8rem;
+    min-height: 1.8rem;
+}

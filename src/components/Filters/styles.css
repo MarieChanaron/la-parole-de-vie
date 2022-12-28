@@ -1,0 +1,21 @@
+#filters button {
+    display: block;
+    width: 100%;
+    margin-bottom: 16px;
+    background-color: transparent;
+}
+
+#filters p {
+    margin-bottom: 4px;
+    font-size: 1.6rem;
+}
+
+#filters .selected {
+    background-color: var(--buttonNormalColor);
+}
+
+#filters button:not([disabled]):hover{
+    position: relative;
+    bottom: 1px;
+    box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.15);
+}

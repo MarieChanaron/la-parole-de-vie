@@ -1,0 +1,196 @@
+:root {
+    --leftPaneBgColor: #dfe4e9;
+    --leftPaneFontColor: #050203;
+    --resultPaneBgColor: white;
+    --buttonNormalColor: #A6ABC4;
+    --buttonHoverColor: #BBC9A5;
+    --borderColor: #659038;
+    --textFontColor: #050303;
+    --footerBgColor: #050203;
+    --outlineColor: #A6ABC4;
+    --verseAccentColor: #9b025b;
+    --verseBgColor: #F1EFEA;
+    --verseBorderColor: #e9e6df;
+    --margin: 88px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    font-family: 'Crimson Text', 'Garamond', 'Times New Roman', Times, serif;
+    font-weight: 400;
+    font-style: normal;
+    color: var(--textFontColor);
+    font-size: 1.7rem;
+}
+
+html {
+    font-size: 65%;
+}
+
+html, body, #root, #app {
+    overscroll-behavior: none;
+}
+
+@media (max-width: 768px) {
+    body.scroll {
+        overflow-y: scroll;
+        overflow-x: hidden;
+    }
+}
+
+
+#app[ismobilesafari="true"] {
+    background-color: white;
+    min-height: 100vh;
+}
+
+#app[istablet="true"] {
+    position: fixed;
+    overflow: hidden;
+}
+
+
+/* Global classes */
+
+.invisible{
+    visibility: hidden;
+}
+
+.transparent {
+    opacity: 0.7;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.fixed {
+    position: fixed;
+}
+
+
+/* Scrollbars */
+
+@media (min-width: 769px) { /* Not for mobile */
+
+    div::-webkit-scrollbar {
+        width: 15px;
+        height: 15px;
+    }
+    
+    div::-webkit-scrollbar-track-piece {
+        border: 1px solid white;
+    }
+    
+    div::-webkit-scrollbar-thumb {
+        border-radius: 8px;
+    }
+    
+    
+    #searchPane::-webkit-scrollbar-thumb, 
+    .tableOfContents::-webkit-scrollbar-thumb { /* L'ascenceur */
+        background-color: #A5BAC9;
+        border: 1px solid #8fa7b8;
+    }
+    
+    #searchPane::-webkit-scrollbar-track-piece,
+    .tableOfcontents::-webkit-scrollbar-track-piece { /* La cage de l'ascenceur */
+        background-color: #DFE4E9;
+    }
+    
+    #readerText::-webkit-scrollbar-thumb, 
+    #resultPane::-webkit-scrollbar-thumb {
+        background-color: #05020338;
+        border: 1px solid #05020338;
+    }
+    
+    #readerText::-webkit-scrollbar-track-piece, 
+    #resultPane::-webkit-scrollbar-track-piece {
+        background-color: var(--verseBgColor);
+    }
+
+}
+
+
+
+/* Forms general layout */
+
+input, select {
+    border: 1px solid var(--borderColor);
+    border-radius: 2px;
+    display: block;
+    outline-color: var(--outlineColor);
+    background-color: white;
+    height: 37px;
+}
+
+select {
+    padding-left: 4px;
+}
+
+@-moz-document url-prefix() {
+    select {
+        padding-left:8px;
+    }
+}
+
+input[type="text"] {
+    padding: 0 38px 0 8px;
+}
+
+input[type="submit"] {
+    cursor: pointer;
+    box-shadow: 2px 4px 4px RGBa(0,0,0,0.15);
+    width: 173px;
+}
+
+input[type="submit"]:active {
+    transform: scale(0.93);
+    transition: 0.1s ease-in-out;
+}
+
+form a {
+    text-decoration: none;
+}
+
+form label {
+    font-size: 1.6rem;
+}
+
+optgroup {
+    margin-top: 8px;
+}
+
+select {
+    box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+
+
+@media (max-width: 992px) {
+    :root {
+        --margin: 64px;
+    }
+}
+
+@media (max-width: 768px) {
+    :root {
+        --margin: 48px;
+    }
+}
+
+@media (max-width: 576px) {
+    :root {
+        --margin: 32px;
+    }
+}
+
+@media (max-width: 400px) {
+    :root {
+        --margin: 16px;
+    }
+}

@@ -1,0 +1,109 @@
+#firstQueryForm {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(to bottom, RGBa(0,0,0,0), RGBa(0,0,0,0.1));
+    padding-right: var(--margin);
+    padding-left: var(--margin);
+}
+
+#firstQueryForm {
+    height: 100vh;
+    padding-top: 143px;
+    padding-bottom: 39px;
+}
+
+
+#firstQueryForm h1 {
+    font-size: 2.4rem;
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: 48px;
+    color: white;
+    text-shadow: 0px 0px 6px RGBa(0, 0, 0, 1);
+    text-transform: uppercase;
+}
+
+#firstQueryForm form label {
+    color: white;
+    display: inline-block;
+    backdrop-filter: blur(10px);
+    padding-left: 4px;
+    padding-right: 16px;
+    padding-bottom: 2px;
+    border-radius: 2px 2px 0 0;
+    position: relative;
+    top: 2px;
+    text-shadow: 0px 0px 6px RGBa(0, 0, 0, 1);
+}
+
+#firstQueryForm input,
+#firstQueryForm select {
+    position: relative;
+    z-index: 1;
+}
+
+#firstQueryForm input[type="text"] {
+    margin-bottom: 40px;
+}
+
+#firstQueryForm select {
+    margin-bottom: 24px;
+}
+
+#firstQueryForm input[type="submit"] {
+    margin-top: 40px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+
+@media (max-width: 1200px) {
+    #firstQueryForm {
+        padding-top: 61px;
+        padding-bottom: 39px;
+    }
+}
+
+@media (max-width: 768px) {
+    #firstQueryForm {
+        padding-top: 56px;
+        padding-bottom: 62px;
+    }
+    #firstQueryForm #keyword,
+    #firstQueryForm select {
+        margin-bottom: 16px;
+    }
+    #firstQueryForm input[type="submit"] {
+        margin-top: 32px;
+    }
+    #firstQueryForm h1 {
+        margin-bottom: 40px;
+    }
+}
+
+@media (max-width: 576px) {
+    #firstQueryForm > div {
+        width: 98%;
+        max-width: 375px;
+    }
+    #firstQueryForm h1 {
+        display: none;
+    }
+}
+
+
+/* DEVICE MOBILE */
+
+@media (max-width: 768px) {
+    #firstQueryForm[ismobileonly="true"] {
+        height: calc(100vh - 62px);
+        padding-top: 46px;
+        padding-bottom: 0;
+    }
+    #firstQueryForm[ismobilesafari="true"] {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+}

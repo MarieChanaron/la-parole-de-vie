@@ -1,0 +1,48 @@
+#notFound {  
+    position: relative;
+    width: fit-content;
+    height: 100%;
+    padding-bottom: 20vh;
+    left: calc(50% - 85px);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#notFound img {
+    width: 170px;
+}
+
+#notFound p {
+    font-size: 1.8rem;
+}
+
+
+/* DEVICE IOS MOBILE SAFARI */
+
+#notFound[isMobileSafari="true"] {
+    position: fixed;
+}
+
+
+@media (max-width: 1200px) {
+    #notFound {
+        display: block;
+        margin-top: 80px;
+        padding-bottom: 0;
+        height: unset;
+        left: calc(50vw - 85px);
+    }
+}
+
+@media (max-width: 768px) {
+    #notFound {
+        margin-top: 0;
+        left: calc(50vw - 75px);
+    }
+    #notFound img {
+    width: 150px;
+    }
+}

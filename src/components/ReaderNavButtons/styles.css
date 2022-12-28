@@ -1,0 +1,85 @@
+#readerNavBtns {
+   padding-right: var(--margin);
+   padding-left: 56px;
+   width: 100%;
+   background-color: white;
+}
+
+#readerNavBtns > div > div{
+    width: fit-content;
+    height: 64px;
+    margin: auto;
+    padding: 12px 0;
+}
+
+#readerNavBtns img {
+    height: 40px;
+    width: 40px;
+}
+
+.navBtn {
+    cursor: pointer;
+    opacity: 0.6;
+    margin: 0 20px;
+}
+
+.desactivated {
+    opacity: 0.6;
+    margin: 0 20px;
+}
+
+.navBtn:hover {
+    opacity: 0.8;
+}
+
+.MuiTooltip-tooltip {
+    border-radius: 2px !important;
+    font-family: 'Crimson Text', 'Garamond', 'Times New Roman', Times, serif !important;
+    font-size: 1.2rem !important;
+}
+
+hr {
+    border-top: 1px solid var(--verseBorderColor);
+    margin-left: 0;
+    margin-right: 0px;
+}
+
+
+@media (max-width: 1200px) {
+    #readerNavBtns {
+        padding-right: var(--margin);
+        padding-left: var(--margin);
+    }
+}
+
+@media (min-width: 769px) {
+    hr {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    #readerNavBtns {
+        position: fixed;
+        bottom: 0;
+    }
+    #readerNavBtns img {
+        height: 36px;
+        width: 36px;
+    }
+    #readerNavBtns > div > div{
+        height: 56px;
+        padding: 10px 0;
+    }
+}
+
+@media (max-width: 576px) {
+    #readerNavBtns img {
+        height: 32px;
+        width: 32px;
+    }
+    #readerNavBtns > div > div{
+        height: 46px;
+        padding: 7px 0;
+    }
+}

@@ -1,0 +1,49 @@
+#band {
+    background-color: var(--verseBgColor);
+    padding: 16px var(--margin) 16px 56px;
+    border-bottom: 1px solid var(--verseBorderColor);
+    position: relative;
+    height: 70px;
+}
+
+
+@media (max-width: 1200px) {
+    #band {
+        padding: 16px var(--margin);
+    }
+}
+
+@media (max-width: 992px) {
+    #band {
+        padding: 16px 60px;
+    }
+}
+
+@media (max-width: 768px) {
+    #band {
+        padding: auto var(--margin);
+        position: fixed;
+        z-index: 102;
+        top: 64px;
+        width: 100%;
+        height: 56px;
+    }
+}
+
+@media (max-width: 576px) {
+    #band {
+        padding: auto var(--margin);
+        top: 60px;
+        height: 46px;
+    }
+}
+
+
+/* DEVICE TABLET */
+
+@media (max-width: 1200px) and (min-width: 769px) {
+    #band[istablet="true"] {
+        position: relative;
+        top: 0;
+    }
+}

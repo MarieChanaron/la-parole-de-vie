@@ -1,0 +1,42 @@
+.veil {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.247);
+    backdrop-filter: brightness(80%) grayscale(70%);
+}
+
+
+@media (max-width: 1200px) {
+    .veil[displaytable="yes"] {
+        display: block;
+    }
+    .veil[display="block"] {
+        display: block;
+    }
+}
+
+@media (max-width: 768px) {
+    .veil[displayform="yes"] {
+        display: block;
+    }
+}
+
+/* @media (max-width: 576px) {
+    .veil[displayform="yes"] {
+        display: block;
+    }
+    .veil[displaytable="yes"] {
+        display: block;
+    }
+}
+
+@media (max-width: 400px) {
+    .veil {
+        display: none;
+    }
+} */

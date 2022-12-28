@@ -1,0 +1,62 @@
+/* A part of the styling is in ./TableOfContentStatic/globalstyles.css */
+
+#tableOfContentsSlide {
+    display: none;
+    width: 340px;
+}
+
+@media (max-width: 1200px) {
+    #tableOfContentsSlide {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: -340px;
+        margin-top: 10vh;
+        transition: 0.3s ease-in;
+        height: 90vh;
+    }
+    #tableOfContentsSlide[show="show"] {
+        left: 0px;
+    }
+}
+
+@media (max-width: 768px) {
+    #tableOfContentsSlide {
+        top: 64px;
+        margin-top: 0px;
+        height: calc(100% - 64px);
+        overscroll-behavior: none;
+    }
+}
+
+@media (max-width: 576px) {
+    #tableOfContentsSlide {
+        padding-left: 32px;
+        top: 60px;
+        margin-top: 0px;
+        height: calc(100% - 60px);
+        overscroll-behavior: none;
+    }
+    #tableOfContentsSlide[formdisplayed="true"] {
+        display: none;
+    }
+    #tableOfContentsSlide h3 {
+        margin-top: 32px;
+    }
+}
+
+@media (max-width: 400px) {
+    #tableOfContentsSlide {
+        width: 100%;
+        left: -100%;
+    }
+}
+
+/* DEVICE TABLET */
+
+@media (max-width: 1200px) and (min-width: 769px) {
+    #tableOfContentsSlide[istablet="true"] {
+        margin-top: 80px;
+        height: calc(100% - 80px);
+    }
+}

@@ -1,0 +1,170 @@
+#navigationButtons {
+    display: flex;
+    grid-gap: 16px;
+    flex-direction: column;
+    position: fixed;
+    margin-top: 40px;
+    left: calc(100vw - 63px);
+    z-index: 1200;
+}
+
+#navigationButtons .icon {
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-color: white;
+}
+
+#navigationButtons .transparent {
+    opacity: 0.7;
+}
+
+#navigationButtons .icon img {
+    min-width: 20px;
+    padding-top: 5px;
+    box-sizing: content-box;
+    display: block;
+    margin: auto;
+}
+
+#navigationButtons:not([ismobileonly="true"]) .icon:not(.disabled):hover {
+    position: relative;
+    bottom: 1px;
+    box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.15);
+}
+
+#navigationButtons .disabled {
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+#btnSearch {
+    background-image: url('../../images/icons/magnifying-glass-brown.svg');
+    background-size: 21px;
+}
+
+#btnTop {
+    background-image: url('../../images/icons/to-top.svg');
+    background-size: 17px;
+}
+
+#btnBottom {
+    background-image: url('../../images/icons/to-bottom.svg');
+    background-size: 17px;
+}
+
+#btnReverse {
+    background-image: url('../../images/icons/reverse.svg');
+    background-size: 18px;
+}
+
+
+#searchAmongResults {
+    position: absolute;
+    top: -90px;
+    right: -400px;
+    width: 290px;
+    padding: 4px;
+    border: 1px solid var(--borderColor);
+    background-color: var(--buttonNormalColor);
+    border-radius: 2px;
+    box-shadow: 2px 4px 4px rgba(0,0,0,0.15);
+    transition: 0.4s ease-in;
+    z-index: 103;
+}
+
+#searchAmongResults.visible {
+    right: 0px;
+}
+
+#searchAmongResults input {
+    width: 100%;
+    margin-top: 2px;
+    border-radius: 2px;
+    box-shadow: none;
+    border: none;
+    outline: none;
+}
+
+#cross {
+    width: 30px;
+    height: 30px;
+    background-image: url('../../images/icons/cross.svg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    box-shadow: none;
+    display: inline;
+    z-index: 1;
+    float: right;
+}
+
+
+
+@media (max-width: 1200px) {
+    #navigationButtons {
+        margin-top: 69px;
+    }
+    #navigationButtons[display="none"] {
+        display: none;
+    }
+}
+
+@media (max-width: 992px) {
+    #navigationButtons {
+        flex-direction: row-reverse;
+        left: calc(100vw - 240px);
+        margin-top: 0;
+        bottom: 16px;
+        z-index: 90;
+    }
+    #navigationButtons .icon {
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    }
+}
+
+@media (max-width: 768px) {
+    #navigationButtons {
+        left: unset;
+        right: var(--margin);
+    }
+}
+
+@media (max-width: 576px) {
+    #navigationButtons {
+        width: 100%;
+        left: 0;
+        justify-content: center;
+        justify-items: center;
+    }
+    #btnReverse.icon {
+        margin-left: 0px;
+    }
+    #searchAmongResults {
+        margin-right: var(--margin);
+        max-width: calc(100% - 2*var(--margin));
+    }
+}
+
+
+/* DEVICE MOBILE */
+
+@media (max-width: 768px) {
+    #navigationButtons[ismobileonly="true"] {
+        bottom: 0px;
+    }
+    #searchAmongResults[ismobileonly="true"] {
+        transition: none;
+    }
+    #searchAmongResults.visible[ismobileonly="true"] {
+        position: fixed;
+        top: 0;
+        left: var(--margin);
+        width: calc(100% - 2*var(--margin));
+    }
+}

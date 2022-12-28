@@ -1,0 +1,73 @@
+#readerFormLight {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    margin-top: 12px;
+}
+
+#readerFormLight p.colon {
+    margin: 0 6px;
+}
+
+#readerFormLight select {
+    width: fit-content;
+    margin: 0 12px;
+    height: 32px;
+    font-size: 1.6rem;
+}
+
+#readerFormLight option, 
+#readerFormLight optgroup {
+    font-size: 1.6rem;
+}
+
+#readerFormLight input#verse {
+    margin-right: 12px;
+}
+
+#readerFormLight input[type="submit"] {
+    height: 24px;
+    width: 24px;
+    border: none;
+    background-color: transparent;
+    box-shadow: none;
+    background-image: url('../../images/icons/magnifying-glass-green.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
+    transition: 0.2s ease-in-out;
+    outline: none;
+}
+
+#readerFormLight input[type="submit"]:hover {
+    transform: scale(1.15);
+}
+
+#readerFormLight input[list] {
+    padding-left: 4px;
+    width: 49px;
+    height: 32px;
+    box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#readerFormLight input[list]::placeholder {
+    font-size: 1.4rem;
+}
+
+#readerFormLight[boxshadow="none"] select,
+#readerFormLight[boxshadow="none"] input[list] {
+    box-shadow: none;
+}
+
+
+@media (max-width: 768px) {
+    #readerFormLight {
+        display: flex;
+    }
+}
+
+@media (max-width: 576px) {
+    #readerFormLight {
+        display: none;
+    }
+}

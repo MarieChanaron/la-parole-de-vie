@@ -1,0 +1,138 @@
+#banner {
+    /* Dimensions */
+    width: 100%;
+    min-height: 20vh;
+
+    /* Position */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    /* Box shadow */
+    box-shadow: 0px 4px 8px RGBa(0, 0, 0, 0.2);
+
+    /* Background-image - not visible on the homepage */
+    background-image: 
+        linear-gradient(to top, RGBa(0,0,0,0.2), RGBa(0,0,0,0)),
+        url('../../images/banner-image.jpg');
+    background-size: cover;
+    background-position: 0 50%;
+    background-repeat: no-repeat;
+
+    /* Spacing */
+    padding-right: var(--margin);
+    padding-left: var(--margin);
+
+    /* Display */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+    gap: 12px;
+
+    /* Transition */
+    transition-duration: 0.2s;
+
+}
+
+#banner[transparency='transparentBg'] {
+    /* Background overlay more opaque on the homepage */
+    background-image: linear-gradient(to bottom, RGBa(0,0,0,0.4), RGBa(0,0,0,0)) !important;
+    box-shadow: none;
+    background-image: none;
+    position: fixed;
+    top: 0;
+}
+
+#banner:not([ismobile="true"]):hover { /* Mobile and tablet */
+    background-color: RGBa(0,0,0,0.2);
+    background-blend-mode: darken;
+    box-shadow: 0px 4px 8px RGBa(0, 0, 0, 0.1);
+}
+
+#banner .top { /* Includes the logo and the menu */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#banner .top img#logo {
+    width: 328px;
+    float: left;
+}
+
+#banner #quote {
+    margin-top: 4px;
+    margin-bottom: 12px;
+    width: 786px;
+}
+
+#banner #quote p {
+    color: white;
+    line-height: 26px;
+    font-style: italic;
+    text-shadow: 
+        0px 0px 1.8rem RGBa(0, 0, 0, 1), 
+        1px 1px 0.2rem RGBa(0, 0, 0, 0.5), 
+        -1px -1px 0.2rem RGBa(0, 0, 0, 0.5);
+}
+
+
+/* MEDIA QUERIES */
+
+@media (max-width: 1200px) {
+    #banner {
+        min-height: 10vh;
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+    #banner .top {
+        align-items: center;
+    }
+    #banner #quote {
+        display: none;
+    }
+    #banner .top img#logo {
+        width: 280px;
+    }
+}
+
+@media (max-width: 768px) {
+    #banner {
+        position: fixed;
+        min-height: 64px;
+    }
+}
+
+@media (max-width: 576px) {
+    #banner {
+        position: fixed;
+        min-height: 60px;
+    }
+    #banner .top img#logo {
+        width: 240px;
+    }
+}
+
+@media (max-width: 400px) {
+    #banner {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    #banner .top img#logo {
+        width: 220px;
+    }
+}
+
+
+/* DEVICE TABLET */
+
+@media (max-width: 1200px) and (min-width: 769px) {
+    #banner[transparency='transparentBg'][istablet="true"] {
+        position: fixed;
+    }
+    #banner[istablet="true"] {
+        position: relative;
+        min-height: 80px;
+    }
+}

@@ -1,0 +1,21 @@
+.button { /* all buttons including input submit */
+    background-color: var(--buttonNormalColor);
+    height: 37px;
+    border-radius: 2px;
+    cursor: pointer;
+    border: 1px solid var(--borderColor);
+}
+
+.button:not([disabled]) {
+    box-shadow: 2px 4px 4px 0px RGBa(0, 0, 0, 0.05);
+}
+
+.button:not(button[disabled]):hover {
+    background-color: var(--buttonHoverColor);
+    transition: 0.2s;
+}
+
+.button[disabled]{
+    cursor: not-allowed;
+    box-shadow: none;
+}

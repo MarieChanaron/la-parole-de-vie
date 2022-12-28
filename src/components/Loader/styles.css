@@ -1,0 +1,41 @@
+#spinner {
+    display: block;
+    width: 56px;
+    min-height: 56px;
+    border-bottom: 2px solid var(--textFontColor);
+    border-radius: 50%;
+    border-radius: 50%;
+    opacity: 0.5;
+
+    animation-name: spin;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes spin{
+    from {transform: rotate(0deg);}
+    to {transform: rotate(360deg);}
+}
+
+
+@media (max-width: 992px) {
+    #spinner {
+        width: 48px;
+        min-height: 48px;
+    }
+}
+
+@media (max-width: 768px) {
+    #spinner {
+        width: 40px;
+        min-height: 40px;
+    }
+}
+
+@media (max-width: 576px) {
+    #spinner {
+        width: 32px;
+        min-height: 32px;
+    }
+}

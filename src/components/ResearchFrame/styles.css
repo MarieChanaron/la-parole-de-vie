@@ -1,0 +1,38 @@
+#researchFrame {
+    display: flex;
+    flex-grow: 1;
+    flex-shrink: 1;
+    width: 100%;
+    position: relative;
+}
+
+
+/* MEDIA QUERIES */
+
+@media (max-width: 1200px) {
+    #researchFrame {
+        height: 90vh;
+    }
+}
+
+@media (max-width: 768px) {
+    #researchFrame {
+        height: fit-content;
+        top: 133px;
+    }
+}
+
+@media (max-width: 576px) {
+    #researchFrame {
+        top: 129px;
+    }
+}
+
+
+/* DEVICE TABLET */
+
+@media (max-width: 1200px) and (min-width: 769px) {
+    #researchFrame[istablet="true"] {
+        height: calc(100% - 80px);
+    }
+}

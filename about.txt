@@ -1,0 +1,6 @@
+This favicon was generated using the following font:
+
+- Font Title: Tangerine
+- Font Author: Copyright (c) 2010 by Toshi Omagari. All rights reserved.
+- Font Source: http://fonts.gstatic.com/s/tangerine/v17/Iurd6Y5j_oScZZow4VO5srNpjJtM6G0t9w.ttf
+- Font License: SIL Open Font License, 1.1 (http://scripts.sil.org/OFL))

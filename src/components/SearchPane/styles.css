@@ -1,0 +1,119 @@
+#searchPane {
+    height: 80vh;
+    background-color: var(--leftPaneBgColor);
+    overflow-y: hidden;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding-right: 32px;
+    padding-left: var(--margin);
+    padding-top: 48px;
+    padding-bottom: 48px;
+    min-width: 340px;
+    max-width: 340px;
+}
+
+#searchPane.scrollable {
+    overflow-y: auto;
+}
+
+#searchPane label {
+    color: var(--leftPaneFontColor);
+}
+
+#searchPane p, #searchPane div {
+    color: var(--leftPaneFontColor);
+}
+
+#searchPane input[value="Rechercher"] {
+    width: min-content;
+    padding-right: 24px;
+    padding-left: 24px;
+    margin: 24px auto 0;
+}
+
+#searchPane form input {
+    margin-bottom: 16px;
+    width: 200px;
+}
+
+#searchPane form select {
+    margin-bottom: 16px;
+}
+
+#resultsUpdate {
+    justify-self: center;
+}
+
+
+
+@media (max-width: 1200px) {
+    #searchPane {
+        height: 90vh;
+        position: absolute;
+        left: -325px;
+        cursor: pointer;
+        z-index: 101;
+        transition: 0.3s ease-in;
+        overflow-y: hidden;
+        justify-content: flex-start;
+        padding-left: 32px;
+        padding-right: 32px;
+    }
+    #searchPane.scrollable {
+        overflow-y: hidden;
+    }
+    #searchPane[show='show'] {
+        position: absolute;
+        left: 0px;
+        overflow-y: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    #searchPane {
+        left: -340px;
+        top: 64px;
+        height: calc(100vh - 64px);
+        position: fixed;
+    }
+    #searchPane[show='show'] {
+        position: fixed;
+    }
+}
+
+@media (max-width: 576px) {
+    #searchPane {
+        top: 60px;
+        height: calc(100vh - 60px);
+    }
+}
+
+@media (max-width: 400px) {
+    #searchPane {
+        left: -100%;
+        min-width: 100%;
+        padding-top: 48px;
+    }
+}
+
+@media (max-height: 860px) {
+    #searchPane {
+        display: block;
+    }
+}
+
+
+/* DEVICE TABLET */
+
+@media (max-width: 1200px) and (min-width: 769px) {
+    #searchPane[istablet="true"] {
+        height: 100%;
+        overflow-y: hidden;
+    }
+    #searchPane[istablet="true"][show='show'] {
+        height: 100%;
+        overflow-y: auto;
+    }
+}

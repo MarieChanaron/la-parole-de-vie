@@ -1,0 +1,190 @@
+#readerForm {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    overflow-x: hidden;
+}
+
+#readerForm p.separator {
+    opacity: 0.5;
+    margin: 0 16px;
+}
+
+#readerForm select {
+    width: 216px;
+}
+
+#readerForm select#book {
+    margin-right: 16px;
+}
+
+#readerForm p.colon {
+    margin: 0 4px;
+}
+
+#readerForm input[type="submit"][value=""] {
+    height: 28px;
+    width: 28px;
+    border: none;
+    margin-left: 16px;
+    background-color: transparent;
+    box-shadow: none;
+    background-image: url('../../images/icons/magnifying-glass-green.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
+    transition: 0.2s ease-in-out;
+    outline: none;
+}
+
+#readerForm input[type="submit"][value=""]:hover {
+    transform: scale(1.15);
+}
+
+#readerForm input[list] {
+    padding-left: 4px;
+    width: 68px;
+    box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#readerForm input[list]::placeholder {
+    font-size: 1.6rem;
+}
+
+#readerForm .reference {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    grid-gap: 4px;
+}
+
+#readerForm label {
+    display: none;
+}
+
+#readerForm input[type="submit"]:not([value=""]) {
+    display: none;
+    align-self: center;
+    width: min-content;
+    padding-right: 32px;
+    padding-left: 32px;
+    margin: 32px auto 0;
+}
+
+
+
+@media (max-width: 900px) {
+    #readerForm select {
+        width: fit-content;
+    }
+    #readerForm input[list] {
+        width: 60px;
+    }
+    #readerForm input[list]::placeholder {
+        font-size: 1.4rem;
+    }
+    #readerForm p.separator {
+        margin: 0 12px;
+    }
+    #readerForm select#book {
+        margin-right: 12px;
+    }
+    #readerForm p.colon {
+        margin: 0 2px;
+    }
+    #readerForm input[type="submit"][value=""] {
+        margin-left: 12px;
+    }
+}
+
+
+@media (min-width: 768px) {
+    #readerForm[boxshadow="none"] input,
+    #readerForm[boxshadow="none"] select {
+        box-shadow: none;
+    }
+}
+
+@media (max-width: 768px) {
+    #readerForm {
+        display: block;
+        position: fixed;
+        top: 64px;
+        z-index: 101;
+        width: 340px;
+        background-color: var(--leftPaneBgColor);
+        height: calc(100% - 64px);
+        padding-top: 48px;
+        padding-bottom: 48px;
+        transition: 0.3s ease-in;
+    }
+    #readerForm select {
+        margin-bottom: 16px;
+    }
+    #readerForm .separator {
+        display: none;
+    }
+    #readerForm label,
+    #readerForm select,
+    #readerForm div.reference {
+        margin-left: 0;
+        margin-right: 0;
+    }
+    #readerForm label {
+        display: block;
+        width: 100%;
+    }
+    #readerForm label[for="reference"] {
+       text-align: right;
+    }
+    #readerForm input[type="submit"][value=""] {
+        display: none;
+    }
+    #readerForm {
+        padding-left: 32px;
+        padding-right: 32px;
+    }
+    #readerForm select {
+        width: 100%;
+    }
+    #readerForm input[type="submit"]:not([value=""]) {
+        display: block;
+    }
+}
+
+@media (max-width: 768px) and (min-width: 577px) {
+    #readerForm {
+        right: -340px;
+        
+    }
+    #readerForm[show="show"] {
+        right: 0px;
+    }
+}
+
+@media (max-width: 576px) {
+    #readerForm {
+        right: -340px;
+        top: 60px;
+        height: calc(100% - 60px);
+    }
+    #readerForm[show="show"] {
+        right: 0px;
+        overflow-y: auto;
+        overscroll-behavior: none;
+    }
+    #readerForm[tabledisplayed="true"] {
+        display: none;
+    }
+}
+
+@media (max-width: 400px) {
+    #readerForm {
+        width: 100%;
+        right: -100%;
+    }
+    #readerForm[show="show"] {
+        right: 0px;
+    }
+}

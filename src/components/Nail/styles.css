@@ -1,0 +1,78 @@
+#nail {
+    background-color: var(--leftPaneBgColor);
+    height: 37px;
+    position: absolute;
+    z-index: 102;
+    left: 15px;
+    top: 16px;
+    padding: 0 6px;
+    border-radius: 0 2px 2px 0;
+    border-width: 1px 1px 1px 0;
+    border-style: solid;
+    border-color: var(--borderColor);
+    display: none;
+    align-items: center;
+    justify-content: space-evenly;
+    box-shadow: 2px 4px 4px 0px RGBa(0, 0, 0, 0.05);
+    cursor: pointer;
+}
+
+#nail[position="right"] {
+    left: 340px;
+    border-color: var(--buttonNormalColor);
+    padding: 4px 5px;
+}
+
+#nail[position="right"] img {
+    width: 28px;
+    height: 28px;
+}
+
+
+@media (max-width: 1200px) {
+    #nail {
+        display: flex;
+        gap: 8px;
+        transition: 0.3s ease-in;
+    }
+}
+
+@media (max-width: 768px) {
+    #nail {
+        left: 0px;
+        padding: 4px 5px;
+        position: fixed;
+        top: 80px;
+        border-color: var(--buttonNormalColor);
+    }
+    #nail img {
+        width: 28px;
+        height: 28px;
+    }
+    #nail span {
+        display: none;
+    }
+}
+
+@media (max-width: 576px) {
+    #nail {
+        top: 76px;
+    }
+}
+
+@media (max-width: 400px) {
+    #nail[position="right"] {
+        left: calc(100% - 39px);
+        align-items: center;
+        border-color: transparent;
+    }
+}
+
+
+/* DEVICE TABLET */
+
+@media (max-width: 768px) {
+    #nail[istablet="true"] {
+        top: 96px;
+    }
+}

@@ -1,0 +1,100 @@
+#lightForm {
+    position: absolute;
+    z-index: 84;
+    top: 16px;
+    width: 100%;
+    display: none;
+}
+
+#lightForm > div {
+    width: 300px;
+    display: block;
+    margin: auto;
+    position: relative;
+    border-radius: 50px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#lightForm input[type='text'] {
+    border-radius: 50px;
+    width: 100%;
+}
+
+#lightForm > div[boxshadow='none'] {
+    box-shadow: unset;
+}
+
+
+#lightForm label,
+#lightForm select, 
+#lightForm input[value='Rechercher'] {
+    display: none;
+}
+
+#lightForm input#icon {
+    width: 24px;
+    height: 24px;
+    margin: 0;
+    padding: 0;
+    background-image: url('../../images/icons/magnifying-glass-green.svg');
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: contain;
+    border: 0;
+    box-shadow: 0 0 0;
+    position: absolute;
+    top: 5px;
+    right: 9px;
+    transition: 0.2s ease-in-out;
+    outline: none;
+}
+
+#lightForm input#icon:hover {
+    transform: scale(1.15);
+}
+
+
+@media (max-width: 1200px) {
+    #lightForm {
+        display: block;
+    }
+}
+
+@media (max-width: 768px) {
+    #lightForm {
+        position: fixed;
+        padding-top: 16px;
+        height: 71px;
+        top: 64px;
+    }
+}
+
+@media (max-width: 576px) {
+    #lightForm {
+        top: 60px;
+    }
+    #lightForm > div {
+        margin: 0 var(--margin) 0 auto;
+    }
+}
+
+@media (max-width:  400px) {
+    #lightForm > div {
+        width: 80%;
+        margin-right: var(--margin);
+    }
+}
+
+/* DEVICE TABLET */
+
+#lightForm[istablet="true"] {
+    height: 71px;
+    padding-top: 16px;
+    top: unset;
+}
+
+@media (max-width: 576px) {
+    #lightForm[istablet="true"] {
+        top: 80px;
+    }
+}

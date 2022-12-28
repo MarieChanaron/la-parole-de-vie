@@ -1,0 +1,67 @@
+#menu {
+    position: relative;
+}
+
+#menu img {
+    width: 56px;
+    margin-left: auto;
+    display: none;
+    cursor: pointer;
+}
+
+#menu button {
+    margin: 4px 0 4px 16px;
+    width: 173px;
+    background-color: var(--leftPaneBgColor);
+}
+
+#menu button:hover {
+    background-color: var(--buttonHoverColor);
+}
+
+
+
+
+@media (max-width: 1200px) {
+    #menu button {
+        width: 144px;
+    }
+}
+
+@media (max-width: 768px) {
+    #menu .buttons {
+        flex-direction: column;
+        position: absolute;
+        z-index: 104;
+        right: 0;
+        top: 56px;
+    }
+    #menu button {
+        margin: 0;
+        box-shadow: 0px 4px 4px RGBa(0,0,0,0.3);
+    }
+    #menu a:nth-child(2) {
+        margin-top: 8px;
+    }
+    #menu .false {
+        display: none;
+    }
+    #menu .true {
+        display: flex;
+        backdrop-filter: blur(5px);
+        padding-bottom: 4px;
+    }
+    #menu img {
+        display: flex;
+    }
+}
+
+@media (max-width: 576px) {
+    #menu .buttons {
+        top: 48px;
+    }
+    #menu img {
+        width: 48px;
+        height: 48px;
+    }
+}

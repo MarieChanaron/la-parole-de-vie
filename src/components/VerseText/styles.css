@@ -1,0 +1,6 @@
+.important {
+    color: var(--verseAccentColor);
+}
+
+/* Regarding the font-size, look in ReaderText/styles.css */
+/* This is put apart because it depends on the kind of device */

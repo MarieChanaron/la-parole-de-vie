@@ -1,0 +1,35 @@
+#searchForm input#icon {
+    width: 24px;
+    height: 24px;
+    margin: 0;
+    padding: 0;
+    background-image: url('../../images/icons/magnifying-glass-green.svg');
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: contain;
+    border: 0;
+    box-shadow: 0 0 0;
+    position: absolute;
+    top: 7px;
+    right: 7px;
+    transition: 0.2s ease-in-out;
+    outline: none;
+}
+
+#searchForm input#icon:hover {
+    transform: scale(1.15);
+}
+
+#searchForm div#inputText {
+    position: relative;
+}
+
+#searchForm input[type='text'] {
+    width: 100%;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#searchForm select {
+    width: 100%;
+}
+

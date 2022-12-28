@@ -1,0 +1,63 @@
+img#tableOfContentIcon {
+    box-sizing: content-box;
+    width: 32px;
+    display: none;
+    position: absolute;
+    left: var(--margin);
+    transition: 0.3s ease-in;
+    cursor: pointer;
+    z-index: 83;
+    margin: 0;
+    border-style: solid;
+    border-color: transparent;
+    background-color: transparent;
+    padding: 5px;
+    border-width: 1px 1px 1px 0px;
+    border-radius: 0px 2px 2px 0px;
+}
+
+img#tableOfContentIcon[position="right"] {
+    background-color: var(--leftPaneBgColor);
+    border-color: var(--buttonNormalColor);
+    box-shadow: 2px 4px 4px 0px RGBa(0, 0, 0, 0.05);
+    width: 28px;
+    z-index: 102;
+    left: 340px;
+}
+
+
+@media (max-width: 1200px) {
+    img#tableOfContentIcon {
+        display: inline;
+        top: 14px;
+    }
+}
+
+@media (max-width: 992px) {
+    img#tableOfContentIcon {
+        left: 60px;
+    }
+}
+
+@media (max-width: 768px) {
+    img#tableOfContentIcon {
+        width: 28px;
+        padding: 2px 3px;
+        top: 11px;
+        left: 40px;
+    }
+}
+
+@media (max-width: 576px) {
+    img#tableOfContentIcon {
+        top: 6px;
+        left: var(--margin);
+    }
+}
+
+@media (max-width: 400px) {
+    img#tableOfContentIcon[position="right"] {
+        left: calc(100% - 35px);
+        border-color: transparent;
+    }
+}
