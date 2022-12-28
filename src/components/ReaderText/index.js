@@ -21,20 +21,15 @@ function ReaderText({text}) {
     const verseParam = Number(getUrlParam('verse'));
     const verseRef = React.useRef();
 
-    
+
     useLayoutEffect(
         () => {
-            if (!verseParam) {
-                window.scrollTo(0,0);
-            } else {
-                if (verseRef.current && initial) {
-                    verseRef.current.scrollIntoView({block: 'center', inline: 'nearest'});
-                    setInitial(false);
-                }
+            if (verseRef.current && initial) {
+                verseRef.current.scrollIntoView({block: 'center', inline: 'nearest'});
+                setInitial(false);
             }
-        }
+        }, [initial]
     );
-
 
     useEffect( () => {
         if (isTablet && window.innerWidth > 768 && window.innerWidth <= 1200) {
@@ -46,7 +41,7 @@ function ReaderText({text}) {
                 setTextHeight(height - 310);
             }}
         }
-    });
+    }, []);
 
 
     return (
