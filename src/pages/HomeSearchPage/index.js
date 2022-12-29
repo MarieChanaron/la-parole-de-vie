@@ -47,7 +47,9 @@ function HomeSearchPage() {
 
     const reload = () => {
         // window.location = window.location.href+'?eraseCache=true';
-        window.location.reload(true);
+        const url = new URL(window.location.href);
+        url.searchParams.append('eraseCache', true);
+        window.location.href = url;
     }
 
     const changeOrientation = () => {
