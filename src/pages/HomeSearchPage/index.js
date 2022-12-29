@@ -35,7 +35,9 @@ function HomeSearchPage() {
 
 
     useEffect( () => {
-        // window.scrollTo(0,0);
+        if (isMobileOnly) {
+            window.scrollTo(0,0);
+        }
         /* Do not show always the scrollbar on the body - auto by default */
         document.body.classList.remove('scroll');
     }, []);
