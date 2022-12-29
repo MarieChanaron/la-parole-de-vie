@@ -111,9 +111,10 @@
 
 /* DEVICE: MOBILE */
 
+/* Portrait view */
 @media (max-width: 768px) {
     #homeSearchForm[ismobileonly="true"] {
-        overflow-y: scroll;
+        overflow-y: auto;
     }
     #homeSearchForm[ismobileonly="true"][isfirefox="true"] {
         height: fit-content;
@@ -121,6 +122,7 @@
     }
 }
 
+/* Landscape view */
 @media (min-width: 577px) {
     #homeSearchForm[ismobileonly="true"] {
         height: fit-content !important;
