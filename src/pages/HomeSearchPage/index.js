@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { 
     isMobileOnly, 
     isFirefox, 
@@ -31,7 +31,7 @@ function HomeSearchPage() {
     /* Orientation of the screen - Useful only for mobile */
     const [orientation, setOrientation] = useState();
 
-    const initial = useRef(true);
+    const ref = React.useRef();
 
 
     useEffect( () => { /* eslint-disable-line react-hooks/exhaustive-deps */
@@ -45,18 +45,19 @@ function HomeSearchPage() {
         }
     });
 
-    const changeOrientation = () => {
-        const timeout = setTimeout( () => {
-            orientation === "portrait" ? setOrientation("landscape") : setOrientation("portrait");
-        }, 1000);
-        clearTimeout(timeout);
+    const reload = () => {
+        window.location = window.location.href+'?eraseCache=true';
     }
 
-    useEffect( () => {
-        if (!initial) {
-            window.location.reload(true);
-        }
-    }, [orientation]);
+    const changeOrientation = () => {
+        const timeout = setTimeout(
+            () => {
+                orientation === "portrait" ? setOrientation("landscape") : setOrientation("portrait");
+            }, 1000
+        )
+        clearTimeout(timeout);
+        reload();
+    }
 
     useEffect( () => {
         if (isMobileOnly && !isFirefox) {
@@ -64,14 +65,15 @@ function HomeSearchPage() {
             screenOrientation.addEventListener("change", changeOrientation);   
             return () => screenOrientation.removeEventListener("change", changeOrientation); 
         }
-    }, [window.innerWidth, window.innerHeight, orientation]); // eslint-disable-line 
+    });
+
 
     useEffect( () => {
         if (isMobileOnly && isFirefox) {
             if ((window.innerHeight !== windowHeight) && (window.innerWidth !== windowWidth)) {
+                changeOrientation();
                 setWindowWidth(window.innerWidth);
                 setWindowHeight(window.innerHeight);
-                orientation === "portrait" ? setOrientation("landscape") : setOrientation("portrait");
             }
         }
     }, [window.innerWidth, window.innerHeight]); // eslint-disable-line 
@@ -81,7 +83,6 @@ function HomeSearchPage() {
         // window.scrollTo(0,0);
         /* Do not show always the scrollbar on the body - auto by default */
         document.body.classList.remove('scroll');
-        initial.current = false;
         setOrientation(window.innerWidth > window.innerHeight ? "landscape" : "portrait");
     }, []);
 
@@ -96,11 +97,10 @@ function HomeSearchPage() {
             isfirefox={isFirefox ? "true" : "false"}
             ismobilesafari={isMobileSafari ? "true" : "false"}
             deviceorientation={orientation}
+            ref={ref}
         >
 
             <Banner transparency='transparentBg' />
-
-            <p style={{position: 'absolute'}}>{windowWidth} {window.innerWidth} {windowHeight} {window.innerHeight}</p>
 
             <FirstQueryForm 
                 height={height-62} /* 62px is the height of the footer on mobile */
