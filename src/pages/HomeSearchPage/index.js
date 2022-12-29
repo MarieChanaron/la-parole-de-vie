@@ -58,7 +58,7 @@ function HomeSearchPage() {
             screenOrientation.addEventListener("change", changeOrientation);   
             return () => screenOrientation.removeEventListener("change", changeOrientation); 
         }
-    }, [orientation]);
+    });
 
 
     useEffect( () => {

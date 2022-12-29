@@ -32,17 +32,17 @@ J'ai constaté que la très grande majorité des applications bibliques utilisai
 
 ## Technologie et dépendances
 
-React version 18.2.0
-npm create-react-app ***
+React version 18.2.0  
+npm create-react-app ***  
+  
+react-device-detect :   
+npm install react-device-detect  
+Développé par Facebook  
 
-react-device-detect : 
-npm install react-device-detect
-Développé par Facebook
+react-router-dom :  
+npm install react-router-dom  
+Développé par Facebook  
 
-react-router-dom :
-npm install react-router-dom
-Développé par Facebook
-
-Material UI :
-npm install @mui/material @emotion/react @emotion/styled
-Développé par Google
+Material UI :  
+npm install @mui/material @emotion/react @emotion/styled  
+Développé par Google  
