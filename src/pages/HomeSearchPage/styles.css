@@ -112,7 +112,7 @@
 /* DEVICE: MOBILE */
 
 @media (max-width: 768px) {
-    #homeSearchForm[ismobilesafari="true"] {
+    #homeSearchForm[ismobileonly="true"] {
         overflow-y: scroll;
     }
     #homeSearchForm[ismobileonly="true"][isfirefox="true"] {
