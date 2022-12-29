@@ -102,10 +102,8 @@
 }
 
 
-/* DEVICE MOBILE */
+/* DEVICE: TABLET, MOBILE */
 
-@media (max-width: 768px) {
-    #readerText .important {
-        font-size: 100%;
-    }
+#readerText[ismobile="true"] .important {
+    font-size: 100%;
 }
