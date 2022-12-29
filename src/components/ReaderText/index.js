@@ -28,7 +28,7 @@ function ReaderText({text}) {
                 verseRef.current.scrollIntoView({block: 'center', inline: 'nearest'});
                 initial.current = false;
             }
-        }, []
+        }
     );
 
     useEffect( () => {
