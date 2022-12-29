@@ -46,7 +46,8 @@ function HomeSearchPage() {
     });
 
     const reload = () => {
-        window.location = window.location.href+'?eraseCache=true';
+        // window.location = window.location.href+'?eraseCache=true';
+        window.location.reload(true);
     }
 
     const changeOrientation = () => {
@@ -71,9 +72,10 @@ function HomeSearchPage() {
     useEffect( () => {
         if (isMobileOnly && isFirefox) {
             if ((window.innerHeight !== windowHeight) && (window.innerWidth !== windowWidth)) {
-                changeOrientation();
                 setWindowWidth(window.innerWidth);
                 setWindowHeight(window.innerHeight);
+                changeOrientation();
+                reload();
             }
         }
     }, [window.innerWidth, window.innerHeight]); // eslint-disable-line 
