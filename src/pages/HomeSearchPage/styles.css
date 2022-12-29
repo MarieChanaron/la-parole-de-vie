@@ -1,5 +1,4 @@
 #homeSearchForm {
-    height: 100vh;
     width: 100%;
     
     /* Background */
@@ -17,6 +16,8 @@
 #homeSearchForm[istablet="true"] {
     height: 100vh;
 }
+
+
 
 /* MEDIA QUERIES */
 
