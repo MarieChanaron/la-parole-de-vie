@@ -47,7 +47,12 @@ function HomeSearchPage() {
 
     const changeOrientation = () => {
         const timeout = setTimeout( () => {
-            window.location.reload(true);
+            if (orientation === "portrait") {
+                setOrientation("landscape");
+                window.location.reload(true);
+            } else {
+                setOrientation("portrait");
+            }
         }, 1000);
         clearTimeout(timeout);
     }
@@ -93,6 +98,11 @@ function HomeSearchPage() {
         >
 
             <Banner transparency='transparentBg' />
+
+            <p>{windowWidth}</p>
+            <p>{windowHeight}</p>
+            <p>{window.innerWidth}</p>
+            <p>{window.innerHeight}</p>
 
             <FirstQueryForm 
                 height={height-62} /* 62px is the height of the footer on mobile */
