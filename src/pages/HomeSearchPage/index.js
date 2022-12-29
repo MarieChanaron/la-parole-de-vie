@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { 
     isMobileOnly, 
     isFirefox, 
@@ -29,9 +29,9 @@ function HomeSearchPage() {
 
 
     /* Orientation of the screen - Useful only for mobile */
-    const [orientation, setOrientation] = useState(window.innerWidth > window.innerHeight ? "landscape" : "portrait");
+    const [orientation, setOrientation] = useState();
 
-    const ref = React.useRef();
+    const initial = useRef(true);
 
 
     useEffect( () => { /* eslint-disable-line react-hooks/exhaustive-deps */
@@ -53,7 +53,9 @@ function HomeSearchPage() {
     }
 
     useEffect( () => {
-        window.location.reload(true);
+        if (!initial) {
+            window.location.reload(true);
+        }
     }, [orientation]);
 
     useEffect( () => {
@@ -79,6 +81,8 @@ function HomeSearchPage() {
         // window.scrollTo(0,0);
         /* Do not show always the scrollbar on the body - auto by default */
         document.body.classList.remove('scroll');
+        initial.current = false;
+        setOrientation(window.innerWidth > window.innerHeight ? "landscape" : "portrait");
     }, []);
 
 
@@ -92,7 +96,6 @@ function HomeSearchPage() {
             isfirefox={isFirefox ? "true" : "false"}
             ismobilesafari={isMobileSafari ? "true" : "false"}
             deviceorientation={orientation}
-            ref={ref}
         >
 
             <Banner transparency='transparentBg' />
