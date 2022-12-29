@@ -35,7 +35,7 @@ function HomeSearchPage() {
 
 
     useEffect( () => {
-        if (isMobileOnly) {
+        if (isMobileOnly && !isMobileSafari) {
             window.scrollTo(0,0);
         }
         /* Do not show always the scrollbar on the body - auto by default */
