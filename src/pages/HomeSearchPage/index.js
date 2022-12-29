@@ -47,15 +47,14 @@ function HomeSearchPage() {
 
     const changeOrientation = () => {
         const timeout = setTimeout( () => {
-            if (orientation === "portrait") {
-                setOrientation("landscape");
-                window.location.reload(true);
-            } else {
-                setOrientation("portrait");
-            }
+            orientation === "portrait" ? setOrientation("landscape") : setOrientation("portrait");
         }, 1000);
         clearTimeout(timeout);
     }
+
+    useEffect( () => {
+        window.location.reload(true);
+    }, [orientation]);
 
     useEffect( () => {
         if (isMobileOnly && !isFirefox) {
@@ -64,7 +63,6 @@ function HomeSearchPage() {
             return () => screenOrientation.removeEventListener("change", changeOrientation); 
         }
     });
-
 
     useEffect( () => {
         if (isMobileOnly && isFirefox) {
@@ -99,7 +97,7 @@ function HomeSearchPage() {
 
             <Banner transparency='transparentBg' />
 
-            <p>{windowWidth} {window.innerWidth} {windowHeight} {window.innerHeight}</p>
+            <p style={{position: 'absolute'}}>{windowWidth} {window.innerWidth} {windowHeight} {window.innerHeight}</p>
 
             <FirstQueryForm 
                 height={height-62} /* 62px is the height of the footer on mobile */
