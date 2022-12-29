@@ -23,7 +23,6 @@
     }
     #homeSearchForm[isdesktop="true"] #banner {
         position: static;
-        background-color:brown;
     }
     #homeSearchForm[isdesktop="true"] footer {
         position: static !important;
@@ -41,7 +40,6 @@
     }
     #homeSearchForm[isdesktop="true"] #banner {
         position: static;
-        background-color:brown;
     }
     #homeSearchForm[isdesktop="true"] footer {
         position: static !important;
@@ -125,18 +123,17 @@
 
 @media (min-width: 577px) {
     #homeSearchForm[ismobileonly="true"] {
-        height: fit-content;
+        height: fit-content !important;
         position: static;
     }
     #homeSearchForm[ismobileonly="true"] #banner {
         position: static;
-        background-color:brown;
     }
     #homeSearchForm[ismobileonly="true"] footer {
         position: static !important;
     }
     #homeSearchForm[ismobileonly="true"] #firstQueryForm {
-        height: 483px;
+        height: 483px !important;
         padding-top: 0;
         padding-bottom: 0;
     }
