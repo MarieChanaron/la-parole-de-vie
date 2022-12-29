@@ -23,19 +23,17 @@ function TableOfContentsSlide({showTable, showForm}) {
   // The function below has the same role as scrollIntoView.
   // But this function works for elements having position fixed (for medium / small screen)
   const scrollIntoTable = (bookIndex, total) => {
-    const toc = containerRef.current,
-          scrollTopValue = toc.scrollHeight - toc.offsetHeight,
-          val = scrollTopValue / (total-1) * bookIndex;
-          // console.log("scrollheight: ", toc.scrollHeight);
-          // console.log("offsetHeight: ", toc.offsetHeight);
-          // console.log("scrolltop: ", toc.scrollTop);
-          // console.log("scrollTopValue: ", scrollTopValue);
-    toc.scrollTop = val;
-  }
-
-  const scroll = () => {
-    const bookId = getBook().id;
-    scrollIntoTable(bookId-1, books.length);
+  const toc = containerRef.current;
+    // scrollHeight = toc.scrollHeight,
+    // offsetHeight = toc.offsetHeight,
+    // pos = bookIndex / total * scrollHeight,
+    // posRelative = pos / scrollHeight,
+    // scrolltop = posRelative * offsetHeight - 0.5 * (offsetHeight ** 2) / scrollHeight; 
+  const pos = bookIndex / total;
+  const scrollbarThumb = (toc.offsetHeight ** 2) / toc.scrollHeight;
+  const space = toc.offsetHeight - scrollbarThumb;
+  const val = pos * space;
+  toc.scrollTop = val;
   }
 
 
@@ -50,7 +48,8 @@ function TableOfContentsSlide({showTable, showForm}) {
   // Scroll on first loading and on opening the table of contents
   useEffect( () => {
     if (showTable === true) {
-      scroll();
+      const bookId = getBook().id;
+      scrollIntoTable(bookId-1, books.length);
     }
   });
 
