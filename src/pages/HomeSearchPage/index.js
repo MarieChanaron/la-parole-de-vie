@@ -24,10 +24,11 @@ function HomeSearchPage() {
     const [height, setHeight] = useState(sessionStorage.getItem('height'));
     const [focus, setFocus] = useState(false);
 
+    console.log(focus);
+
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
     const [windowHeight, setWindowHeight] = useState(window.innerHeight);
 
-    console.log(focus);
 
     /* Orientation of the screen - Useful only for mobile */
     const [orientation, setOrientation] = useState(window.innerWidth > window.innerHeight ? "landscape" : "portrait");
@@ -35,7 +36,7 @@ function HomeSearchPage() {
     const ref = React.useRef();
 
 
-    useEffect( () => {
+    useEffect( () => { /* eslint-disable-line react-hooks/exhaustive-deps */
         /* If the browser is Firefox, and if the device is mobile only, 
         save the height of the homepage in the session storage and retrieve it */
         if (isFirefox && isMobileOnly) {
@@ -44,7 +45,7 @@ function HomeSearchPage() {
                 setHeight(sessionStorage.getItem('height'));
             }
         }
-    }, [height]); // To check with the mobile
+    });
 
 
     // useEffect( () => {
@@ -77,7 +78,7 @@ function HomeSearchPage() {
             setWindowWidth(window.innerWidth);
             setWindowHeight(window.innerHeight);
         }
-    }, [windowWidth, windowHeight, orientation]);
+    }, [window.innerWidth, window.innerHeight]); /* eslint-disable-line react-hooks/exhaustive-deps */
 
 
     useEffect( () => {
