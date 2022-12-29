@@ -23,17 +23,10 @@ function TableOfContentsSlide({showTable, showForm}) {
   // The function below has the same role as scrollIntoView.
   // But this function works for elements having position fixed (for medium / small screen)
   const scrollIntoTable = (bookIndex, total) => {
-  const toc = containerRef.current;
-    // scrollHeight = toc.scrollHeight,
-    // offsetHeight = toc.offsetHeight,
-    // pos = bookIndex / total * scrollHeight,
-    // posRelative = pos / scrollHeight,
-    // scrolltop = posRelative * offsetHeight - 0.5 * (offsetHeight ** 2) / scrollHeight; 
-  const pos = bookIndex / total;
-  const scrollbarThumb = (toc.offsetHeight ** 2) / toc.scrollHeight;
-  const space = toc.offsetHeight - scrollbarThumb;
-  const val = pos * space;
-  toc.scrollTop = val;
+    const toc = containerRef.current;
+    const posY = bookIndex / total * toc.scrollHeight;
+    const val = posY - toc.offsetHeight / 2;
+    toc.scrollTop = val;
   }
 
 
@@ -49,7 +42,7 @@ function TableOfContentsSlide({showTable, showForm}) {
   useEffect( () => {
     if (showTable === true) {
       const bookId = getBook().id;
-      scrollIntoTable(bookId-1, books.length);
+      scrollIntoTable(bookId-1, books.length-1);
     }
   });
 
@@ -63,6 +56,7 @@ function TableOfContentsSlide({showTable, showForm}) {
       show={showTable ? 'show' : null} 
       formdisplayed={showForm ? 'true' : undefined}
       istablet={isTablet ? "true": "false"}
+      onScroll={e => console.log(e.target.scrollTop)}
     />
 
   )
