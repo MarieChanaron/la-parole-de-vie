@@ -52,7 +52,10 @@ function HomeSearchPage() {
             }, 1000
         )
         clearTimeout(timeout);
-        window.location.reload(isFirefox ? true : false);
+
+        if (orientation === "landscape") {
+            window.location.reload(true);
+        }
     }
 
     useEffect( () => {
