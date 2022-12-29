@@ -64,12 +64,12 @@ hr {
         bottom: 0;
     }
     #readerNavBtns img {
-        height: 36px;
-        width: 36px;
+        height: 32px;
+        width: 32px;
     }
     #readerNavBtns > div > div{
         height: 52px;
-        padding: 8px 0;
+        padding: 10px 0;
     }
 }
 
