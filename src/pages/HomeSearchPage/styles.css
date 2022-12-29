@@ -13,52 +13,40 @@
     overflow: hidden;
 }
 
-#homeSearchForm[isdesktop="true"],
-#homeSearchForm[istablet="true"] {
-    height: 100vh;
-}
 
 /* MEDIA QUERIES */
 
 @media (max-width: 576px) and (max-height: 475px) {
-    #homeSearchForm[isdesktop="true"], 
-    #homeSearchForm[ismobileonly="true"][deviceorientation="landscape"] {
+    #homeSearchForm[isdesktop="true"] {
         height: fit-content;
         position: static;
     }
-    #homeSearchForm[isdesktop="true"] #banner,
-    #homeSearchForm[ismobileonly="true"][deviceorientation="landscape"] #banner {
+    #homeSearchForm[isdesktop="true"] #banner {
         position: static;
         background-color:brown;
     }
-    #homeSearchForm[isdesktop="true"] footer,
-    #homeSearchForm[ismobileonly="true"][deviceorientation="landscape"] footer {
+    #homeSearchForm[isdesktop="true"] footer {
         position: static !important;
     }
-    #homeSearchForm[isdesktop="true"] #firstQueryForm,
-    #homeSearchForm[ismobileonly="true"][deviceorientation="landscape"] #firstQueryForm {
+    #homeSearchForm[isdesktop="true"] #firstQueryForm {
         height: 353px;
         padding-top: 60px;
     }
 }
 
 @media (min-width: 577px) and (max-width: 768px) and (max-height: 609px) {
-    #homeSearchForm[isdesktop="true"],
-    #homeSearchForm[ismobileonly="true"][deviceorientation="landscape"] {
+    #homeSearchForm[isdesktop="true"] {
         height: fit-content;
         position: static;
     }
-    #homeSearchForm[isdesktop="true"] #banner,
-    #homeSearchForm[ismobileonly="true"][deviceorientation="landscape"] #banner {
+    #homeSearchForm[isdesktop="true"] #banner {
         position: static;
         background-color:brown;
     }
-    #homeSearchForm[isdesktop="true"] footer,
-    #homeSearchForm[ismobileonly="true"][deviceorientation="landscape"] footer {
+    #homeSearchForm[isdesktop="true"] footer {
         position: static !important;
     }
-    #homeSearchForm[isdesktop="true"] #firstQueryForm,
-    #homeSearchForm[ismobileonly="true"][deviceorientation="landscape"] #firstQueryForm {
+    #homeSearchForm[isdesktop="true"] #firstQueryForm {
         height: 483px;
         padding-top: 0;
         padding-bottom: 0;
@@ -123,7 +111,7 @@
 }
 
 
-/* DEVICE MOBILE */
+/* DEVICE: MOBILE */
 
 @media (max-width: 768px) {
     #homeSearchForm[ismobilesafari="true"] {
@@ -135,45 +123,21 @@
     }
 }
 
-@media (orientation: portrait) {
-    #homeSearchForm[isMobileOnly="true"][isfirefox="false"] {
-        height: 100vh;
-    }
-}
-
-@media (max-width: 768px) and (orientation: landscape) {
-    #homeSearchForm[ismobileonly="true"][isfirefox="false"][deviceorientation="landscape"] {
+@media (min-width: 577px) {
+    #homeSearchForm[ismobileonly="true"] {
         height: fit-content;
         position: static;
     }
-    #homeSearchForm[ismobileonly="true"][isfirefox="false"][deviceorientation="landscape"] #banner {
+    #homeSearchForm[ismobileonly="true"] #banner {
         position: static;
         background-color:brown;
     }
-    #homeSearchForm[ismobileonly="true"][isfirefox="false"][deviceorientation="landscape"] footer {
+    #homeSearchForm[ismobileonly="true"] footer {
         position: static !important;
     }
-    #homeSearchForm[ismobileonly="true"][isfirefox="false"][deviceorientation="landscape"] #firstQueryForm {
+    #homeSearchForm[ismobileonly="true"] #firstQueryForm {
         height: 483px;
         padding-top: 0;
         padding-bottom: 0;
-    }
-}
-
-@media (max-width: 576px) and (orientation: landscape) { 
-    #homeSearchForm[ismobileonly="true"][isfirefox="false"][deviceorientation="landscape"] {
-        height: fit-content;
-        position: static;
-    }
-    #homeSearchForm[ismobileonly="true"][isfirefox="false"][deviceorientation="landscape"] #banner {
-        position: static;
-        background-color:brown;
-    }
-    #homeSearchForm[ismobileonly="true"][isfirefox="false"][deviceorientation="landscape"] footer {
-        position: static !important;
-    }
-    #homeSearchForm[ismobileonly="true"][isfirefox="false"][deviceorientation="landscape"] #firstQueryForm {
-        height: 353px;
-        padding-top: 60px;
     }
 }
