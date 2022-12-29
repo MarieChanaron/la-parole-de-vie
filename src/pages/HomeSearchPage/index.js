@@ -29,7 +29,7 @@ function HomeSearchPage() {
 
 
     /* Orientation of the screen - Useful only for mobile */
-    const [orientation, setOrientation] = useState(window.innerWidth > window.innerHeight ? "landscape" : "portrait");
+    const [orientation, setOrientation] = useState();
 
     const ref = React.useRef();
 
@@ -73,13 +73,14 @@ function HomeSearchPage() {
                 setWindowHeight(window.innerHeight);
             }
         }
-    }, [windowWidth, windowHeight, orientation]);
+    }, [window.innerHeight, window.innerWidth]); // eslint-disable-line 
 
 
     useEffect( () => {
         // window.scrollTo(0,0);
         /* Do not show always the scrollbar on the body - auto by default */
         document.body.classList.remove('scroll');
+        setOrientation(window.innerWidth > window.innerHeight ? "landscape" : "portrait");
     }, []);
 
 
