@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 
 // Function
 import { fetchData } from '../api/fetchData';
@@ -175,7 +175,7 @@ function useFetchReference() {
 
             }
 
-        }, [query]
+        }, [query] /* eslint-disable-line react-hooks/exhaustive-deps */
     );
 
     

@@ -32,7 +32,7 @@ function LightForm({boxShadow, setFormFocus}) {
         // Get the value param and fill the input text with it
         refInput.current.value = getUrlParam('value');
 
-    }, []
+    }, [refInput]
     );
 
     const handleFocus = event => {

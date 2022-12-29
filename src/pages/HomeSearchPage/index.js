@@ -35,10 +35,6 @@ function HomeSearchPage() {
     const ref = React.useRef();
 
 
-    const input = document.getElementById("keyword");
-    console.log(input);
-
-
     useEffect( () => {
         /* If the browser is Firefox, and if the device is mobile only, 
         save the height of the homepage in the session storage and retrieve it */
@@ -48,7 +44,7 @@ function HomeSearchPage() {
                 setHeight(sessionStorage.getItem('height'));
             }
         }
-    });
+    }, [height]); // To check with the mobile
 
 
     // useEffect( () => {
@@ -81,7 +77,7 @@ function HomeSearchPage() {
             setWindowWidth(window.innerWidth);
             setWindowHeight(window.innerHeight);
         }
-    }, [window.innerHeight, window.innerWidth]);
+    }, [windowWidth, windowHeight, orientation]);
 
 
     useEffect( () => {

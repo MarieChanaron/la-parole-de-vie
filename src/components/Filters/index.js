@@ -34,7 +34,7 @@ function Filters({setShowLeftPane, loading, total, setFilter, setNb}) {
         const grid = document.getElementById('grid');
         grid.classList = `${value}Grid`; 
         window.innerWidth > 768 ? scrollToTop('auto') : window.scrollTo(0,0);
-        }, [value]
+        }, [value, setFilter]
     );
 
 

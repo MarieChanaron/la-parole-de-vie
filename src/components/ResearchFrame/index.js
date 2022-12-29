@@ -47,7 +47,7 @@ function ResearchFrame() {
         setResults( prev => [...prev, item] );
       }
     })
-    }, [keyword]
+    }, [keyword, state]
   );
 
 

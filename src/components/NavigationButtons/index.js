@@ -51,7 +51,7 @@ function NavigationButtons({setKeyword, loading, nb, display, formFocus}) {
 
       return () => clearTimeout(timer);
 
-    }, [value]
+    }, [value, setKeyword]
   );
 
 

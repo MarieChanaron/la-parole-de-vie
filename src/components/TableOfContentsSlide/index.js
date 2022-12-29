@@ -43,21 +43,16 @@ function TableOfContentsSlide({showTable, showForm}) {
   useEffect(
     () => {
       fillTableOfContents(containerRef);
-      scroll();
     }, []
   );
 
-  // Scroll on resizing the page
-  useEffect( () => {
-    scroll();
-  }, [window.innerWidth, window.innerHeight]);
 
-  // Scroll on opening the table of contents
+  // Scroll on first loading and on opening the table of contents
   useEffect( () => {
     if (showTable === true) {
       scroll();
     }
-  }, [showTable]);
+  });
 
 
   return (

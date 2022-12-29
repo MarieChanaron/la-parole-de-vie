@@ -62,7 +62,7 @@ function Form() {
         const translation = getUrlParam('translation');
         if (translation) {translationRef.current.value = translation;}
 
-    }, []
+    }, [] /* eslint-disable-line react-hooks/exhaustive-deps */
     );
 
 

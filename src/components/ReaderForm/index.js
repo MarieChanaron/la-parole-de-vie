@@ -130,7 +130,7 @@ function ReaderForm({showForm, showTable, boxshadow}) {
         refChapter.current.value = chapter;
         refVerse.current.value = verse;
 
-    }, []
+    }, [book.shortname, chapter, refChapter, refTranslation, refVerse, translation, verse]
   );
 
   return (

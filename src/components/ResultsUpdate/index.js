@@ -35,7 +35,7 @@ function ResultsUpdate({resultsLength, total, filter, loading, keyword}) {
                 break;
         }
 
-    });
+    }, [filter, keyword, resultsLength, total]);
     
 
   return (
