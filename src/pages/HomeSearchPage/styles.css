@@ -130,3 +130,40 @@
         overflow: hidden;
     }
 }
+
+@media (max-width: 768px) and (orientation: landscape) {
+    #homeSearchForm[ismobileonly="true"][isfirefox="false"][deviceorientation="landscape"] {
+        height: fit-content;
+        position: static;
+    }
+    #homeSearchForm[ismobileonly="true"][isfirefox="false"][deviceorientation="landscape"] #banner {
+        position: static;
+        background-color:brown;
+    }
+    #homeSearchForm[ismobileonly="true"][isfirefox="false"][deviceorientation="landscape"] footer {
+        position: static !important;
+    }
+    #homeSearchForm[ismobileonly="true"][isfirefox="false"][deviceorientation="landscape"] #firstQueryForm {
+        height: 483px;
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+}
+
+@media (max-width: 576px) and (orientation: landscape) { 
+    #homeSearchForm[ismobileonly="true"][isfirefox="false"][deviceorientation="landscape"] {
+        height: fit-content;
+        position: static;
+    }
+    #homeSearchForm[ismobileonly="true"][isfirefox="false"][deviceorientation="landscape"] #banner {
+        position: static;
+        background-color:brown;
+    }
+    #homeSearchForm[ismobileonly="true"][isfirefox="false"][deviceorientation="landscape"] footer {
+        position: static !important;
+    }
+    #homeSearchForm[ismobileonly="true"][isfirefox="false"][deviceorientation="landscape"] #firstQueryForm {
+        height: 353px;
+        padding-top: 60px;
+    }
+}
