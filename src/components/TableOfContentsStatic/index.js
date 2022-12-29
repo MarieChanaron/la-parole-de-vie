@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { isTablet } from 'react-device-detect';
 
 // Styles
@@ -13,9 +13,6 @@ function TableOfContentsStatic() {
 
   const containerRef = useRef();
 
-  const [width] = useState(window.innerWidth);
-  const [height] = useState(window.innerHeight);
-
   // Scroll to see the selected element on the center of the table of contents
   const scroll = () => {
     const element = document.querySelector('.selected');
@@ -28,13 +25,15 @@ function TableOfContentsStatic() {
   useEffect(
     () => {
       fillTableOfContents(containerRef);
+      scroll();
     }, []
   );
 
   // On resizing the page
   useEffect( () => {
-    scroll();
-  }, [width, height]);
+    window.addEventListener('resize', scroll);
+    return () => window.removeEventListener('resize', scroll);
+  });
 
 
   return (

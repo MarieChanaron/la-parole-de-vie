@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import { isFirefox, isMobileOnly, isTablet } from "react-device-detect";
 
@@ -14,6 +14,7 @@ import {
 
 function LightForm({boxShadow, setFormFocus}) {
 
+    const [scrollPos, setScrollPos] = useState(); // To save the scroll position for mobile as the window moves on opening the virtual keyboard
   
     const refInput = React.createRef();
 
@@ -28,24 +29,24 @@ function LightForm({boxShadow, setFormFocus}) {
 
 
     useEffect(() => {
-
         // Get the value param and fill the input text with it
         refInput.current.value = getUrlParam('value');
-
     }, [refInput]
     );
 
     const handleFocus = event => {
-        event.target.setSelectionRange(0,refInput.current.value.length)
+        event.target.setSelectionRange(0,refInput.current.value.length);
         if (isFirefox && isMobileOnly) {
             setFormFocus(true);
         }
+        setScrollPos(window.scrollY);
     }
 
     const handleBlur = () => {
         if (isFirefox && isMobileOnly) {
             setFormFocus(false);
         }
+        window.scrollTo(0, scrollPos);
     }
 
     return(
