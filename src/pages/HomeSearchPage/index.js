@@ -14,9 +14,6 @@ import Banner from '../../components/Banner';
 import Footer from '../../components/Footer';
 import FirstQueryForm from '../../components/FirstQueryForm';
 
-// Helper function
-// import { deviceOrientation } from '../../helpers';
-
 
 function HomeSearchPage() {
 
@@ -47,38 +44,35 @@ function HomeSearchPage() {
         }
     });
 
-
-    // useEffect( () => {
-
-    //     const changeOrientation = () => {
-    //         const input = document.querySelector("input[name='keyword']");
-    //         const hasfocus = input.getAttribute('hasfocus');
-    //         console.log(hasfocus);
-
-    //         if (orientation === "portrait") {
-    //             setOrientation("landscape");
-    //         } else {
-    //             setOrientation("portrait");
-    //         }
-    //     }  
-
-    //     let screenOrientation = window.matchMedia(`(orientation: ${orientation})`);
-    //     screenOrientation.addEventListener("change", changeOrientation);   
-    //     return () => screenOrientation.removeEventListener("change", changeOrientation); 
-    // }, [orientation]);
+    useEffect( () => {
+        if (isMobileOnly && !isFirefox) {
+            const changeOrientation = () => {
+                if (orientation === "portrait") {
+                    setOrientation("landscape");
+                } else {
+                    setOrientation("portrait");
+                }
+            }  
+            let screenOrientation = window.matchMedia(`(orientation: ${orientation})`);
+            screenOrientation.addEventListener("change", changeOrientation);   
+            return () => screenOrientation.removeEventListener("change", changeOrientation); 
+        }
+    }, [orientation]);
 
 
     useEffect( () => {
-        if (window.innerHeight !== windowHeight && window.innerWidth !== windowWidth) {
-            if (orientation === "portrait") {
-                setOrientation("landscape");
-            } else {
-                setOrientation("portrait");
+        if (isMobileOnly && isFirefox) {
+            if (window.innerHeight !== windowHeight && window.innerWidth !== windowWidth) {
+                if (orientation === "portrait") {
+                    setOrientation("landscape");
+                } else {
+                    setOrientation("portrait");
+                }
+                setWindowWidth(window.innerWidth);
+                setWindowHeight(window.innerHeight);
             }
-            setWindowWidth(window.innerWidth);
-            setWindowHeight(window.innerHeight);
         }
-    }, [window.innerWidth, window.innerHeight]); /* eslint-disable-line react-hooks/exhaustive-deps */
+    }, [windowWidth, windowHeight, orientation]);
 
 
     useEffect( () => {
