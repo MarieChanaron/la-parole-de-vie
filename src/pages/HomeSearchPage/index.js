@@ -20,6 +20,9 @@ function HomeSearchPage() {
 
     /* height is set only of the browser is Firefox and if the device is mobile */
     const [height, setHeight] = useState(sessionStorage.getItem('height'));
+    const [focus, setFocus] = useState(false);
+
+    console.log(focus);
 
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
     const [windowHeight, setWindowHeight] = useState(window.innerHeight);
@@ -27,6 +30,8 @@ function HomeSearchPage() {
 
     /* Orientation of the screen - Useful only for mobile */
     const [orientation, setOrientation] = useState();
+
+    const ref = React.useRef();
 
 
     useEffect( () => { /* eslint-disable-line react-hooks/exhaustive-deps */
@@ -47,6 +52,7 @@ function HomeSearchPage() {
             }, 1000
         )
         clearTimeout(timeout);
+        window.location.reload(isFirefox ? true : false);
     }
 
     useEffect( () => {
@@ -80,19 +86,21 @@ function HomeSearchPage() {
     return (
         <div 
             id='homeSearchForm'
-            style={isFirefox && isMobileOnly ? {height: height} : (isMobileOnly && orientation === "portrait" ? {height: window.innerHeight} : "fit-content")} /* Set the height for mobile Firefox in case the user opens the virtual keyboard */
+            style={{height: height}} /* Set the height for mobile Firefox in case the user opens the virtual keyboard */
             ismobileonly={isMobileOnly ? "true" : "false"}
             isdesktop={isDesktop ? "true" : "false"}
             istablet={isTablet ? "true" : "false"}
             isfirefox={isFirefox ? "true" : "false"}
             ismobilesafari={isMobileSafari ? "true" : "false"}
             deviceorientation={orientation}
+            ref={ref}
         >
 
             <Banner transparency='transparentBg' />
 
             <FirstQueryForm 
                 height={height-62} /* 62px is the height of the footer on mobile */
+                setFocus={setFocus}
             />
 
             <Footer />
