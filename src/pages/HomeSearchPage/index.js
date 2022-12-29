@@ -49,7 +49,7 @@ function HomeSearchPage() {
         const timeout = setTimeout(
             () => {
                 orientation === "portrait" ? setOrientation("landscape") : setOrientation("portrait");
-            }, 100
+            }, 1000
         )
         clearTimeout(timeout);
     }
