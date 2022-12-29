@@ -136,15 +136,9 @@
     }
 }
 
-@media (orientation: portrait) {
-    #homeSearchForm[isMobileOnly="true"][isfirefox="false"] {
-        height: 100vh;
-    }
-}
-
 @media (max-width: 768px) and (orientation: landscape) {
     #homeSearchForm[ismobileonly="true"][isfirefox="false"][deviceorientation="landscape"] {
-        height: fit-content;
+        /* height: fit-content; */
         position: static;
     }
     #homeSearchForm[ismobileonly="true"][isfirefox="false"][deviceorientation="landscape"] #banner {
@@ -163,7 +157,7 @@
 
 @media (max-width: 576px) and (orientation: landscape) { 
     #homeSearchForm[ismobileonly="true"][isfirefox="false"][deviceorientation="landscape"] {
-        height: fit-content;
+        /* height: fit-content; */
         position: static;
     }
     #homeSearchForm[ismobileonly="true"][isfirefox="false"][deviceorientation="landscape"] #banner {
