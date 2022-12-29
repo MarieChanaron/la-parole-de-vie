@@ -15,7 +15,7 @@ import { getUrlParam } from '../../helpers';
 
 function ReaderText({text}) {
 
-    const [initial, setInitial] = useState(true);
+    const initial = React.useRef(true);
     const [textHeight, setTextHeight] = useState(undefined);
 
     const verseParam = Number(getUrlParam('verse'));
@@ -26,9 +26,9 @@ function ReaderText({text}) {
         () => {
             if (verseRef.current && initial) {
                 verseRef.current.scrollIntoView({block: 'center', inline: 'nearest'});
-                setInitial(false);
+                initial.current = false;
             }
-        }, [initial]
+        }, []
     );
 
     useEffect( () => {
