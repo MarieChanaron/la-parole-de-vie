@@ -61,7 +61,7 @@ function HomeSearchPage() {
     });
 
 
-    useEffect( () => {
+    useEffect( () => { // eslint-disable-line 
         if (isMobileOnly && isFirefox) {
             if (window.innerHeight !== windowHeight && window.innerWidth !== windowWidth) {
                 if (orientation === "portrait") {
@@ -73,7 +73,7 @@ function HomeSearchPage() {
                 setWindowHeight(window.innerHeight);
             }
         }
-    }, [window.innerHeight, window.innerWidth]); // eslint-disable-line 
+    }); 
 
 
     useEffect( () => {
