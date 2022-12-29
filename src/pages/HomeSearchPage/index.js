@@ -45,15 +45,12 @@ function HomeSearchPage() {
         }
     });
 
+    const changeOrientation = () => {
+        orientation === "portrait" ? setOrientation("landscape") : setOrientation("portrait");
+    }
+
     useEffect( () => {
         if (isMobileOnly && !isFirefox) {
-            const changeOrientation = () => {
-                if (orientation === "portrait") {
-                    setOrientation("landscape");
-                } else {
-                    setOrientation("portrait");
-                }
-            }  
             let screenOrientation = window.matchMedia(`(orientation: ${orientation})`);
             screenOrientation.addEventListener("change", changeOrientation);   
             return () => screenOrientation.removeEventListener("change", changeOrientation); 
@@ -61,19 +58,15 @@ function HomeSearchPage() {
     });
 
 
-    useEffect( () => { // eslint-disable-line 
+    useEffect( () => {
         if (isMobileOnly && isFirefox) {
-            if (window.innerHeight !== windowHeight && window.innerWidth !== windowWidth) {
-                if (orientation === "portrait") {
-                    setOrientation("landscape");
-                } else {
-                    setOrientation("portrait");
-                }
+            if ((window.innerHeight !== windowHeight) && (window.innerWidth !== windowWidth)) {
+                changeOrientation();
                 setWindowWidth(window.innerWidth);
                 setWindowHeight(window.innerHeight);
             }
         }
-    }); 
+    }, [window.innerWidth, window.innerHeight]); // eslint-disable-line 
 
 
     useEffect( () => {
