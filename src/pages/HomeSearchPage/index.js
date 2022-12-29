@@ -3,7 +3,8 @@ import {
     isMobileOnly, 
     isFirefox, 
     isMobileSafari, 
-    isDesktop 
+    isDesktop,
+    isTablet 
 } from 'react-device-detect';
 
 // Styles
@@ -88,6 +89,7 @@ function HomeSearchPage() {
             style={{height: height}} /* Set the height for mobile Firefox in case the user opens the virtual keyboard */
             ismobileonly={isMobileOnly ? "true" : "false"}
             isdesktop={isDesktop ? "true" : "false"}
+            istablet={isTablet ? "true" : "false"}
             isfirefox={isFirefox ? "true" : "false"}
             ismobilesafari={isMobileSafari ? "true" : "false"}
             deviceorientation={orientation}

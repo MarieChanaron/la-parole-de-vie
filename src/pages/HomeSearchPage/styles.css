@@ -13,6 +13,10 @@
     overflow: hidden;
 }
 
+#homeSearchForm[isdesktop="true"],
+#homeSearchForm[istablet="true"] {
+    height: 100vh;
+}
 
 /* MEDIA QUERIES */
 
@@ -128,6 +132,12 @@
     #homeSearchForm[ismobileonly="true"][isfirefox="true"] {
         height: fit-content;
         overflow: hidden;
+    }
+}
+
+@media (orientation: portrait) {
+    #homeSearchForm[isMobileOnly="true"][isfirefox="false"] {
+        height: 100vh;
     }
 }
 
