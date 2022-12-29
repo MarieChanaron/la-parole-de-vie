@@ -64,14 +64,14 @@ function HomeSearchPage() {
             screenOrientation.addEventListener("change", changeOrientation);   
             return () => screenOrientation.removeEventListener("change", changeOrientation); 
         }
-    });
+    }, [window.innerWidth, window.innerHeight, orientation]); // eslint-disable-line 
 
     useEffect( () => {
         if (isMobileOnly && isFirefox) {
             if ((window.innerHeight !== windowHeight) && (window.innerWidth !== windowWidth)) {
-                orientation === "portrait" ? setOrientation("landscape") : setOrientation("portrait");
                 setWindowWidth(window.innerWidth);
                 setWindowHeight(window.innerHeight);
+                orientation === "portrait" ? setOrientation("landscape") : setOrientation("portrait");
             }
         }
     }, [window.innerWidth, window.innerHeight]); // eslint-disable-line 
