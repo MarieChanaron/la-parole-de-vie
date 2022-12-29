@@ -46,7 +46,12 @@ function HomeSearchPage() {
     });
 
     const changeOrientation = () => {
-        orientation === "portrait" ? setOrientation("landscape") : setOrientation("portrait");
+        const timeout = setTimeout(
+            () => {
+                orientation === "portrait" ? setOrientation("landscape") : setOrientation("portrait");
+            }, 100
+        )
+        clearTimeout(timeout);
     }
 
     useEffect( () => {
