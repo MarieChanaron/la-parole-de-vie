@@ -8,7 +8,7 @@ import './styles.css';
 import Form from '../Form';
 
 
-function FirstQueryForm({height, setFocus}) {
+function FirstQueryForm({height}) {
 
   return (
     <>
@@ -20,7 +20,7 @@ function FirstQueryForm({height, setFocus}) {
       >
         <div>
             <h1>Recherche de versets bibliques</h1>
-            <Form setFocus={setFocus} />
+            <Form />
         </div>
       </div>
     </>

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { isFirefox, isMobileOnly } from "react-device-detect";
 
 // Styles
@@ -25,9 +25,8 @@ function Form() {
     const translationRef = React.createRef();
     const bookRef = React.createRef();
 
-    const [focus, setFocus] = useState(false);
+    // const [focus, setFocus] = useState(false);
 
-    console.log(focus);
 
     const handleSubmit = e => {
         e.preventDefault();
@@ -66,11 +65,6 @@ function Form() {
     );
 
 
-    const handleFocus = event => {
-        event.target.setSelectionRange(0,inputRef.current.value.length);
-        setFocus(true);
-    }
-
     return(
 
         <form 
@@ -84,11 +78,9 @@ function Form() {
                         name="keyword"
                         id="keyword"
                         type="text"
-                        onFocus={handleFocus}
-                        onBlur={() => setFocus(false)}
+                        onFocus={event => event.target.setSelectionRange(0,inputRef.current.value.length)}
                         ref={inputRef}
                         placeholder="Exemple : vie éternelle"
-                        hasfocus={focus ? "true" : "false"}
                     />
                 <input 
                     id="icon" 
