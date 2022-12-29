@@ -29,7 +29,7 @@ function HomeSearchPage() {
 
 
     /* Orientation of the screen - Useful only for mobile */
-    const [orientation, setOrientation] = useState();
+    const [orientation, setOrientation] = useState(window.innerWidth > window.innerHeight ? "landscape" : "portrait");
 
     const ref = React.useRef();
 
@@ -46,16 +46,10 @@ function HomeSearchPage() {
     });
 
     const changeOrientation = () => {
-        const timeout = setTimeout(
-            () => {
-                orientation === "portrait" ? setOrientation("landscape") : setOrientation("portrait");
-            }, 1000
-        )
-        clearTimeout(timeout);
-
-        if (orientation === "landscape") {
+        const timeout = setTimeout( () => {
             window.location.reload(true);
-        }
+        }, 1000);
+        clearTimeout(timeout);
     }
 
     useEffect( () => {
@@ -70,7 +64,7 @@ function HomeSearchPage() {
     useEffect( () => {
         if (isMobileOnly && isFirefox) {
             if ((window.innerHeight !== windowHeight) && (window.innerWidth !== windowWidth)) {
-                changeOrientation();
+                orientation === "portrait" ? setOrientation("landscape") : setOrientation("portrait");
                 setWindowWidth(window.innerWidth);
                 setWindowHeight(window.innerHeight);
             }
@@ -82,7 +76,6 @@ function HomeSearchPage() {
         // window.scrollTo(0,0);
         /* Do not show always the scrollbar on the body - auto by default */
         document.body.classList.remove('scroll');
-        setOrientation(window.innerWidth > window.innerHeight ? "landscape" : "portrait");
     }, []);
 
 
