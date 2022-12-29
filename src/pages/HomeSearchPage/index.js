@@ -99,10 +99,7 @@ function HomeSearchPage() {
 
             <Banner transparency='transparentBg' />
 
-            <p>{windowWidth}</p>
-            <p>{windowHeight}</p>
-            <p>{window.innerWidth}</p>
-            <p>{window.innerHeight}</p>
+            <p>{windowWidth} {window.innerWidth} {windowHeight} {window.innerHeight}</p>
 
             <FirstQueryForm 
                 height={height-62} /* 62px is the height of the footer on mobile */
