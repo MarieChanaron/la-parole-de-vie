@@ -16,7 +16,7 @@ function FirstQueryForm({height}) {
         id="firstQueryForm" 
         ismobileonly={isMobileOnly ? "true" : "false"}
         ismobilesafari={isMobileSafari ? "true" : "false"}
-        style={height ? {height: height} : null} // For Firefox mobile only
+        style={height ? {height: height} : (isMobileOnly && window.innerWidth <= 576 ? window.innerHeight-62 : null)} // For mobile only
       >
         <div>
             <h1>Recherche de versets bibliques</h1>
