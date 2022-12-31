@@ -139,6 +139,7 @@
     }
     #searchPane[ismobileonly="true"][show='show'] {
         top: 60px;
+        height: calc(100vh - 60px);
     }
 }
 
