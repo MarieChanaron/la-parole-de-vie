@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from "prop-types";
+import { isMobileOnly } from 'react-device-detect';
 
 // Styles
 import './styles.css';
@@ -13,6 +14,7 @@ function Veil({display, displayTable, displayForm, handleClick}) {
       displayform={displayForm} 
       displaytable={displayTable}
       onClick={handleClick} 
+      ismobileonly={isMobileOnly ? "true" : "false"}
     />
   )
 }

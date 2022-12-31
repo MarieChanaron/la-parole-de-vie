@@ -12,10 +12,8 @@
 
 
 @media (max-width: 1200px) {
-    .veil[displaytable="yes"] {
-        display: block;
-    }
-    .veil[display="block"] {
+    .veil[displaytable="yes"], 
+    .veil[display="block"]{
         display: block;
     }
 }
@@ -24,4 +22,10 @@
     .veil[displayform="yes"] {
         display: block;
     }
+}
+
+/* MOBILE PHONE */
+
+.veil[ismobileonly="true"][displayform="yes"] {
+    display: block;
 }
