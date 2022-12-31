@@ -87,8 +87,35 @@
     display: block;
     height: calc(100% - 80px);
 }
+
 #reader[istablet="true"] .right {
     height: 100%;
+}
+
+/* MOBILE PHONE */
+
+#reader[ismobileonly="true"] #readerLoaderWrapper {
+    margin-top: 40px;
+    position: absolute;
+    width: 100%;
+    margin-left: 0;
+}
+
+#reader[ismobileonly="true"] {
+    padding-top: 120px;
+}
+
+#reader[ismobileonly="true"] .content {
+    overflow-y: scroll;
+}
+
+@media (max-width: 576px) {
+    #reader[ismobileonly="true"] {
+        padding-top: 106px;
+    }
+    #reader[ismobileonly="true"] #readerLoaderWrapper {
+        margin-top: 32px;
+    }
 }
 
 /* MOBILE SAFARI */

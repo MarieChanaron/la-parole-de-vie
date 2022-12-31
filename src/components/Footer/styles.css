@@ -73,12 +73,3 @@ footer div {
         text-align: center;
     }
 }
-
-
-/* DEVICE MOBILE */
-
-@media (max-width: 768px) {
-    footer[ismobileonly="true"] {
-        position: relative;
-    }
-}

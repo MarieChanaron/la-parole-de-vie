@@ -60,3 +60,40 @@
     margin-top: 80px;
     height: calc(100% - 80px);
 }
+
+
+/* MOBILE PHONE */
+
+#tableOfContentsSlide[ismobileonly="true"] {
+    top: 64px;
+    margin-top: 0px;
+    height: calc(100% - 64px);
+    overscroll-behavior: none;
+}
+
+#tableOfContentsSlide[ismobileonly="true"][show="show"] {
+    left: 0px;
+}
+
+@media (max-width: 576px) {
+    #tableOfContentsSlide[ismobileonly="true"] {
+        padding-left: 32px;
+        top: 60px;
+        margin-top: 0px;
+        height: calc(100% - 60px);
+        overscroll-behavior: none;
+    }
+    #tableOfContentsSlide[ismobileonly="true"][formdisplayed="true"] {
+        display: none;
+    }
+    #tableOfContentsSlide[ismobileonly="true"] h3 {
+        margin-top: 32px;
+    }
+}
+
+@media (max-width: 400px) {
+    #tableOfContentsSlide[ismobileonly="true"] {
+        width: 100%;
+        left: -100%;
+    }
+}

@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { isTablet } from 'react-device-detect';
+import { isTablet, isMobileOnly } from 'react-device-detect';
 
 // Style
 import './styles.css';
@@ -19,7 +19,8 @@ function BibleReaderPage() {
       <div 
         id="bibleReaderPage" 
         istablet={isTablet ? "true": "false"}
-        style={isTablet && window.innerWidth > 768 && window.innerWidth <= 1200 ? {height: window.innerHeight} : null}
+        ismobileonly={isMobileOnly ? "true" : "false"}
+        style={isTablet ? {height: window.innerHeight} : null}
       >
         <Banner />
         <Reader />

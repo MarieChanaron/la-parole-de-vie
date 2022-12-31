@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useLayoutEffect } from 'react';
-import { isMobile, isTablet } from 'react-device-detect';
+import { isMobile, isTablet, isMobileOnly } from 'react-device-detect';
 
 // Styles 
 import './styles.css';
@@ -61,6 +61,7 @@ function ResearchFrame() {
     <div 
       id="researchFrame" 
       istablet={isTablet ? "true" : "false"}
+      ismobileonly={isMobileOnly ? "true" : "false"}
     >
 
       <Nail 

@@ -134,3 +134,31 @@
     position: relative;
     min-height: 80px;
 }
+
+
+/* MOBILE PHONE */
+
+#banner[ismobileonly="true"] {
+    position: fixed;
+    min-height: 64px;
+}
+
+@media (max-width: 576px) {
+    #banner[ismobileonly="true"] {
+        position: fixed;
+        min-height: 60px;
+    }
+    #banner[ismobileonly="true"] .top img#logo {
+        width: 240px;
+    }
+}
+
+@media (max-width: 400px) {
+    #banner[ismobileonly="true"] {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    #banner[ismobileonly="true"] .top img#logo {
+        width: 220px;
+    }
+}

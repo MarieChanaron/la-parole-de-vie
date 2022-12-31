@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import { isMobileOnly } from 'react-device-detect';
 
 // Styles
 import './styles.css';
@@ -41,6 +42,7 @@ function TableOfContentsStatic() {
       id="tableOfContentsStatic" 
       className='tableOfContents'
       ref={containerRef}
+      ismobileonly={isMobileOnly ? "true" : "false"}
     />
 
   )

@@ -45,3 +45,22 @@
     position: relative;
     top: 0;
 }
+
+/* MOBILE PHONE */
+
+#band[ismobileonly="true"] {
+    padding: auto var(--margin);
+    position: fixed;
+    z-index: 102;
+    top: 64px;
+    width: 100%;
+    height: 56px;
+}
+
+@media (max-width: 576px) {
+    #band[ismobileonly="true"] {
+        padding: auto var(--margin);
+        top: 60px;
+        height: 46px;
+    }
+}

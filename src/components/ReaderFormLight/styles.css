@@ -71,3 +71,15 @@
         display: none;
     }
 }
+
+/* MOBILE PHONE */
+
+#readerFormLight[ismobileonly="true"] {
+    display: flex;
+}
+
+@media (max-width: 576px) {
+    #readerFormLight[ismobileonly="true"] {
+        display: none;
+    }
+}

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from "prop-types";
+import { isMobileOnly } from 'react-device-detect';
 
 // Styles
 import './styles.css';
@@ -45,11 +46,15 @@ function Menu() {
 
 
   return (
-    <div id="menu">
+    <div 
+      id="menu"
+      ismobileonly={isMobileOnly ? "true" : "false"}
+    >
       <img 
         src={visible ? closeMenu : mobileMenu} 
         alt="" 
         onClick={toggle} ref={burgerMenuRef} 
+        ismobileonly={isMobileOnly ? "true" : "false"}
       />
       <div className={`buttons ${visible}`}>
         <Link to='/' onClick={reset}>

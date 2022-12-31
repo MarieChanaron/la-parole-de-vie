@@ -102,8 +102,33 @@
 }
 
 
-/* DEVICE: TABLET, MOBILE */
+/* DEVICES: TABLET, MOBILE */
 
 #readerText[ismobile="true"] .important {
     font-size: 100%;
+}
+
+/* MOBILE PHONE */
+
+#readerText[ismobileonly="true"] {
+    flex-basis: 100%;
+    flex-grow: 1;
+    flex-shrink: 1;
+    column-width: unset;
+    column-gap: unset;
+    margin-left: var(--margin);
+    margin-right: var(--margin);
+    margin-bottom: 48px;
+    padding-top: 8px;
+    padding-bottom: 16px;
+}
+
+#readerText[ismobileonly="true"] #divider {
+    display: none;
+}
+
+@media (max-width: 576px) {
+    #readerText[ismobileonly="true"] {
+        margin-bottom: 46px;
+    }
 }

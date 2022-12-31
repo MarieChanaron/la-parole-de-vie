@@ -12,6 +12,7 @@
 @media (max-width: 1200px) {
     #researchFrame {
         height: 90vh;
+        top: 0px;
     }
 }
 
@@ -31,8 +32,29 @@
 
 /* DEVICE TABLET */
 
-@media (max-width: 1200px) and (min-width: 769px) {
-    #researchFrame[istablet="true"] {
-        height: calc(100% - 80px);
+#researchFrame[istablet="true"] {
+    height: calc(100% - 80px);
+}
+
+/* MOBILE PHONE */
+
+@media (max-width: 1200px) {
+    #researchFrame[ismobileonly="true"] {
+        height: fit-content;
+        padding-top: 133px;
+    }
+}
+
+@media (max-width: 768px) {
+    #researchFrame[ismobileonly="true"] {
+        height: fit-content;
+        top: 133px;
+        padding-top: 0px;
+    }
+}
+
+@media (max-width: 576px) {
+    #researchFrame[ismobileonly="true"] {
+        top: 129px;
     }
 }

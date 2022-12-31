@@ -1,6 +1,7 @@
 import React from 'react';
 import { Tooltip } from '@mui/material';
 import PropTypes from "prop-types";
+import { isMobileOnly } from 'react-device-detect';
 
 // Styles
 import './styles.css';
@@ -58,7 +59,10 @@ function ReaderNavButtons({book, chapter}) {
 
 
     return (
-        <div id="readerNavBtns">
+        <div 
+            id="readerNavBtns"
+            ismobileonly={isMobileOnly ? "true" : "false"}
+        >
 
             <hr/>
             

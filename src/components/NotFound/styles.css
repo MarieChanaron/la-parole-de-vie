@@ -20,13 +20,6 @@
 }
 
 
-/* DEVICE IOS MOBILE SAFARI */
-
-#notFound[isMobileSafari="true"] {
-    position: fixed;
-}
-
-
 @media (max-width: 1200px) {
     #notFound {
         display: block;
@@ -45,4 +38,11 @@
     #notFound img {
     width: 150px;
     }
+}
+
+
+/* DEVICE IOS MOBILE SAFARI */
+
+#notFound[isMobileSafari="true"] {
+    position: fixed;
 }

@@ -90,6 +90,35 @@
 }
 
 
+/* MOBILE PHONE */
+
+#resultPane[ismobileonly="true"] {
+    height: fit-content;
+    overflow-y: hidden;
+}
+
+#resultPane[ismobileonly="true"] #searchErrorContainer {
+    margin-top: 16px;
+}
+
+#resultPane[ismobileonly="true"] #searchLoaderWrapper {
+    width: 100%;
+    margin: auto;
+    overflow: hidden;
+}
+
+#resultPane[ismobileonly="true"] #searchLoaderWrapper[isresult="false"] {
+    padding-top: 16px;
+}
+
+@media (max-width: 576px) {
+    #resultPane[ismobileonly="true"] #searchLoaderWrapper[isresult="true"] {
+        margin-top: -48px;
+        padding-bottom: 72px;
+    }
+}
+
+
 /* DEVICE IOS MOBILE SAFARI */
 
 #resultPane[ismobilesafari="true"] #searchLoaderWrapper[isresult="false"],

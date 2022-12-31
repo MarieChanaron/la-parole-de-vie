@@ -56,3 +56,43 @@ img#manageSearchIcon[position="translate"] {
         border-color: transparent;
     }
 }
+
+
+/* DEVICE MOBILE */
+
+img#manageSearchIcon[ismobileonly="true"] {
+    display: inline;
+    width: 28px;
+    padding: 2px 3px;
+    top: 11px;
+    right: var(--margin);
+}
+
+img#manageSearchIcon[ismobileonly="true"][position="translate"] {
+    background-color: var(--leftPaneBgColor);
+    border-color: var(--buttonNormalColor);
+    box-shadow: -2px 4px 4px 0px RGBa(0, 0, 0, 0.05);
+    width: 28px;
+    z-index: 102;
+    right: 340px;
+}
+
+@media (max-width: 768px) {
+    img#manageSearchIcon[ismobileonly="true"] {
+        right: 40px;
+    }
+}
+
+@media (max-width: 576px) {
+    img#manageSearchIcon[ismobileonly="true"] {
+        top: 6px;
+        right: var(--margin);
+    }
+}
+
+@media (max-width: 400px) {
+    img#manageSearchIcon[ismobileonly="true"][position="translate"] {
+        right: calc(100% - 35px);
+        border-color: transparent;
+    }
+}

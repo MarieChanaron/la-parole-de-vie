@@ -154,17 +154,36 @@
 
 /* DEVICE MOBILE */
 
-@media (max-width: 768px) {
+#navigationButtons[ismobileonly="true"] {
+    bottom: 0px;
+    left: unset;
+    right: var(--margin);
+    flex-direction: row-reverse;
+}
+
+#searchAmongResults[ismobileonly="true"] {
+    transition: none;
+}
+
+#searchAmongResults.visible[ismobileonly="true"] {
+    position: fixed;
+    top: 0;
+    left: var(--margin);
+    width: calc(100% - 2*var(--margin));
+}
+
+@media (max-width: 576px) {
     #navigationButtons[ismobileonly="true"] {
-        bottom: 0px;
+        width: 100%;
+        left: 0;
+        justify-content: center;
+        justify-items: center;
+    }
+    #navigationButtons[ismobileonly="true"] #btnReverse.icon {
+        margin-left: 0px;
     }
     #searchAmongResults[ismobileonly="true"] {
-        transition: none;
-    }
-    #searchAmongResults.visible[ismobileonly="true"] {
-        position: fixed;
-        top: 0;
-        left: var(--margin);
-        width: calc(100% - 2*var(--margin));
+        margin-right: var(--margin);
+        max-width: calc(100% - 2*var(--margin));
     }
 }
