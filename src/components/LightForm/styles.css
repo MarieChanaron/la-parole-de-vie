@@ -92,9 +92,3 @@
     padding-top: 16px;
     top: unset;
 }
-
-@media (max-width: 576px) {
-    #lightForm[istablet="true"] {
-        top: 80px;
-    }
-}

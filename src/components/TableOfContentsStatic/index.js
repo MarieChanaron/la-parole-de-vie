@@ -1,5 +1,4 @@
 import React, { useEffect, useRef } from 'react';
-import { isTablet } from 'react-device-detect';
 
 // Styles
 import './styles.css';
@@ -41,8 +40,7 @@ function TableOfContentsStatic() {
     <div 
       id="tableOfContentsStatic" 
       className='tableOfContents'
-      ref={containerRef} 
-      istablet={isTablet ? "true": "false"}
+      ref={containerRef}
     />
 
   )

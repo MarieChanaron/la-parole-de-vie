@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from "prop-types";
-import { isTablet } from 'react-device-detect';
 
 // Styles
 import './styles.css';
@@ -20,7 +19,6 @@ function Nail({showLeftPane, setShowLeftPane}) {
             id="nail" 
             onClick={translate} 
             position={showLeftPane === 'show' ? 'right' : null} 
-            istablet={isTablet ? "true" : "false"}
         >
             {showLeftPane === 'hide' ? <span>&nbsp;&nbsp;Critères</span> : null}
             

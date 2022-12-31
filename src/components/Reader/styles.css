@@ -83,14 +83,12 @@
 
 /* DEVICE TABLET */
 
-@media (max-width: 1200px) and (min-width: 769px) {
-    #reader[istablet="true"] {
-        display: block;
-        height: calc(100% - 80px);
-    }
-    #reader[istablet="true"] .right {
-        height: 100%;
-    }
+#reader[istablet="true"] {
+    display: block;
+    height: calc(100% - 80px);
+}
+#reader[istablet="true"] .right {
+    height: 100%;
 }
 
 /* MOBILE SAFARI */

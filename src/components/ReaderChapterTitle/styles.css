@@ -55,13 +55,11 @@
 
 /* DEVICE MOBILE */
 
-@media (max-width: 768px) {
-    #readerChapterTitle[ismobileonly="true"] h2 {
-        text-align: center;
-    }
-    #readerChapterTitle[ismobileonly="true"] h2 span {
-        font-family: 'Crimson Text', serif !important;
-        font-size: 2rem;
-        line-height: 3.3rem;
-    } 
+#readerChapterTitle[ismobileonly="true"] h2 {
+    text-align: center;
 }
+#readerChapterTitle[ismobileonly="true"] h2 span {
+    font-family: 'Crimson Text', serif !important;
+    font-size: 2rem;
+    line-height: 3.3rem;
+} 

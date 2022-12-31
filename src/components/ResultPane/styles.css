@@ -84,11 +84,9 @@
 
 /* DEVICE TABLET */
 
-@media (max-width: 1200px) and (min-width: 769px) {
-    #resultPane[istablet="true"] {
-        height: 100%;
-        overflow-y: auto;
-    }
+#resultPane[istablet="true"] {
+    height: 100%;
+    overflow-y: auto;
 }
 
 

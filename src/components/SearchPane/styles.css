@@ -107,13 +107,11 @@
 
 /* DEVICE TABLET */
 
-@media (max-width: 1200px) and (min-width: 769px) {
-    #searchPane[istablet="true"] {
-        height: 100%;
-        overflow-y: hidden;
-    }
-    #searchPane[istablet="true"][show='show'] {
-        height: 100%;
-        overflow-y: auto;
-    }
+#searchPane[istablet="true"] {
+    height: 100%;
+    overflow-y: hidden;
+}
+#searchPane[istablet="true"][show='show'] {
+    height: 100%;
+    overflow-y: auto;
 }

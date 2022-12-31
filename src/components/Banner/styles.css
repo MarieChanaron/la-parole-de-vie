@@ -127,12 +127,10 @@
 
 /* DEVICE TABLET */
 
-@media (max-width: 1200px) and (min-width: 769px) {
-    #banner[transparency='transparentBg'][istablet="true"] {
-        position: fixed;
-    }
-    #banner[istablet="true"] {
-        position: relative;
-        min-height: 80px;
-    }
+#banner[transparency='transparentBg'][istablet="true"] {
+    position: fixed;
+}
+#banner[istablet="true"] {
+    position: relative;
+    min-height: 80px;
 }

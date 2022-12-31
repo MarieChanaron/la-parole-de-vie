@@ -41,9 +41,7 @@
 
 /* DEVICE TABLET */
 
-@media (max-width: 1200px) and (min-width: 769px) {
-    #band[istablet="true"] {
-        position: relative;
-        top: 0;
-    }
+#band[istablet="true"] {
+    position: relative;
+    top: 0;
 }

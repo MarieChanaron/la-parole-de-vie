@@ -56,9 +56,7 @@
 
 /* DEVICE TABLET */
 
-@media (max-width: 1200px) and (min-width: 769px) {
-    #tableOfContentsSlide[istablet="true"] {
-        margin-top: 80px;
-        height: calc(100% - 80px);
-    }
+#tableOfContentsSlide[istablet="true"] {
+    margin-top: 80px;
+    height: calc(100% - 80px);
 }

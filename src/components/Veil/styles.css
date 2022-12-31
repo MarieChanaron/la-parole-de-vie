@@ -25,18 +25,3 @@
         display: block;
     }
 }
-
-/* @media (max-width: 576px) {
-    .veil[displayform="yes"] {
-        display: block;
-    }
-    .veil[displaytable="yes"] {
-        display: block;
-    }
-}
-
-@media (max-width: 400px) {
-    .veil {
-        display: none;
-    }
-} */
