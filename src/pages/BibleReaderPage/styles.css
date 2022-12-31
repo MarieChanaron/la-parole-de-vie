@@ -2,9 +2,6 @@
     overflow: hidden;
     display: flex;
     flex-direction: column;
-}
-
-#bibleReeaderPage[ismobileonly="false"] {
     max-height: 100vh;
 }
 
@@ -20,5 +17,11 @@
 
 #bibleReaderPage[istablet="true"] {
     display: block;
+    max-height: unset;
+}
+
+/* MOBILE PHONE */
+
+#bibleReaderPage[ismobileonly="true"] {
     max-height: unset;
 }
