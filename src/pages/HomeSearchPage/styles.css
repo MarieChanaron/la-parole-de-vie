@@ -111,16 +111,14 @@
 
 /* DEVICE: MOBILE */
 
-/* Portrait view */
-@media (max-width: 768px) {
-    #homeSearchForm[ismobileonly="true"] {
-        overflow-y: auto;
-    }
-    #homeSearchForm[ismobileonly="true"][isfirefox="true"] {
-        height: fit-content;
-        overflow: hidden;
-    }
+#homeSearchForm[ismobileonly="true"] {
+    overflow-y: auto;
 }
+#homeSearchForm[ismobileonly="true"][isfirefox="true"] {
+    height: fit-content;
+    overflow: hidden;
+}
+
 
 /* Landscape view */
 @media (min-width: 577px) {
