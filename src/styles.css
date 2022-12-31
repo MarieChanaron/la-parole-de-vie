@@ -74,44 +74,40 @@ html, body, #root, #app {
 
 /* Scrollbars */
 
-@media (min-width: 769px) { /* Not for mobile */
+body.scrollbar div::-webkit-scrollbar {
+    width: 15px;
+    height: 15px;
+}
 
-    div::-webkit-scrollbar {
-        width: 15px;
-        height: 15px;
-    }
-    
-    div::-webkit-scrollbar-track-piece {
-        border: 1px solid white;
-    }
-    
-    div::-webkit-scrollbar-thumb {
-        border-radius: 8px;
-    }
-    
-    
-    #searchPane::-webkit-scrollbar-thumb, 
-    .tableOfContents::-webkit-scrollbar-thumb { /* L'ascenceur */
-        background-color: #A5BAC9;
-        border: 1px solid #8fa7b8;
-    }
-    
-    #searchPane::-webkit-scrollbar-track-piece,
-    .tableOfcontents::-webkit-scrollbar-track-piece { /* La cage de l'ascenceur */
-        background-color: #DFE4E9;
-    }
-    
-    #readerText::-webkit-scrollbar-thumb, 
-    #resultPane::-webkit-scrollbar-thumb {
-        background-color: #05020338;
-        border: 1px solid #05020338;
-    }
-    
-    #readerText::-webkit-scrollbar-track-piece, 
-    #resultPane::-webkit-scrollbar-track-piece {
-        background-color: var(--verseBgColor);
-    }
+body.scrollbar div::-webkit-scrollbar-track-piece {
+    border: 1px solid white;
+}
 
+body.scrollbar div::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+}
+
+
+body.scrollbar #searchPane::-webkit-scrollbar-thumb, 
+body.scrollbar .tableOfContents::-webkit-scrollbar-thumb { /* L'ascenceur */
+    background-color: #A5BAC9;
+    border: 1px solid #8fa7b8;
+}
+
+body.scrollbar #searchPane::-webkit-scrollbar-track-piece,
+body.scrollbar .tableOfcontents::-webkit-scrollbar-track-piece { /* La cage de l'ascenceur */
+    background-color: #DFE4E9;
+}
+
+body.scrollbar #readerText::-webkit-scrollbar-thumb, 
+body.scrollbar #resultPane::-webkit-scrollbar-thumb {
+    background-color: #05020338;
+    border: 1px solid #05020338;
+}
+
+body.scrollbar #readerText::-webkit-scrollbar-track-piece, 
+body.scrollbar #resultPane::-webkit-scrollbar-track-piece {
+    background-color: var(--verseBgColor);
 }
 
 

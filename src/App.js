@@ -1,5 +1,5 @@
-import React from 'react';
-import { isMobileSafari, isTablet } from 'react-device-detect';
+import React, { useEffect } from 'react';
+import { isMobileSafari, isTablet, isMobileOnly } from 'react-device-detect';
 
 // React Router
 import {
@@ -20,6 +20,12 @@ import './styles.css';
 
 
 function App() {
+
+  useEffect( () => {
+    if (!isMobileOnly) {
+      document.body.classList.add('scrollbar');
+    }
+  });
 
   return (
     <div 
