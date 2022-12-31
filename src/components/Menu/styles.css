@@ -8,7 +8,7 @@
     cursor: pointer;
 }
 
-#menu[ismobileonly="false"] {
+#menu[ismobileonly="false"] img {
     display: none;
 }
 
@@ -54,7 +54,7 @@
         backdrop-filter: blur(5px);
         padding-bottom: 4px;
     }
-    #menu img {
+    #menu[ismobileonly="false"] img {
         display: flex;
     }
 }
