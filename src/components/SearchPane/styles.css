@@ -127,12 +127,13 @@
 
 #searchPane[ismobileonly="true"][show='show'] {
     position: fixed;
+    left: 0px;
     top: 64px;
     height: calc(100vh - 64px);
 }
 
 @media (max-width: 576px) {
-    #searchPane[ismobileonly="true"] {
+    #searchPane[ismobileonly="true"]:not([show='show']) {
         top: 60px;
         height: calc(100vh - 60px);
     }
@@ -142,7 +143,7 @@
 }
 
 @media (max-width: 400px) {
-    #searchPane[ismobileonly="true"] {
+    #searchPane[ismobileonly="true"]:not([show='show']) {
         left: -100%;
         min-width: 100%;
         padding-top: 48px;

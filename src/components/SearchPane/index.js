@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import PropTypes from "prop-types";
 import { isTablet, isMobileOnly } from 'react-device-detect';
 
@@ -14,10 +14,6 @@ import ResultsUpdate from '../ResultsUpdate';
 function SearchPane({showLeftPane, setShowLeftPane, resultsLength, total, loading, keyword, setNb}) {
 
   const [filter, setFilter] = useState();
-
-  useEffect( () => {
-    alert(window.innerWidth);
-  });
 
   return (
 
