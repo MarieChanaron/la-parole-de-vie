@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import PropTypes from "prop-types";
+import { isMobileOnly } from "react-device-detect";
 
 // Styles
 import "./styles.css";
@@ -136,6 +137,7 @@ function ReaderFormLight({boxshadow}) {
       id="readerFormLight"
       onSubmit={handleSubmit}
       boxshadow={boxshadow}
+      ismobileonly={isMobileOnly ? "true" : "false"}
     >
 
       <select 

@@ -111,16 +111,16 @@
 
 /* DEVICE: MOBILE */
 
-@media (max-width: 768px) {
-    #homeSearchForm[ismobilesafari="true"] {
-        overflow-y: scroll;
-    }
-    #homeSearchForm[ismobileonly="true"][isfirefox="true"] {
-        height: fit-content;
-        overflow: hidden;
-    }
+#homeSearchForm[ismobileonly="true"] {
+    overflow-y: auto;
+}
+#homeSearchForm[ismobileonly="true"][isfirefox="true"] {
+    height: fit-content;
+    overflow: hidden;
 }
 
+
+/* Landscape view */
 @media (min-width: 577px) {
     #homeSearchForm[ismobileonly="true"] {
         height: fit-content !important;

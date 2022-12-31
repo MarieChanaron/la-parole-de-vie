@@ -127,12 +127,38 @@
 
 /* DEVICE TABLET */
 
-@media (max-width: 1200px) and (min-width: 769px) {
-    #banner[transparency='transparentBg'][istablet="true"] {
+#banner[transparency='transparentBg'][istablet="true"] {
+    position: fixed;
+}
+#banner[istablet="true"] {
+    position: relative;
+    min-height: 80px;
+}
+
+
+/* MOBILE PHONE */
+
+#banner[ismobileonly="true"] {
+    position: fixed;
+    min-height: 64px;
+}
+
+@media (max-width: 576px) {
+    #banner[ismobileonly="true"] {
         position: fixed;
+        min-height: 60px;
     }
-    #banner[istablet="true"] {
-        position: relative;
-        min-height: 80px;
+    #banner[ismobileonly="true"] .top img#logo {
+        width: 240px;
+    }
+}
+
+@media (max-width: 400px) {
+    #banner[ismobileonly="true"] {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    #banner[ismobileonly="true"] .top img#logo {
+        width: 220px;
     }
 }

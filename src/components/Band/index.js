@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { isMobile, isTablet } from 'react-device-detect';
+import { isMobile, isTablet, isMobileOnly } from 'react-device-detect';
 
 // Styles
 import './styles.css';
@@ -38,6 +38,7 @@ function Band() {
         <div 
             id="band" 
             istablet={isTablet ? "true" : "false"}
+            ismobileonly={isMobileOnly ? "true" : "false"}
         >
 
             <TableOfContentIcon

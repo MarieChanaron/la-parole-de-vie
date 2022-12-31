@@ -61,8 +61,6 @@ export const scrollToBottom = (type) => {
   grid.scrollIntoView({behavior: type, block: 'end', inline: 'nearest'});
 }
 
-// Scroll functions 
-
 export const disableScroll = () => {
   const leftScroll = window.scrollX || document.documentElement.scrollLeft;
   const topScroll = window.scrollY || document.documentElement.scrollTop;

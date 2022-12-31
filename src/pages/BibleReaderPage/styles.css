@@ -15,9 +15,13 @@
 
 /* DEVICE TABLET */
 
-@media (max-width: 1200px) and (min-width: 769px) {
-    #bibleReaderPage[istablet="true"] {
-        display: block;
-        max-height: unset;
-    }
+#bibleReaderPage[istablet="true"] {
+    display: block;
+    max-height: unset;
+}
+
+/* MOBILE PHONE */
+
+#bibleReaderPage[ismobileonly="true"] {
+    max-height: unset;
 }

@@ -76,3 +76,47 @@
         top: 96px;
     }
 }
+
+/* MOBILE PHONE */
+
+#nail[ismobileonly="true"] {
+    left: 0px;
+    padding: 4px 5px;
+    position: fixed;
+    top: 80px;
+    border-color: var(--buttonNormalColor);
+}
+
+#nail[ismobileonly="true"][position="right"] {
+    left: 340px;
+    border-color: var(--buttonNormalColor);
+    padding: 4px 5px;
+}
+
+#nail[ismobileonly="true"][position="right"] img {
+    width: 28px;
+    height: 28px;
+}
+
+#nail[ismobileonly="true"] img {
+    width: 28px;
+    height: 28px;
+}
+
+#nail[ismobileonly="true"] span {
+    display: none;
+}
+
+@media (max-width: 576px) {
+    #nail[ismobileonly="true"] {
+        top: 76px;
+    }
+}
+
+@media (max-width: 400px) {
+    #nail[ismobileonly="true"][position="right"] {
+        left: calc(100% - 39px);
+        align-items: center;
+        border-color: transparent;
+    }
+}

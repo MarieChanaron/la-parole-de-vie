@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import PropTypes from "prop-types";
-import { isTablet } from 'react-device-detect';
+import { isTablet, isMobileOnly } from 'react-device-detect';
 
 // Styles
 import './styles.css';
@@ -56,6 +56,7 @@ function TableOfContentsSlide({showTable, showForm}) {
       show={showTable ? 'show' : null} 
       formdisplayed={showForm ? 'true' : undefined}
       istablet={isTablet ? "true": "false"}
+      ismobileonly={isMobileOnly ? "true" : "false"}
       onScroll={e => console.log(e.target.scrollTop)}
     />
 

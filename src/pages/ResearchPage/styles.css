@@ -1,8 +1,8 @@
 #researchPage {
     display: flex;
     flex-direction: column;
-    max-height: 100vh;
     overflow: hidden;
+    max-height: 100vh;
 }
 
 
@@ -15,16 +15,21 @@
 
 /* DEVICE TABLET */
 
-@media (max-width: 1200px) and (min-width: 769px) {
-    #researchPage[istablet="true"] {
-        display: block;
-        max-height: unset;
-        width: 100%;
-        position: fixed;
-        overflow: hidden;
-        overscroll-behavior: none;
-        top: 0;
-        left: 0;
-        right: 0;
-    }
+#researchPage[istablet="true"] {
+    display: block;
+    max-height: unset;
+    width: 100%;
+    position: fixed;
+    overflow: hidden;
+    overscroll-behavior: none;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+/* MOBILE PHONE */
+
+#researchPage[ismobileonly="true"] {
+    max-height: unset;
+    overflow: unset;
 }

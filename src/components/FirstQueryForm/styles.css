@@ -96,14 +96,36 @@
 
 /* DEVICE MOBILE */
 
-@media (max-width: 768px) {
-    #firstQueryForm[ismobileonly="true"] {
-        height: calc(100vh - 62px);
-        padding-top: 46px;
-        padding-bottom: 0;
+#firstQueryForm[ismobileonly="true"] {
+    height: calc(100vh - 62px);
+    padding-top: 46px;
+    padding-bottom: 0;
+}
+
+#firstQueryForm[ismobileonly="true"] #keyword,
+#firstQueryForm[ismobileonly="true"] select {
+    margin-bottom: 16px;
+}
+
+#firstQueryForm[ismobileonly="true"] input[type="submit"] {
+    margin-top: 32px;
+}
+
+#firstQueryForm[ismobileonly="true"] h1 {
+    margin-bottom: 40px;
+}
+
+#firstQueryForm[ismobilesafari="true"] {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+@media (max-width: 576px) {
+    #firstQueryForm[ismobileonly="true"] > div {
+        width: 98%;
+        max-width: 375px;
     }
-    #firstQueryForm[ismobilesafari="true"] {
-        padding-top: 0;
-        padding-bottom: 0;
+    #firstQueryForm[ismobileonly="true"] h1 {
+        display: none;
     }
 }

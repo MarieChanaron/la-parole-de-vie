@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { isTablet } from 'react-device-detect';
+import { isTablet, isMobileOnly } from 'react-device-detect';
 
 // Style
 import './styles.css';
@@ -19,6 +19,7 @@ function ResearchPage() {
     <div 
       id="researchPage" 
       istablet={isTablet ? "true" : "false"}
+      ismobileonly={isMobileOnly ? "true" : "false"}
       style={isTablet ? {height: window.innerHeight} : null}
     >
         <Banner />

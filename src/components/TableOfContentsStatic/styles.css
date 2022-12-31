@@ -3,3 +3,8 @@
         display: none;
     }
 }
+
+
+#tableOfContentsStatic[ismobileonly="true"] {
+    display: none;
+}

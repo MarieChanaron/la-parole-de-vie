@@ -62,8 +62,18 @@
 
 /* DEVICE MOBILE */
 
-@media (max-width: 768px) {
-    #grid[isresult="true"][ismobileonly="true"] {
-        padding: 0 0 48px 0;
+#grid[ismobileonly="true"] {
+    margin-right: var(--margin);
+    width: unset;
+}
+
+#grid[isresult="true"][ismobileonly="true"] {
+    padding: 0 0 48px 0;
+}
+
+
+@media (max-width:  576px) {
+    #grid[ismobileonly="true"] {
+        grid-gap: 16px;
     }
 }

@@ -40,7 +40,6 @@ function NavigationButtons({setKeyword, loading, nb, display, formFocus}) {
         return;
       }
 
-      // scrollToTop('auto'); // for Mobile Safari
       window.scrollTo(0,0);
 
       const timer = setTimeout(

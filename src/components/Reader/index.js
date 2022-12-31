@@ -1,5 +1,5 @@
 import React from 'react';
-import { isTablet, isMobileSafari } from 'react-device-detect';
+import { isTablet, isMobileSafari, isMobileOnly } from 'react-device-detect';
 
 // Styles
 import './styles.css';
@@ -27,6 +27,7 @@ function Reader() {
       id="reader" 
       istablet={isTablet ? "true": "false"}
       ismobilesafari={isMobileSafari ? "true" : "false"}
+      ismobileonly={isMobileOnly ? "true" : "false"}
     >
 
       <TableOfContentsStatic />

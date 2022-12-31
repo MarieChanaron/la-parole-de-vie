@@ -107,13 +107,46 @@
 
 /* DEVICE TABLET */
 
-@media (max-width: 1200px) and (min-width: 769px) {
-    #searchPane[istablet="true"] {
-        height: 100%;
-        overflow-y: hidden;
+#searchPane[istablet="true"] {
+    height: 100%;
+    overflow-y: hidden;
+}
+#searchPane[istablet="true"][show='show'] {
+    height: 100%;
+    overflow-y: auto;
+}
+
+/* MOBILE PHONE */
+
+#searchPane[ismobileonly="true"]:not([show='show']) {
+    left: -340px;
+    top: 64px;
+    height: calc(100vh - 64px);
+    position: fixed;
+}
+
+#searchPane[ismobileonly="true"][show='show'] {
+    position: fixed;
+    left: 0px;
+    top: 64px;
+    height: calc(100vh - 64px);
+}
+
+@media (max-width: 576px) {
+    #searchPane[ismobileonly="true"]:not([show='show']) {
+        top: 60px;
+        height: calc(100vh - 60px);
     }
-    #searchPane[istablet="true"][show='show'] {
-        height: 100%;
-        overflow-y: auto;
+    #searchPane[ismobileonly="true"][show='show'] {
+        top: 60px;
+        height: calc(100vh - 60px);
+    }
+}
+
+@media (max-width: 400px) {
+    #searchPane[ismobileonly="true"]:not([show='show']) {
+        left: -100%;
+        min-width: 100%;
+        padding-top: 48px;
     }
 }

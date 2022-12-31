@@ -99,7 +99,7 @@
 }
 
 
-@media (min-width: 768px) {
+@media (min-width: 769px) {
     #readerForm[boxshadow="none"] input,
     #readerForm[boxshadow="none"] select {
         box-shadow: none;
@@ -185,6 +185,98 @@
         right: -100%;
     }
     #readerForm[show="show"] {
+        right: 0px;
+    }
+}
+
+
+/* MOBILE PHONE */
+
+#readerForm[ismobileonly="true"] {
+    display: block;
+    position: fixed;
+    top: 64px;
+    z-index: 101;
+    width: 340px;
+    background-color: var(--leftPaneBgColor);
+    height: calc(100% - 64px);
+    padding-top: 48px;
+    padding-bottom: 48px;
+    transition: 0.3s ease-in;
+}
+
+#readerForm[ismobileonly="true"] select {
+    margin-bottom: 16px;
+}
+
+#readerForm[ismobileonly="true"] .separator {
+    display: none;
+}
+
+#readerForm[ismobileonly="true"] label,
+#readerForm[ismobileonly="true"] select,
+#readerForm[ismobileonly="true"] div.reference {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+#readerForm[ismobileonly="true"] label {
+    display: block;
+    width: 100%;
+}
+#readerForm[ismobileonly="true"] label[for="reference"] {
+    text-align: right;
+}
+
+#readerForm[ismobileonly="true"] input[type="submit"][value=""] {
+    display: none;
+}
+
+#readerForm[ismobileonly="true"] {
+    padding-left: 32px;
+    padding-right: 32px;
+}
+
+#readerForm[ismobileonly="true"] select {
+    width: 100%;
+}
+
+#readerForm[ismobileonly="true"] input[type="submit"]:not([value=""]) {
+    display: block;
+}
+
+@media (min-width: 577px) {
+    #readerForm[ismobileonly="true"] {
+        right: -340px;
+        
+    }
+    #readerForm[ismobileonly="true"][show="show"] {
+        right: 0px;
+    }
+}
+
+@media (max-width: 576px) {
+    #readerForm[ismobileonly="true"] {
+        right: -340px;
+        top: 60px;
+        height: calc(100% - 60px);
+    }
+    #readerForm[ismobileonly="true"][show="show"] {
+        right: 0px;
+        overflow-y: auto;
+        overscroll-behavior: none;
+    }
+    #readerForm[ismobileonly="true"][tabledisplayed="true"] {
+        display: none;
+    }
+}
+
+@media (max-width: 400px) {
+    #readerForm[ismobileonly="true"] {
+        width: 100%;
+        right: -100%;
+    }
+    #readerForm[ismobileonly="true"][show="show"] {
         right: 0px;
     }
 }

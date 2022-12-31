@@ -24,7 +24,6 @@
     box-shadow: unset;
 }
 
-
 #lightForm label,
 #lightForm select, 
 #lightForm input[value='Rechercher'] {
@@ -93,8 +92,27 @@
     top: unset;
 }
 
+/* MOBILE PHONE */
+
+#lightForm[ismobileonly="true"] {
+    position: fixed;
+    padding-top: 16px;
+    height: 71px;
+    top: 64px;
+}
+
 @media (max-width: 576px) {
-    #lightForm[istablet="true"] {
-        top: 80px;
+    #lightForm[ismobileonly="true"] {
+        top: 60px;
+    }
+    #lightForm[ismobileonly="true"] > div {
+        margin: 0 var(--margin) 0 auto;
+    }
+}
+
+@media (max-width:  400px) {
+    #lightForm[ismobileonly="true"] > div {
+        width: 80%;
+        margin-right: var(--margin);
     }
 }

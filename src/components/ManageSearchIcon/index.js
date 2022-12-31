@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from "prop-types";
+import { isMobileOnly } from 'react-device-detect';
 
 // Styles
 import './styles.css';
@@ -7,6 +8,7 @@ import './styles.css';
 // Icon
 import closePaneInverse from '../../images/icons/close-pane-inverse.svg';
 import manageSearch from '../../images/icons/manage-search.svg';
+
 
 function ManageSearchIcon({showForm, setShowForm}) {
 
@@ -17,6 +19,7 @@ function ManageSearchIcon({showForm, setShowForm}) {
         alt="" 
         onClick={() => setShowForm(prev => !prev)} 
         position={showForm ? 'translate' : null} 
+        ismobileonly={isMobileOnly ? "true" : "false"}
       />
   )
 }

@@ -12,10 +12,8 @@
 
 
 @media (max-width: 1200px) {
-    .veil[displaytable="yes"] {
-        display: block;
-    }
-    .veil[display="block"] {
+    .veil[displaytable="yes"], 
+    .veil[display="block"]{
         display: block;
     }
 }
@@ -26,17 +24,8 @@
     }
 }
 
-/* @media (max-width: 576px) {
-    .veil[displayform="yes"] {
-        display: block;
-    }
-    .veil[displaytable="yes"] {
-        display: block;
-    }
-}
+/* MOBILE PHONE */
 
-@media (max-width: 400px) {
-    .veil {
-        display: none;
-    }
-} */
+.veil[ismobileonly="true"][displayform="yes"] {
+    display: block;
+}

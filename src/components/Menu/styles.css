@@ -5,8 +5,11 @@
 #menu img {
     width: 56px;
     margin-left: auto;
-    display: none;
     cursor: pointer;
+}
+
+#menu[ismobileonly="false"] img {
+    display: none;
 }
 
 #menu button {
@@ -51,7 +54,7 @@
         backdrop-filter: blur(5px);
         padding-bottom: 4px;
     }
-    #menu img {
+    #menu[ismobileonly="false"] img {
         display: flex;
     }
 }
@@ -61,6 +64,50 @@
         top: 48px;
     }
     #menu img {
+        width: 48px;
+        height: 48px;
+    }
+}
+
+
+/* DEVICE MOBILE */
+
+#menu[ismobileonly="true"] .buttons {
+    flex-direction: column;
+    position: absolute;
+    z-index: 104;
+    right: 0;
+    top: 56px;
+}
+
+#menu[ismobileonly="true"] button {
+    margin: 0;
+    box-shadow: 0px 4px 4px RGBa(0,0,0,0.3);
+}
+
+#menu[ismobileonly="true"] a:nth-child(2) {
+    margin-top: 8px;
+}
+
+#menu[ismobileonly="true"] .false {
+    display: none;
+}
+
+#menu[ismobileonly="true"] .true {
+    display: flex;
+    backdrop-filter: blur(5px);
+    padding-bottom: 4px;
+}
+
+#menu[ismobileonly="true"] img {
+    display: flex;
+}
+
+@media (max-width: 576px) {
+    #menu[ismobileonly="true"] .buttons {
+        top: 48px;
+    }
+    #menu[ismobileonly="true"] img {
         width: 48px;
         height: 48px;
     }

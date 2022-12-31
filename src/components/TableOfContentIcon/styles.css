@@ -61,3 +61,41 @@ img#tableOfContentIcon[position="right"] {
         border-color: transparent;
     }
 }
+
+/* MOBILE PHONE */
+
+img#tableOfContentIcon[ismobileonly="true"] {
+    width: 28px;
+    padding: 2px 3px;
+    top: 11px;
+    left: var(--margin);
+}
+
+img#tableOfContentIcon[ismobileonly="true"][position="right"] {
+    background-color: var(--leftPaneBgColor);
+    border-color: var(--buttonNormalColor);
+    box-shadow: 2px 4px 4px 0px RGBa(0, 0, 0, 0.05);
+    width: 28px;
+    z-index: 102;
+    left: 340px;
+}
+
+@media (max-width: 768px) {
+    img#tableOfContentIcon[ismobileonly="true"] {
+        left: 40px;
+    }
+}
+
+@media (max-width: 576px) {
+    img#tableOfContentIcon[ismobileonly="true"] {
+        top: 6px;
+        left: var(--margin);
+    }
+}
+
+@media (max-width: 400px) {
+    img#tableOfContentIcon[ismobileonly="true"][position="right"] {
+        left: calc(100% - 35px);
+        border-color: transparent;
+    }
+}

@@ -55,6 +55,7 @@ function LightForm({boxShadow, setFormFocus}) {
             id="lightForm" 
             onSubmit={handleSubmit} 
             istablet={isTablet ? "true" : "false"}
+            ismobileonly={isMobileOnly ? "true" : "false"}
         >
 
             <div boxshadow={boxShadow === false ? 'none' : null}>
