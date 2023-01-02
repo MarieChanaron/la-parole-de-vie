@@ -96,9 +96,25 @@
 
 /* DEVICE MOBILE */
 
-#firstQueryForm[ismobileonly="true"] {
+#firstQueryForm[ismobilesafari="false"],
+#firstQueryForm[ismobileonly="true"][isfirefox="false"] {
+    height: 100vh;
+    padding-top: 46px;
+    padding-bottom: 62px;
+}
+
+#firstQueryForm[ismobilesafari="true"],
+#firstQueryForm[ismobileonly="true"][isfirefox="true"] {
     height: calc(100vh - 62px);
     padding-top: 46px;
+}
+
+#firstQueryForm[ismobilesafari="true"] {
+    padding-top: 46px;
+}
+
+#firstQueryForm[ismobilesafari="true"] {
+    padding-top: 0;
     padding-bottom: 0;
 }
 
@@ -119,6 +135,7 @@
     padding-top: 0;
     padding-bottom: 0;
 }
+
 
 @media (max-width: 576px) {
     #firstQueryForm[ismobileonly="true"] > div {
