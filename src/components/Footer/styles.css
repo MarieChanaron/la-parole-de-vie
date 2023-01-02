@@ -73,3 +73,9 @@ footer div {
         text-align: center;
     }
 }
+
+/* MOBILE SAFARI */
+
+footer[ismobilesafari="true"] {
+    position: static;
+}

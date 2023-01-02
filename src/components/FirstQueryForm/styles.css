@@ -11,6 +11,7 @@
     padding-left: var(--margin);
 }
 
+
 #firstQueryForm h1 {
     font-size: 2.4rem;
     font-weight: 400;
@@ -93,9 +94,9 @@
 /* DEVICE MOBILE */
 
 #firstQueryForm[ismobileonly="true"] {
-    /* height: calc(100vh - 62px); */
-    padding-top: 60px;
-    padding-bottom: 62px;
+    height: calc(100vh - 62px);
+    padding-top: 46px;
+    padding-bottom: 0;
 }
 
 #firstQueryForm[ismobileonly="true"] #keyword,
