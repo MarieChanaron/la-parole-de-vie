@@ -81,3 +81,7 @@ footer[ismobileonly="true"][isfirefox="true"],
 footer[ismobilesafari="true"] {
     position: static !important;
 }
+
+footer[ismobileonly="true"] {
+    opacity: 0.5;
+}
