@@ -97,8 +97,7 @@
 /* DEVICE MOBILE */
 
 /* Tous les mobiles sauf Safari et Firefox */
-#firstQueryForm[ismobilesafari="false"],
-#firstQueryForm[ismobileonly="true"][isfirefox="false"] {
+#firstQueryForm[ismobileonly="true"] {
     height: 100vh;
     padding-top: 46px;
     padding-bottom: 62px;
@@ -106,7 +105,12 @@
 }
 
 /* Safari et Firefox */
-#firstQueryForm[ismobilesafari="true"],
+#firstQueryForm[ismobilesafari="true"] {
+    height: calc(100vh - 62px);
+    padding-top: 46px;
+    padding-bottom: 0;
+    border: 2px solid pink;
+}
 #firstQueryForm[ismobileonly="true"][isfirefox="true"] {
     height: calc(100vh - 62px);
     padding-top: 46px;
