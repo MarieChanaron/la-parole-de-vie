@@ -131,7 +131,7 @@
     }
     #firstQueryForm[ismobileonly="true"][isfirefox="false"][ismobilesafari="false"] {
         height: 100vh;
-        padding-top: 46px;
-        padding-bottom: 62px;
+        /* padding-top: 46px;
+        padding-bottom: 62px; */
     }
 }

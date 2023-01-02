@@ -82,5 +82,5 @@ footer[ismobileonly="true"] {
 }
 
 footer[ismobileonly="true"][ismobilesafari="false"][isfirefox="false"] {
-    position: fixed;
+    /* position: fixed; */
 }
