@@ -77,10 +77,6 @@ footer div {
 
 /* MOBILE PHONE */
 
-/* footer[ismobileonly="true"] {
+footer[ismobileonly="true"] {
     position: relative;
 }
-
-footer[ismobileonly="true"][ismobilesafari="false"][isfirefox="false"] {
-    position: fixed;
-} */

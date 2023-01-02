@@ -120,23 +120,6 @@
 }
 
 
-#homeSearchForm[ismobileonly="true"] {
-    height: fit-content !important;
-    position: static;
-}
-#homeSearchForm[ismobileonly="true"] #banner {
-    position: static;
-}
-#homeSearchForm[ismobileonly="true"] footer {
-    position: static !important;
-}
-#homeSearchForm[ismobileonly="true"] #firstQueryForm {
-    height: calc(100vh - 60px) !important;
-    padding-top: 0;
-    padding-bottom: 0;
-}
-
-
 /* Landscape view */
 @media (min-width: 577px) {
     #homeSearchForm[ismobileonly="true"] {
@@ -151,6 +134,25 @@
     }
     #homeSearchForm[ismobileonly="true"] #firstQueryForm {
         height: 483px !important;
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+}
+
+/* Portrait view - Android */
+@media (max-width: 576px) {
+    #homeSearchForm[isandroid="true"] {
+        height: fit-content !important;
+        position: static;
+    }
+    #homeSearchForm[isandroid="true"] #banner {
+        position: static;
+    }
+    #homeSearchForm[isandroid="true"] footer {
+        position: static !important;
+    }
+    #homeSearchForm[isandroid="true"] #firstQueryForm {
+        height: calc(100vh - 60px) !important;
         padding-top: 0;
         padding-bottom: 0;
     }

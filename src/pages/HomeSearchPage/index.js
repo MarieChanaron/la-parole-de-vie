@@ -4,7 +4,8 @@ import {
     isFirefox, 
     isMobileSafari, 
     isDesktop,
-    isTablet 
+    isTablet, 
+    isAndroid
 } from 'react-device-detect';
 
 // Styles
@@ -52,6 +53,7 @@ function HomeSearchPage() {
             istablet={isTablet ? "true" : "false"}
             isfirefox={isFirefox ? "true" : "false"}
             ismobilesafari={isMobileSafari ? "true" : "false"}
+            isandroid={isAndroid ? "true" : "false"}
         >
 
             <Banner transparency='transparentBg' />
