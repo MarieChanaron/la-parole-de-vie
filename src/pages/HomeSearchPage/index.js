@@ -21,6 +21,8 @@ function HomeSearchPage() {
 
     /* height is set only of the browser is Firefox and if the device is mobile */
     const [height, setHeight] = useState(sessionStorage.getItem('height'));
+
+    alert(height);
    
 
     useEffect( () => { /* eslint-disable-line react-hooks/exhaustive-deps */
@@ -47,7 +49,7 @@ function HomeSearchPage() {
     return (
         <div 
             id='homeSearchForm'
-            style={{height: height}} /* Set the height for mobile Firefox in case the user opens the virtual keyboard */
+            style={{height: 1000}} /* Set the height for mobile Firefox in case the user opens the virtual keyboard */
             ismobileonly={isMobileOnly ? "true" : "false"}
             isdesktop={isDesktop ? "true" : "false"}
             istablet={isTablet ? "true" : "false"}
