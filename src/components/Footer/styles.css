@@ -77,13 +77,6 @@ footer div {
 
 /* MOBILE PHONE */
 
-footer[ismobileonly="true"][isfirefox="true"] {
-    position: static !important;
-}
-footer[ismobilesafari="true"] {
-    position: static !important;
-}
-
 footer[ismobileonly="true"] {
-    opacity: 0.5;
+    position: relative;
 }

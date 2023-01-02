@@ -96,41 +96,28 @@
 
 /* DEVICE MOBILE */
 
-/* Tous les mobiles sauf Safari et Firefox */
 #firstQueryForm[ismobileonly="true"] {
-    height: 100vh;
+    height: calc(100vh - 62px);
     padding-top: 46px;
-    padding-bottom: 62px;
-    border: 2px solid purple;
+    padding-bottom: 0;
 }
 
-/* Safari et Firefox */
 #firstQueryForm[ismobilesafari="true"] {
-    height: calc(100vh - 62px);
-    padding-top: 46px;
+    padding-top: 0;
     padding-bottom: 0;
-    border: 2px solid pink;
-}
-#firstQueryForm[ismobileonly="true"][isfirefox="true"] {
-    height: calc(100vh - 62px);
-    padding-top: 46px;
-    padding-bottom: 0;
-    border: 2px solid pink;
 }
 
 #firstQueryForm[ismobileonly="true"] #keyword,
 #firstQueryForm[ismobileonly="true"] select {
     margin-bottom: 16px;
 }
+
 #firstQueryForm[ismobileonly="true"] input[type="submit"] {
     margin-top: 32px;
 }
+
 #firstQueryForm[ismobileonly="true"] h1 {
     margin-bottom: 40px;
-}
-#firstQueryForm[ismobilesafari="true"] {
-    padding-top: 0;
-    padding-bottom: 0;
 }
 
 
