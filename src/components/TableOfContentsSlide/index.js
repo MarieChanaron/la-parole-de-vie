@@ -11,7 +11,7 @@ import { books } from '../../data/books';
 
 // Helper functions
 import { getBook } from '../../helpers';
-import { fillTableOfContents, scrollIntoTable } from '../../helpers/fillTableOfContents';
+import { fillTableOfContents } from '../../helpers/fillTableOfContents';
 
 
 
