@@ -102,6 +102,7 @@
     height: 100vh;
     padding-top: 46px;
     padding-bottom: 62px;
+    border: 2px solid purple;
 }
 
 /* Safari et Firefox */
