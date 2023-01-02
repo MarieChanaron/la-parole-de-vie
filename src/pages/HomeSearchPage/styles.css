@@ -115,7 +115,7 @@
     overflow-y: auto;
 }
 #homeSearchForm[ismobileonly="true"][isfirefox="true"] {
-    height: fit-content;
+    /* height: fit-content; */
     overflow: hidden;
 }
 
