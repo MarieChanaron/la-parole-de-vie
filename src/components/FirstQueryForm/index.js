@@ -1,5 +1,5 @@
 import React from 'react';
-import { isMobileOnly, isMobileSafari } from 'react-device-detect';
+import { isMobileOnly, isMobileSafari, isFirefox } from 'react-device-detect';
 
 // Styles
 import './styles.css';
@@ -16,6 +16,7 @@ function FirstQueryForm({height}) {
         id="firstQueryForm" 
         ismobileonly={isMobileOnly ? "true" : "false"}
         ismobilesafari={isMobileSafari ? "true" : "false"}
+        isfirefox={isFirefox ? "true" : "false"}
         style={height ? {height: height} : null} // For Firefox mobile only
       >
         <div>

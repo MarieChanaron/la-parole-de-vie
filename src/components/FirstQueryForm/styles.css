@@ -129,4 +129,9 @@
     #firstQueryForm[ismobileonly="true"] h1 {
         display: none;
     }
+    #firstQueryForm[ismobileonly="true"][isfirefox="false"][ismobilesafari="false"] {
+        height: 100vh;
+        padding-top: 46px;
+        padding-bottom: 62px;
+    }
 }

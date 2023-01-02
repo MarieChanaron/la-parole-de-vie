@@ -80,3 +80,7 @@ footer div {
 footer[ismobileonly="true"] {
     position: relative;
 }
+
+footer[ismobileonly="true"][ismobilesafari="false"][isfirefox="false"] {
+    position: fixed;
+}
