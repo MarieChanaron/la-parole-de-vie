@@ -29,6 +29,18 @@
     }
 }
 
+@media (max-height: 700px) and (min-width: 1201px) {
+    #researchFrame[istablet="false"][ismobileonly="false"] {
+        height: calc(100vh - 137px);
+    }
+}
+
+@media (max-height: 700px) and (min-width: 769px) and (max-width: 1200px) {
+    #researchFrame[istablet="false"][ismobileonly="false"] {
+        height: calc(100vh - 70px);
+    }
+}
+
 
 /* DEVICE TABLET */
 

@@ -4,6 +4,14 @@
     }
 }
 
+@media (max-height: 700px) {
+    #tableOfContentsStatic[isdesktop="true"] {
+        height: 560px;
+    }
+}
+
+
+/* MOBILE PHONE */
 
 #tableOfContentsStatic[ismobileonly="true"] {
     display: none;

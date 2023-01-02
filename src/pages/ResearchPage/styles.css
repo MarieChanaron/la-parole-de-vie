@@ -13,6 +13,13 @@
     }
 }
 
+@media (max-height: 700px) and (min-width: 769px) {
+    #researchPage[istablet="false"][ismobileonly="false"] {
+        height: 100%;
+    }
+}
+
+
 /* DEVICE TABLET */
 
 #researchPage[istablet="true"] {

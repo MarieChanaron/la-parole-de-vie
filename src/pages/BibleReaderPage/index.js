@@ -13,6 +13,7 @@ function BibleReaderPage() {
 
   useEffect( () => {
     document.body.classList.add('scroll');
+    document.body.classList.add('page-scroll');
   }, []);
 
   return (

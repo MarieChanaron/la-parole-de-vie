@@ -124,27 +124,30 @@
     }
 }
 
-@media (max-height: 850px) {
+@media (max-height: 850px) and (min-width: 1201px) {
     #banner {
         gap: 16px;
     }
 }
 
-@media (max-height: 740px) {
+@media (max-height: 740px) and (min-width: 1201px) {
     #banner {
         gap: 8px;
     }
 }
 
-@media (max-height: 650px) {
+@media (max-height: 700px) and (min-width: 1201px) {
     #bibleReaderPage #banner:not([ismobile="true"]),
     #researchPage #banner:not([ismobile="true"]) {
-        padding-top: 16px;
+        padding-top: 8px;
         justify-content: flex-start;
     }
-    #bibleReaderPage #banner:not([ismobile="true"]) #quote,
-    #researchPage #banner:not([ismobile="true"]) #quote {
-        display: none;
+}
+
+@media (max-height: 700px) and (min-width: 769px) and (max-width: 1200px) {
+    #bibleReaderPage #banner:not([ismobile="true"]),
+    #researchPage #banner:not([ismobile="true"]) {
+        min-height: 70px;
     }
 }
 

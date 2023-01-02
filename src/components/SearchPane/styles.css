@@ -104,6 +104,12 @@
     }
 }
 
+@media (max-height: 700px) {
+    #searchPane[istablet="false"][ismobileonly="false"] {
+        height: 100%;
+    }
+}
+
 
 /* DEVICE TABLET */
 

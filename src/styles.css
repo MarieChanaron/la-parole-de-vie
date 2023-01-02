@@ -41,6 +41,12 @@ html, body, #root, #app {
     }
 }
 
+@media (max-height: 700px) {
+    body.page-scroll {
+        overflow-y: scroll;
+        overflow-x: hidden;
+    }
+}
 
 #app[ismobilesafari="true"] {
     background-color: white;

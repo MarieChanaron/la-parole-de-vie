@@ -118,6 +118,12 @@
     }
 }
 
+@media (max-height: 700px) {
+    #resultPane[istablet="false"][ismobileonly="false"] {
+        height: 100%;
+    }
+}
+
 
 /* DEVICE IOS MOBILE SAFARI */
 

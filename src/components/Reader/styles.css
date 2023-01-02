@@ -118,6 +118,18 @@
     }
 }
 
+@media (max-height: 700px) and (min-width: 1201px) {
+    #reader {
+        height: 560px;
+    }
+}
+
+@media (max-height: 700px) and (max-width: 1200px) and (min-width: 769px) {
+    #reader {
+        height: 630px;
+    }
+}
+
 /* MOBILE SAFARI */
 
 #reader[ismobilesafari="true"] #readerLoaderWrapper,

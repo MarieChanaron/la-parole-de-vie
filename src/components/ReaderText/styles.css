@@ -101,6 +101,17 @@
     }
 }
 
+@media (max-height: 700px) and (min-width: 1201px) {
+    #readerText:not([ismobile="true"]) {
+        height: 330px;
+    }
+}
+
+@media (max-height: 700px) and (min-width: 769px) and (max-width: 1200px) {
+    #readerText:not([ismobile="true"]) {
+        height: 400px;
+    }
+}
 
 /* DEVICES: TABLET, MOBILE */
 
