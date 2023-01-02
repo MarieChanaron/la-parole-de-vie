@@ -11,14 +11,13 @@ import { books } from '../../data/books';
 
 // Helper functions
 import { getBook } from '../../helpers';
-import { fillTableOfContents } from '../../helpers/fillTableOfContents';
+import { fillTableOfContents, scrollIntoTable } from '../../helpers/fillTableOfContents';
 
 
 
 function TableOfContentsSlide({showTable, showForm}) {
 
   const containerRef = useRef();
-
 
   // The function below has the same role as scrollIntoView.
   // But this function works for elements having position fixed (for medium / small screen)
@@ -28,7 +27,6 @@ function TableOfContentsSlide({showTable, showForm}) {
     const val = posY - toc.offsetHeight / 2;
     toc.scrollTop = val;
   }
-
 
   // On first loading
   useEffect(
@@ -42,7 +40,7 @@ function TableOfContentsSlide({showTable, showForm}) {
   useEffect( () => {
     if (showTable === true) {
       const bookId = getBook().id;
-      scrollIntoTable(bookId-1, books.length-1);
+      scrollIntoTable(bookId-1, books.length-1, containerRef);
     }
   });
 

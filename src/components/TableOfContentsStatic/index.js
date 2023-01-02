@@ -16,8 +16,12 @@ function TableOfContentsStatic() {
   // Scroll to see the selected element on the center of the table of contents
   const scroll = () => {
     const element = document.querySelector('.selected');
-    if (element) {
-      element.scrollIntoView({block: 'center'});
+    if (window.innerHeight > 700) {
+      if (element) {
+        element.scrollIntoView({block: 'center'});
+      }
+    } else {
+      window.scrollTo(0,0);
     }
   }
 
