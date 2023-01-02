@@ -120,6 +120,23 @@
 }
 
 
+#homeSearchForm[ismobileonly="true"] {
+    height: fit-content !important;
+    position: static;
+}
+#homeSearchForm[ismobileonly="true"] #banner {
+    position: static;
+}
+#homeSearchForm[ismobileonly="true"] footer {
+    position: static !important;
+}
+#homeSearchForm[ismobileonly="true"] #firstQueryForm {
+    height: calc(100vh - 60px) !important;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+
 /* Landscape view */
 @media (min-width: 577px) {
     #homeSearchForm[ismobileonly="true"] {
