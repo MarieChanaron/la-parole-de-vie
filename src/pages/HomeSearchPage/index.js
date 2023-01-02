@@ -26,7 +26,7 @@ function HomeSearchPage() {
     useEffect( () => { /* eslint-disable-line react-hooks/exhaustive-deps */
         /* If the browser is Firefox, and if the device is mobile only, 
         save the height of the homepage in the session storage and retrieve it */
-        if (isFirefox && isMobileOnly) {
+        if (isMobileOnly && (isFirefox || isAndroid)) {
             if (!height && window.innerWidth < window.innerHeight) {
                 sessionStorage.setItem('height', window.innerHeight);
                 setHeight(sessionStorage.getItem('height'));
@@ -59,7 +59,7 @@ function HomeSearchPage() {
             <Banner transparency='transparentBg' />
 
             <FirstQueryForm 
-                height={height-62} /* 62px is the height of the footer on mobile */
+                height={!isAndroid ? height-62 : null} /* 62px is the height of the footer on mobile */
             />
 
             <Footer />
