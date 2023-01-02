@@ -21,14 +21,12 @@ function HomeSearchPage() {
 
     /* height is set only of the browser is Firefox and if the device is mobile */
     const [height, setHeight] = useState(sessionStorage.getItem('height'));
-
-    alert(height);
    
 
     useEffect( () => { /* eslint-disable-line react-hooks/exhaustive-deps */
         /* If the browser is Firefox, and if the device is mobile only, 
         save the height of the homepage in the session storage and retrieve it */
-        if (isMobileOnly && (isFirefox || isAndroid)) {
+        if (isMobileOnly && isFirefox) {
             if (!height && window.innerWidth < window.innerHeight) {
                 sessionStorage.setItem('height', window.innerHeight);
                 setHeight(sessionStorage.getItem('height'));
@@ -49,7 +47,7 @@ function HomeSearchPage() {
     return (
         <div 
             id='homeSearchForm'
-            style={{height: 1000}} /* Set the height for mobile Firefox in case the user opens the virtual keyboard */
+            style={{height: height}} /* Set the height for mobile Firefox in case the user opens the virtual keyboard */
             ismobileonly={isMobileOnly ? "true" : "false"}
             isdesktop={isDesktop ? "true" : "false"}
             istablet={isTablet ? "true" : "false"}
@@ -61,7 +59,7 @@ function HomeSearchPage() {
             <Banner transparency='transparentBg' />
 
             <FirstQueryForm 
-                height={!isAndroid ? height-62 : null} /* 62px is the height of the footer on mobile */
+                height={height-62} /* 62px is the height of the footer on mobile */
             />
 
             <Footer />
