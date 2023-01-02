@@ -96,6 +96,7 @@
 
 /* DEVICE MOBILE */
 
+/* Tous les mobiles sauf Safari et Firefox */
 #firstQueryForm[ismobilesafari="false"],
 #firstQueryForm[ismobileonly="true"][isfirefox="false"] {
     height: 100vh;
@@ -103,18 +104,11 @@
     padding-bottom: 62px;
 }
 
+/* Safari et Firefox */
 #firstQueryForm[ismobilesafari="true"],
 #firstQueryForm[ismobileonly="true"][isfirefox="true"] {
     height: calc(100vh - 62px);
     padding-top: 46px;
-}
-
-#firstQueryForm[ismobilesafari="true"] {
-    padding-top: 46px;
-}
-
-#firstQueryForm[ismobilesafari="true"] {
-    padding-top: 0;
     padding-bottom: 0;
 }
 
@@ -122,15 +116,12 @@
 #firstQueryForm[ismobileonly="true"] select {
     margin-bottom: 16px;
 }
-
 #firstQueryForm[ismobileonly="true"] input[type="submit"] {
     margin-top: 32px;
 }
-
 #firstQueryForm[ismobileonly="true"] h1 {
     margin-bottom: 40px;
 }
-
 #firstQueryForm[ismobilesafari="true"] {
     padding-top: 0;
     padding-bottom: 0;

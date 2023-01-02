@@ -79,5 +79,5 @@ footer div {
 
 footer[ismobileonly="true"][isfirefox="true"],
 footer[ismobilesafari="true"] {
-    position: static;
+    position: static !important;
 }
