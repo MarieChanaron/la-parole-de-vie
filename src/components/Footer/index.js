@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { isMobileOnly } from 'react-device-detect';
+import { isMobileOnly, isMobileSafari, isFirefox } from 'react-device-detect';
 
 // Styles
 import './styles.css';
@@ -15,6 +15,8 @@ function Footer() {
 
     <footer 
       ismobileonly={isMobileOnly ? "true" : "false"}
+      isfirefox={isFirefox ? "true" : "false"}
+      ismobilesafari={isMobileSafari ? "true" : "false"}
     >
 
       <div className="col">

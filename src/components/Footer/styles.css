@@ -73,3 +73,11 @@ footer div {
         text-align: center;
     }
 }
+
+
+/* MOBILE PHONE */
+
+footer[ismobileonly="true"][isfirefox="true"],
+footer[ismobilesafari="true"] {
+    position: static;
+}
