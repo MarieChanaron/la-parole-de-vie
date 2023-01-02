@@ -28,7 +28,7 @@
     flex-direction: column;
     justify-content: center;
     justify-items: center;
-    gap: 12px;
+    gap: 24px;
 
     /* Transition */
     transition-duration: 0.2s;
@@ -124,6 +124,29 @@
     }
 }
 
+@media (max-height: 850px) {
+    #banner {
+        gap: 16px;
+    }
+}
+
+@media (max-height: 740px) {
+    #banner {
+        gap: 8px;
+    }
+}
+
+@media (max-height: 650px) {
+    #bibleReaderPage #banner:not([ismobile="true"]),
+    #researchPage #banner:not([ismobile="true"]) {
+        padding-top: 16px;
+        justify-content: flex-start;
+    }
+    #bibleReaderPage #banner:not([ismobile="true"]) #quote,
+    #researchPage #banner:not([ismobile="true"]) #quote {
+        display: none;
+    }
+}
 
 /* DEVICE TABLET */
 
