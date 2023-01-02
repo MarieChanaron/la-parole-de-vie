@@ -142,7 +142,7 @@
 /* Portrait view - Android */
 @media (max-width: 576px) {
     #homeSearchForm[isandroid="true"] {
-        height: 100vh !important;
+        height: fit-content !important;
         position: static;
     }
     #homeSearchForm[isandroid="true"] #banner {
