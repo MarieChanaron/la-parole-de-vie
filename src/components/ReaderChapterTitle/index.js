@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from "prop-types";
-import { isMobileOnly } from 'react-device-detect';
+// import { isMobileOnly } from 'react-device-detect';
 
 // Styles
 import './styles.css';
@@ -15,7 +15,7 @@ function ReaderChapterTitle({book, chapter, className}) {
     <div 
       id="readerChapterTitle" 
       className={className}
-      ismobileonly={isMobileOnly ? "true" : "false"}
+      // ismobileonly={isMobileOnly ? "true" : "false"}
     >
         <h2>
             <span>{book.name}</span>

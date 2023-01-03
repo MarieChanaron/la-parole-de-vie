@@ -29,6 +29,7 @@
     display: flex;
     justify-content: center;
     margin-top: 56px;
+    background-color: aqua;
 }
 
 #readerErrorContainer {
@@ -138,8 +139,8 @@
 
 /* MOBILE SAFARI */
 
-#reader[ismobilesafari="true"] #readerLoaderWrapper,
-#reader[ismobilesafari="true"] #readerErrorContainer {
+#reader[ismobileonly="true"][ismobilesafari="true"] #readerLoaderWrapper,
+#reader[ismobileonly="true"][ismobilesafari="true"] #readerErrorContainer {
     position: fixed;
     width: 100%;
 }

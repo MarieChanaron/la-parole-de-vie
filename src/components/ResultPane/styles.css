@@ -20,7 +20,6 @@
     justify-content: center;
     position: relative;
     z-index: 80;
-    background-color: aqua;
 }
 
 #searchLoaderWrapper[isresult="false"] {
@@ -40,7 +39,7 @@
     }
     #searchLoaderWrapper {
         margin-left: var(--margin);
-        width: calc(100% - 2*var(--margin));
+        width: calc(100vw - 2*var(--margin));
     }
     #searchLoaderWrapper[isresult="false"] {
         padding-top: 77px;

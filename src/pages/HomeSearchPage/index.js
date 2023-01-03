@@ -3,9 +3,9 @@ import {
     isMobileOnly, 
     isFirefox, 
     isMobileSafari, 
-    isDesktop,
-    isTablet, 
-    isAndroid
+    // isDesktop,
+    // isTablet, 
+    // isAndroid
 } from 'react-device-detect';
 
 // Styles
@@ -48,12 +48,13 @@ function HomeSearchPage() {
         <div 
             id='homeSearchForm'
             style={{height: height}} /* Set the height for mobile Firefox in case the user opens the virtual keyboard */
-            ismobileonly={isMobileOnly ? "true" : "false"}
-            isdesktop={isDesktop ? "true" : "false"}
-            istablet={isTablet ? "true" : "false"}
-            isfirefox={isFirefox ? "true" : "false"}
-            ismobilesafari={isMobileSafari ? "true" : "false"}
-            isandroid={isAndroid ? "true" : "false"}
+            istablet="true"
+            // ismobileonly={isMobileOnly ? "true" : "false"}
+            // isdesktop={isDesktop ? "true" : "false"}
+            // istablet={isTablet ? "true" : "false"}
+            // isfirefox={isFirefox ? "true" : "false"}
+            // ismobilesafari={isMobileSafari ? "true" : "false"}
+            // isandroid={isAndroid ? "true" : "false"}
         >
 
             <Banner transparency='transparentBg' />

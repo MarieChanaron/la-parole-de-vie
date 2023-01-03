@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from "prop-types";
-import { isMobileOnly } from 'react-device-detect';
+// import { isMobileOnly } from 'react-device-detect';
 
 // Styles
 import './styles.css';
@@ -19,7 +19,7 @@ function ManageSearchIcon({showForm, setShowForm}) {
         alt="" 
         onClick={() => setShowForm(prev => !prev)} 
         position={showForm ? 'translate' : null} 
-        ismobileonly={isMobileOnly ? "true" : "false"}
+        // ismobileonly={isMobileOnly ? "true" : "false"}
       />
   )
 }

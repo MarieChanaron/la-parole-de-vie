@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { isMobile, isTablet, isMobileOnly } from 'react-device-detect';
+// import { isMobile, isTablet, isMobileOnly } from 'react-device-detect';
 
 // Styles
 import './styles.css';
@@ -23,9 +23,9 @@ function Band() {
 
 
     useEffect( () => {
-        if (isMobile) {
+        // if (isMobile) {
             showTable || showForm ? disableScroll() : enableScroll();
-        }
+        // }
     }, [showTable, showForm]);
 
 
@@ -37,8 +37,9 @@ function Band() {
     return (
         <div 
             id="band" 
-            istablet={isTablet ? "true" : "false"}
-            ismobileonly={isMobileOnly ? "true" : "false"}
+            istablet="true"
+            // istablet={isTablet ? "true" : "false"}
+            // ismobileonly={isMobileOnly ? "true" : "false"}
         >
 
             <TableOfContentIcon

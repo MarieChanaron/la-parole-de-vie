@@ -1,6 +1,6 @@
 import React, { useLayoutEffect, useEffect } from 'react';
 import PropTypes from "prop-types";
-import { isTablet, isMobileOnly, isMobile } from 'react-device-detect';
+// import { isTablet, isMobileOnly, isMobile } from 'react-device-detect';
 
 // Styles
 import './styles.css';
@@ -27,9 +27,9 @@ function ReaderText({text}) {
                 window.scrollTo(0,0);
             } else {
                 if (verseRef.current && initial) {
-                    if (isMobile || window.innerHeight > 700) {
+                    // if (isMobile || window.innerHeight > 700) {
                         verseRef.current.scrollIntoView({block: 'center', inline: 'nearest'});
-                    }
+                    // }
                     initial.current = false;
                 }
             }
@@ -43,19 +43,20 @@ function ReaderText({text}) {
 
 
     useEffect( () => {
-        if (isTablet) {
+        // if (isTablet) {
             window.addEventListener('orientationchange', reload);
             return () => window.removeEventListener('orientationchange', reload);
-        }
+        // }
     }, []); 
 
 
     return (
         <div 
             id="readerText" 
-            istablet={isTablet ? "true" : "false"}
-            ismobileonly={isMobileOnly ? "true" : "false"}
-            ismobile={isMobile ? "true" : "false"}
+            istablet="true"
+            // istablet={isTablet ? "true" : "false"}
+            // ismobileonly={isMobileOnly ? "true" : "false"}
+            // ismobile={isMobile ? "true" : "false"}
         >
 
             {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { isMobileSafari } from 'react-device-detect';
+// import { isMobileSafari } from 'react-device-detect';
 
 // Styles
 import './styles.css';
@@ -12,7 +12,7 @@ function NotFound() {
   return (
     <div 
       id="notFound"
-      isMobileSafari={isMobileSafari ? "true" : "false"}
+      // isMobileSafari={isMobileSafari ? "true" : "false"}
     >
       <img src={icon} alt="aucun résultat" />
       <p>Aucun verset . . .</p>
