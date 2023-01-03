@@ -28,9 +28,9 @@ function ReaderText({text}) {
                 window.scrollTo(0,0);
             } else {
                 if (verseRef.current && initial) {
-                    // if (isMobile || window.innerHeight > 700) {
+                    if (isMobile || window.innerHeight > 700) {
                         verseRef.current.scrollIntoView({block: 'center', inline: 'nearest'});
-                    // }
+                    }
                     initial.current = false;
                 }
             }
