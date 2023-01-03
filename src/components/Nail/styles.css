@@ -73,7 +73,27 @@
 
 @media (max-width: 768px) {
     #nail[istablet="true"] {
-        top: 96px;
+        left: 0px;
+        padding: 4px 5px;
+        position: fixed;
+        top: 80px;
+        border-color: var(--buttonNormalColor);
+    }
+    #nail[istablet="true"][position="right"] {
+        left: 340px;
+        border-color: var(--buttonNormalColor);
+        padding: 4px 5px;
+    }
+    #nail[istablet="true"][position="right"] img {
+        width: 28px;
+        height: 28px;
+    }
+    #nail[istablet="true"] img {
+        width: 28px;
+        height: 28px;
+    }
+    #nail[istablet="true"] span {
+        display: none;
     }
 }
 

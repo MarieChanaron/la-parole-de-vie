@@ -31,7 +31,7 @@ function LightForm({boxShadow, setFormFocus}) {
     useEffect(() => {
         // Get the value param and fill the input text with it
         refInput.current.value = getUrlParam('value');
-    }, [refInput]
+    }, [] /* eslint-disable-line react-hooks/exhaustive-deps */
     );
 
     const handleFocus = event => {

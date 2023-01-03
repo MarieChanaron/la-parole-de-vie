@@ -59,6 +59,18 @@
     }
 }
 
+/* TABLET */
+
+@media (max-width: 768px) {
+    #grid[istablet="true"] {
+        margin-right: var(--margin);
+        width: unset;
+    }
+    #grid[istablet="true"][ismobileonly="true"] {
+        padding: 0 0 48px 0;
+    }
+}
+
 
 /* DEVICE MOBILE */
 

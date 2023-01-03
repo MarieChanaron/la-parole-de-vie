@@ -84,13 +84,27 @@
 /* DEVICE TABLET */
 
 #reader[istablet="true"] {
-    display: block;
-    height: calc(100% - 80px);
+    display: flex;
 }
 
 #reader[istablet="true"] .right {
     height: 100%;
+    display: block;
 }
+
+@media (max-width: 1200px) {
+    #reader[istablet="true"] {
+        display: block;
+        overflow: hidden;
+    }
+}
+
+@media (max-width: 768px) {
+    #reader[istablet="true"] {
+        padding-top: 0;
+    }
+}
+
 
 /* MOBILE PHONE */
 
@@ -132,8 +146,8 @@
 
 /* MOBILE SAFARI */
 
-#reader[ismobilesafari="true"] #readerLoaderWrapper,
-#reader[ismobilesafari="true"] #readerErrorContainer {
+#reader[ismobileonly="true"][ismobilesafari="true"] #readerLoaderWrapper,
+#reader[ismobileonly="true"][ismobilesafari="true"] #readerErrorContainer {
     position: fixed;
     width: 100%;
 }

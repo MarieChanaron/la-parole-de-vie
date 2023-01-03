@@ -10,6 +10,12 @@
     }
 }
 
+/* TABLET */
+
+#tableOfContentsStatic[istablet="true"] {
+    height: 100%;
+}
+
 
 /* MOBILE PHONE */
 

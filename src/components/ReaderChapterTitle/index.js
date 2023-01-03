@@ -36,4 +36,4 @@ ReaderChapterTitle.propTypes = {
   chapter: PropTypes.number
 }
 
-export default ReaderChapterTitle
+export default ReaderChapterTitle;

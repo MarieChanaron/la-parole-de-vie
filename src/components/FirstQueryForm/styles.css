@@ -102,7 +102,7 @@
     padding-bottom: 0;
 }
 
-#firstQueryForm[ismobilesafari="true"] {
+#firstQueryForm[ismobileonly="true"][ismobilesafari="true"] {
     padding-top: 0;
     padding-bottom: 0;
 }

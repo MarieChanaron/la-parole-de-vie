@@ -25,8 +25,6 @@ function Form() {
     const translationRef = React.createRef();
     const bookRef = React.createRef();
 
-    // const [focus, setFocus] = useState(false);
-
 
     const handleSubmit = e => {
         e.preventDefault();

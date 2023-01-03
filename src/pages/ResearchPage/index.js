@@ -20,7 +20,7 @@ function ResearchPage() {
       id="researchPage" 
       istablet={isTablet ? "true" : "false"}
       ismobileonly={isMobileOnly ? "true" : "false"}
-      style={isTablet ? {height: window.innerHeight} : null}
+      style={isTablet && window.innerWidth > 768 ? {height: window.innerHeight} : null}
     >
         <Banner />
         <ResearchFrame />

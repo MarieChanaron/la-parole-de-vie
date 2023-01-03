@@ -61,6 +61,18 @@
     height: calc(100% - 80px);
 }
 
+@media (max-width: 768px) {
+    #tableOfContentsSlide[istablet="true"] {
+        top: 64px;
+        margin-top: 0px;
+        height: calc(100% - 64px);
+        overscroll-behavior: none;
+    }
+    #tableOfContentsSlide[istablet="true"][show="show"] {
+        left: 0px;
+    }
+}
+
 
 /* MOBILE PHONE */
 

@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { isMobileOnly, isDesktop } from 'react-device-detect';
+import { isMobileOnly, isDesktop, isTablet } from 'react-device-detect';
 
 // Styles
 import './styles.css';
@@ -42,6 +42,7 @@ function TableOfContentsStatic() {
       id="tableOfContentsStatic" 
       className='tableOfContents'
       ref={containerRef}
+      istablet={isTablet ? "true" : "false"}
       ismobileonly={isMobileOnly ? "true" : "false"}
       isdesktop={isDesktop ? "true" : "false"}
     />

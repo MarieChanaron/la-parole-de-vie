@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useLayoutEffect } from 'react';
+import React, { useLayoutEffect, useEffect } from 'react';
 import PropTypes from "prop-types";
 import { isTablet, isMobileOnly, isMobile } from 'react-device-detect';
 
@@ -16,7 +16,6 @@ import { getUrlParam } from '../../helpers';
 function ReaderText({text}) {
 
     const initial = React.useRef(true);
-    const [textHeight, setTextHeight] = useState(undefined);
 
     const verseParam = Number(getUrlParam('verse'));
     const verseRef = React.useRef();
@@ -38,22 +37,23 @@ function ReaderText({text}) {
     );
 
 
+    const reload = () => {
+        window.location.reload();
+    }
+
+
     useEffect( () => {
         if (isTablet) {
-            const height = window.innerHeight;
-            if (height <= 992) {
-                setTextHeight(height - 294);
-            } else {
-                setTextHeight(height - 310);
-            }
+            window.addEventListener('orientationchange', reload);
+            return () => window.removeEventListener('orientationchange', reload);
         }
-    }, []);
+    }, []); 
 
 
     return (
         <div 
             id="readerText" 
-            style={textHeight ? {height: textHeight} : null}
+            istablet={isTablet ? "true" : "false"}
             ismobileonly={isMobileOnly ? "true" : "false"}
             ismobile={isMobile ? "true" : "false"}
         >
