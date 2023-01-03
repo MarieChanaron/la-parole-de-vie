@@ -41,10 +41,15 @@ function ReaderText({text}) {
     useEffect( () => {
         if (isTablet) {
             const height = window.innerHeight;
-            if (height <= 992) {
-                setTextHeight(height - 294);
-            } else {
+            const width = window.innerWidth;
+            if (width > 1200) {
                 setTextHeight(height - 310);
+            } else {
+                if (height <= 992) {
+                    setTextHeight(height - 294);
+                } else {
+                    setTextHeight(height - 310);
+                }
             }
         }
     }, []);
@@ -53,6 +58,7 @@ function ReaderText({text}) {
     return (
         <div 
             id="readerText" 
+            istablet="true"
             style={textHeight ? {height: textHeight} : null}
             ismobileonly={isMobileOnly ? "true" : "false"}
             ismobile={isMobile ? "true" : "false"}

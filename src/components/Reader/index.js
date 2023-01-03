@@ -28,6 +28,7 @@ function Reader() {
       istablet={isTablet ? "true": "false"}
       ismobilesafari={isMobileSafari ? "true" : "false"}
       ismobileonly={isMobileOnly ? "true" : "false"}
+      style={isTablet ? {height: window.innerHeight - 80} : null}
     >
 
       <TableOfContentsStatic />

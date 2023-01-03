@@ -14,7 +14,7 @@ function BibleReaderPage() {
   useEffect( () => {
     document.body.classList.add('scroll'); // For narrow page (desktop or mobile)
     if (isDesktop) {
-      document.body.classList.add('page-scroll'); // For low page in the height, on desktop only
+      document.body.classList.add('page-scroll'); // For low page, on desktop only
     }
   }, []);
 

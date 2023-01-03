@@ -84,12 +84,18 @@
 /* DEVICE TABLET */
 
 #reader[istablet="true"] {
-    display: block;
-    height: calc(100% - 80px);
+    display: flex;
 }
 
 #reader[istablet="true"] .right {
     height: 100%;
+    display: block;
+}
+
+@media (max-width: 1200px) {
+    #reader[istablet="true"] {
+        display: block;
+    }
 }
 
 /* MOBILE PHONE */
