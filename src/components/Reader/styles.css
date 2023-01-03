@@ -119,13 +119,13 @@
 }
 
 @media (max-height: 700px) and (min-width: 1201px) {
-    #reader {
+    #reader[istablet="false"][ismobileonly="false"] {
         height: 560px;
     }
 }
 
 @media (max-height: 700px) and (max-width: 1200px) and (min-width: 769px) {
-    #reader {
+    #reader[istablet="false"][ismobileonly="false"] {
         height: 630px;
     }
 }

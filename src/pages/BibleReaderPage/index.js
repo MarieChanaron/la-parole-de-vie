@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { isTablet, isMobileOnly } from 'react-device-detect';
+import { isTablet, isMobileOnly, isDesktop } from 'react-device-detect';
 
 // Style
 import './styles.css';
@@ -12,8 +12,10 @@ import Reader from '../../components/Reader';
 function BibleReaderPage() {
 
   useEffect( () => {
-    document.body.classList.add('scroll');
-    document.body.classList.add('page-scroll');
+    document.body.classList.add('scroll'); // For narrow page (desktop or mobile)
+    if (isDesktop) {
+      document.body.classList.add('page-scroll'); // For low page in the height, on desktop only
+    }
   }, []);
 
   return (

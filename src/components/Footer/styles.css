@@ -73,3 +73,10 @@ footer div {
         text-align: center;
     }
 }
+
+
+/* MOBILE PHONE */
+
+footer[ismobileonly="true"] {
+    position: relative;
+}

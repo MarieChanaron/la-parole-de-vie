@@ -4,7 +4,8 @@ import {
     isFirefox, 
     isMobileSafari, 
     isDesktop,
-    isTablet 
+    isTablet, 
+    isAndroid
 } from 'react-device-detect';
 
 // Styles
@@ -25,7 +26,7 @@ function HomeSearchPage() {
     useEffect( () => { /* eslint-disable-line react-hooks/exhaustive-deps */
         /* If the browser is Firefox, and if the device is mobile only, 
         save the height of the homepage in the session storage and retrieve it */
-        if (isFirefox && isMobileOnly) {
+        if (isMobileOnly && isFirefox) {
             if (!height && window.innerWidth < window.innerHeight) {
                 sessionStorage.setItem('height', window.innerHeight);
                 setHeight(sessionStorage.getItem('height'));
@@ -52,6 +53,7 @@ function HomeSearchPage() {
             istablet={isTablet ? "true" : "false"}
             isfirefox={isFirefox ? "true" : "false"}
             ismobilesafari={isMobileSafari ? "true" : "false"}
+            isandroid={isAndroid ? "true" : "false"}
         >
 
             <Banner transparency='transparentBg' />

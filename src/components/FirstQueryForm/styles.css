@@ -102,6 +102,11 @@
     padding-bottom: 0;
 }
 
+#firstQueryForm[ismobilesafari="true"] {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
 #firstQueryForm[ismobileonly="true"] #keyword,
 #firstQueryForm[ismobileonly="true"] select {
     margin-bottom: 16px;
@@ -115,10 +120,6 @@
     margin-bottom: 40px;
 }
 
-#firstQueryForm[ismobilesafari="true"] {
-    padding-top: 0;
-    padding-bottom: 0;
-}
 
 @media (max-width: 576px) {
     #firstQueryForm[ismobileonly="true"] > div {

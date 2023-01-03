@@ -138,3 +138,22 @@
         padding-bottom: 0;
     }
 }
+
+/* Portrait view - Android */
+@media (max-width: 576px) {
+    #homeSearchForm[isandroid="true"] {
+        height: fit-content !important;
+        position: static;
+    }
+    #homeSearchForm[isandroid="true"] #banner {
+        position: static;
+    }
+    #homeSearchForm[isandroid="true"] footer {
+        position: static !important;
+    }
+    #homeSearchForm[isandroid="true"] #firstQueryForm {
+        height: calc(100vh - 122px) !important;
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+}
