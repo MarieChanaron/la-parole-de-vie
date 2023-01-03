@@ -13,7 +13,7 @@
 }
 
 @media (max-height: 700px) and (min-width: 769px) {
-    #bibleReaderPage:not([istablet="true"]):not([ismobileonly="true"]) {
+    #bibleReaderPage[istablet="false"][ismobileonly="false"] {
         max-height: 700px;
     }
 }

@@ -55,7 +55,6 @@ function TableOfContentsSlide({showTable, showForm}) {
       formdisplayed={showForm ? 'true' : undefined}
       istablet={isTablet ? "true": "false"}
       ismobileonly={isMobileOnly ? "true" : "false"}
-      onScroll={e => console.log(e.target.scrollTop)}
     />
 
   )
