@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useEffect, useState } from 'react';
+import React, { useLayoutEffect, useEffect } from 'react';
 import PropTypes from "prop-types";
 // import { isTablet, isMobileOnly, isMobile } from 'react-device-detect';
 import { isMobile } from 'react-device-detect';
@@ -17,7 +17,7 @@ import { getUrlParam } from '../../helpers';
 function ReaderText({text}) {
 
     const initial = React.useRef(true);
-    const [textHeight, setTextHeight] = useState(undefined);
+    // const [textHeight, setTextHeight] = useState(undefined);
 
     const verseParam = Number(getUrlParam('verse'));
     const verseRef = React.useRef();
@@ -57,7 +57,7 @@ function ReaderText({text}) {
             id="readerText" 
             istablet="true"
             // istablet={isTablet ? "true" : "false"}
-            style={textHeight ? {height: textHeight} : null}
+            // style={textHeight ? {height: textHeight} : null}
             // ismobileonly={isMobileOnly ? "true" : "false"}
             // ismobile={isMobile ? "true" : "false"}
         >
