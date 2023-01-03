@@ -1,5 +1,5 @@
 import React from 'react';
-// import { isTablet, isMobileSafari, isMobileOnly } from 'react-device-detect';
+import { isTablet, isMobileSafari, isMobileOnly } from 'react-device-detect';
 
 // Styles
 import './styles.css';
@@ -25,12 +25,14 @@ function Reader() {
 
     <div 
       id="reader" 
-      istablet="true"
-      // istablet={isTablet ? "true": "false"}
-      // ismobilesafari={isMobileSafari ? "true" : "false"}
-      // ismobileonly={isMobileOnly ? "true" : "false"}
-      // style={isTablet ? {height: window.innerHeight - 80} : null}
-      style={{height: window.innerHeight - 80}}
+      istablet={isTablet ? "true": "false"}
+      ismobilesafari={isMobileSafari ? "true" : "false"}
+      ismobileonly={isMobileOnly ? "true" : "false"}
+      style={
+        isTablet && window.innerWidth > 768 
+        ? {height: window.innerHeight - 80} 
+        : (isTablet ? {height: window.innerHeight - 64} : null)
+      }
     >
 
       <TableOfContentsStatic />
@@ -40,8 +42,6 @@ function Reader() {
       >
 
         <Band />
-
-        <div id="readerLoaderWrapper"><Loader /></div>
 
         {
           loading

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
-// import { isFirefox, isMobileOnly, isTablet } from "react-device-detect";
+import { isFirefox, isMobileOnly, isTablet } from "react-device-detect";
 
 // Styles
 import "./styles.css";
@@ -36,16 +36,16 @@ function LightForm({boxShadow, setFormFocus}) {
 
     const handleFocus = event => {
         event.target.setSelectionRange(0,refInput.current.value.length);
-        // if (isFirefox && isMobileOnly) {
+        if (isFirefox && isMobileOnly) {
             setFormFocus(true);
-        // }
+        }
         setScrollPos(window.scrollY);
     }
 
     const handleBlur = () => {
-        // if (isFirefox && isMobileOnly) {
+        if (isFirefox && isMobileOnly) {
             setFormFocus(false);
-        // }
+        }
         window.scrollTo(0, scrollPos);
     }
 
@@ -54,9 +54,8 @@ function LightForm({boxShadow, setFormFocus}) {
         <form 
             id="lightForm" 
             onSubmit={handleSubmit} 
-            // istablet={isTablet ? "true" : "false"}
-            // ismobileonly={isMobileOnly ? "true" : "false"}
-            istablet="true"
+            istablet={isTablet ? "true" : "false"}
+            ismobileonly={isMobileOnly ? "true" : "false"}
         >
 
             <div boxshadow={boxShadow === false ? 'none' : null}>

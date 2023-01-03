@@ -56,7 +56,7 @@ function NavigationButtons({setKeyword, loading, nb, display, formFocus}) {
 
   useEffect( () => {
 
-    // if (isMobileOnly) {
+    if (isMobileOnly) {
       const banner = document.getElementById('banner'),
             nail = document.getElementById('nail'),
             lightForm = document.getElementById('lightForm'),
@@ -68,7 +68,7 @@ function NavigationButtons({setKeyword, loading, nb, display, formFocus}) {
       researchFrame.style.top = isMobileOnly && visible ? "88px" : null;
 
       window.scrollTo(0,0);
-    // }
+    }
 
   }, [visible]);
 
@@ -125,13 +125,13 @@ function NavigationButtons({setKeyword, loading, nb, display, formFocus}) {
     <div 
       id="navigationButtons" 
       display={display === false ? 'none' : undefined}
-      // ismobileonly={isMobileOnly ? "true" : "false"}
+      ismobileonly={isMobileOnly ? "true" : "false"}
     >
 
       <div 
         id="searchAmongResults" 
         className={visible ? 'visible' : undefined}
-        // ismobileonly={isMobileOnly ? "true" : "false"}
+        ismobileonly={isMobileOnly ? "true" : "false"}
         ref={frameRef}
       >
         <p>Rechercher parmi les résultats</p>

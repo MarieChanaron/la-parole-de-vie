@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import PropTypes from "prop-types";
-// import { isTablet, isMobileOnly } from 'react-device-detect';
+import { isTablet, isMobileOnly } from 'react-device-detect';
 
 // Styles
 import './styles.css';
@@ -53,9 +53,8 @@ function TableOfContentsSlide({showTable, showForm}) {
       ref={containerRef} 
       show={showTable ? 'show' : null} 
       formdisplayed={showForm ? 'true' : undefined}
-      istablet="true"
-      // istablet={isTablet ? "true": "false"}
-      // ismobileonly={isMobileOnly ? "true" : "false"}
+      istablet={isTablet ? "true": "false"}
+      ismobileonly={isMobileOnly ? "true" : "false"}
     />
 
   )

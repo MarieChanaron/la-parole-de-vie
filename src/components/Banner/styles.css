@@ -164,6 +164,13 @@
     display: none;
 }
 
+@media (max-width: 768px) {
+    #banner[istablet="true"] {
+        position: relative;
+        min-height: 64px;
+    }
+}
+
 
 /* MOBILE PHONE */
 

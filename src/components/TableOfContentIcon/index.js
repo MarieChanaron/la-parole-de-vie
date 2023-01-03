@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from "prop-types";
-// import { isMobileOnly } from 'react-device-detect';
+import { isMobileOnly } from 'react-device-detect';
 
 // Icon
 import tableOfContent from '../../images/icons/table-of-content.svg';
@@ -18,7 +18,7 @@ function TableOfContentIcon({showTable, setShowTable}) {
         alt="" 
         onClick={() => setShowTable(prev => !prev)} 
         position={showTable ? 'right' : null} 
-        // ismobileonly={isMobileOnly ? "true" : "false"}
+        ismobileonly={isMobileOnly ? "true" : "false"}
     />
   )
 }

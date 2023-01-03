@@ -92,6 +92,15 @@
     top: unset;
 }
 
+@media (max-width: 768px) {
+    #lightForm[istablet="true"] {
+        position: fixed;
+        padding-top: 16px;
+        height: 71px;
+        top: 64px;
+    }
+}
+
 /* MOBILE PHONE */
 
 #lightForm[ismobileonly="true"] {

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useLayoutEffect } from 'react';
-// import { isMobile, isTablet, isMobileOnly } from 'react-device-detect';
+import { isMobile, isTablet, isMobileOnly } from 'react-device-detect';
 
 // Styles 
 import './styles.css';
@@ -31,9 +31,9 @@ function ResearchFrame() {
 
 
   useLayoutEffect( () => {
-    // if (isMobile) {
+    if (isMobile) {
       showLeftPane === 'show' ? disableScroll() : enableScroll();
-    // }
+    }
   }, [showLeftPane])
   
 
@@ -60,9 +60,8 @@ function ResearchFrame() {
 
     <div 
       id="researchFrame" 
-      istablet="true"
-      // istablet={isTablet ? "true" : "false"}
-      // ismobileonly={isMobileOnly ? "true" : "false"}
+      istablet={isTablet ? "true" : "false"}
+      ismobileonly={isMobileOnly ? "true" : "false"}
     >
 
       <Nail 

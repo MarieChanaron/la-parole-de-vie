@@ -76,6 +76,12 @@
     }
 }
 
+@media (max-width: 784px) {
+    #readerText {
+        column-width: 250px;
+    }
+}
+
 @media (max-width: 768px) {
     #readerText {
         flex-basis: 100%;
@@ -127,6 +133,23 @@
 @media (max-width: 992px) {
     #readerText[istablet="true"] {
         height: calc(100% - 214px);
+    }
+}
+
+@media (max-width: 768px) {
+    #readerText[istablet="true"] {
+        height: calc(100% - 173px);
+        overflow-x: auto;
+        overflow-y: hidden;
+        column-width: 200px;
+        column-gap: 56px;
+        margin-left: var(--margin);
+        margin-right: var(--margin);
+        padding-top: 16px;
+        padding-bottom: 16px;
+        text-align: justify;
+        animation: fadeIn;
+        animation-duration: 1.3s;
     }
 }
 

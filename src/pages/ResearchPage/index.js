@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-// import { isTablet, isMobileOnly } from 'react-device-detect';
+import { isTablet, isMobileOnly } from 'react-device-detect';
 
 // Style
 import './styles.css';
@@ -18,11 +18,9 @@ function ResearchPage() {
   return (
     <div 
       id="researchPage" 
-      istablet="true"
-      // istablet={isTablet ? "true" : "false"}
-      // ismobileonly={isMobileOnly ? "true" : "false"}
-      // style={isTablet ? {height: window.innerHeight} : null}
-      style={{height: window.innerHeight}}
+      istablet={isTablet ? "true" : "false"}
+      ismobileonly={isMobileOnly ? "true" : "false"}
+      style={isTablet && window.innerWidth > 768 ? {height: window.innerHeight} : null}
     >
         <Banner />
         <ResearchFrame />

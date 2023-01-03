@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from "prop-types";
-// import { isTablet, isMobileOnly } from 'react-device-detect';
+import { isTablet, isMobileOnly } from 'react-device-detect';
 
 // Styles
 import './styles.css';
@@ -21,9 +21,8 @@ function SearchPane({showLeftPane, setShowLeftPane, resultsLength, total, loadin
       id="searchPane" 
       show={showLeftPane}
       className={`${total && "scrollable"}`}
-      istablet="true"
-      // istablet={isTablet ? "true" : "false"}
-      // ismobileonly={isMobileOnly ? "true" : "false"}
+      istablet={isTablet ? "true" : "false"}
+      ismobileonly={isMobileOnly ? "true" : "false"}
     >
 
         <Form />

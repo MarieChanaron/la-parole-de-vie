@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import PropTypes from "prop-types";
-// import { isMobileOnly } from "react-device-detect";
+import { isMobileOnly } from "react-device-detect";
 
 // Styles
 import "./styles.css";
@@ -142,7 +142,7 @@ function ReaderForm({showForm, showTable, boxshadow}) {
       show={showForm ? 'show' : null}
       boxshadow={boxshadow}
       tabledisplayed={showTable ? 'true' : undefined}
-      // ismobileonly={isMobileOnly ? "true" : "false"}
+      ismobileonly={isMobileOnly ? "true" : "false"}
     >
 
       <label htmlFor="translation">Traduction</label>
