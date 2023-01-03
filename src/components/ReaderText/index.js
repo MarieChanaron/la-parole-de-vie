@@ -46,7 +46,7 @@ function ReaderText({text}) {
             if (width > 1200) {
                 setTextHeight(height - 310);
             } else {
-                setTextHeight(height - 310);
+                setTextHeight(height - 294);
             }
         // }
     }, [window.innerWidth]); /* eslint-disable-line react-hooks/exhaustive-deps */
