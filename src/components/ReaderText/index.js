@@ -1,6 +1,7 @@
-import React, { useState, useEffect, useLayoutEffect } from 'react';
+import React, { useLayoutEffect } from 'react';
 import PropTypes from "prop-types";
-import { isTablet, isMobileOnly, isMobile } from 'react-device-detect';
+// import { isTablet, isMobileOnly, isMobile } from 'react-device-detect';
+import { isMobile } from 'react-device-detect';
 
 // Styles
 import './styles.css';
@@ -16,7 +17,7 @@ import { getUrlParam } from '../../helpers';
 function ReaderText({text}) {
 
     const initial = React.useRef(true);
-    const [textHeight, setTextHeight] = useState(undefined);
+    // const [textHeight, setTextHeight] = useState(undefined);
 
     const verseParam = Number(getUrlParam('verse'));
     const verseRef = React.useRef();
@@ -38,30 +39,31 @@ function ReaderText({text}) {
     );
 
 
-    useEffect( () => {
-        if (isTablet) {
-            const height = window.innerHeight;
-            const width = window.innerWidth;
-            if (width > 1200) {
-                setTextHeight(height - 310);
-            } else {
-                if (height <= 992) {
-                    setTextHeight(height - 294);
-                } else {
-                    setTextHeight(height - 310);
-                }
-            }
-        }
-    }, []);
+    // useEffect( () => {
+    //     if (isTablet) {
+    //         const height = window.innerHeight;
+    //         const width = window.innerWidth;
+    //         if (width > 1200) {
+    //             setTextHeight(height - 310);
+    //         } else {
+    //             if (height <= 992) {
+    //                 setTextHeight(height - 294);
+    //             } else {
+    //                 setTextHeight(height - 310);
+    //             }
+    //         }
+    //     }
+    // });
 
 
     return (
         <div 
             id="readerText" 
             istablet="true"
-            style={textHeight ? {height: textHeight} : null}
-            ismobileonly={isMobileOnly ? "true" : "false"}
-            ismobile={isMobile ? "true" : "false"}
+            // istablet={isTablet ? "true" : "false"}
+            // style={textHeight ? {height: textHeight} : null}
+            // ismobileonly={isMobileOnly ? "true" : "false"}
+            // ismobile={isMobile ? "true" : "false"}
         >
 
             {

@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
-import { isTablet, isMobileOnly, isDesktop } from 'react-device-detect';
+// import { isTablet, isMobileOnly, isDesktop } from 'react-device-detect';
+import { isDesktop } from 'react-device-detect';
 
 // Style
 import './styles.css';
@@ -21,9 +22,11 @@ function BibleReaderPage() {
   return (
       <div 
         id="bibleReaderPage" 
-        istablet={isTablet ? "true": "false"}
-        ismobileonly={isMobileOnly ? "true" : "false"}
-        style={isTablet ? {height: window.innerHeight} : null}
+        istablet="true"
+        // istablet={isTablet ? "true": "false"}
+        // ismobileonly={isMobileOnly ? "true" : "false"}
+        // style={isTablet ? {height: window.innerHeight} : null}
+        style={{height: window.innerHeight}}
       >
         <Banner />
         <Reader />

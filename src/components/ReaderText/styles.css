@@ -118,6 +118,21 @@
     font-size: 100%;
 }
 
+/* TABLET */
+
+@media (min-width: 993px) {
+    #readerText[istablet="true"] {
+        height: calc(100% - 230px);
+    }
+}
+
+@media (max-width: 992px) {
+    #readerText[istablet="true"] {
+        height: calc(100% - 214px);
+    }
+}
+
+
 /* MOBILE PHONE */
 
 #readerText[ismobileonly="true"] {
