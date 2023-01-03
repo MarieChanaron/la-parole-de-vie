@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-// import { isMobile, isTablet, isMobileOnly } from 'react-device-detect';
+import { isMobile, isTablet, isMobileOnly } from 'react-device-detect';
 
 // React Router
 import { Link } from 'react-router-dom';
@@ -20,10 +20,9 @@ function Banner({transparency}) {
   return (
     <header 
       id="banner" 
-      // ismobile={isMobile ? "true" : "false"} 
-      // ismobileonly={isMobileOnly ? "true" : "false"}
-      // istablet={isTablet ? "true": "false"}
-      istablet="true"
+      ismobile={isMobile ? "true" : "false"} 
+      ismobileonly={isMobileOnly ? "true" : "false"}
+      istablet={isTablet ? "true": "false"}
       transparency={transparency} 
     >
 

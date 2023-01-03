@@ -5,6 +5,7 @@ import { isMobileOnly } from 'react-device-detect';
 // Styles
 import './styles.css';
 
+
 function Veil({display, displayTable, displayForm, handleClick}) {
   
   return (
