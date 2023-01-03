@@ -1,4 +1,4 @@
-import React, { useLayoutEffect } from 'react';
+import React, { useLayoutEffect, useEffect, useState } from 'react';
 import PropTypes from "prop-types";
 // import { isTablet, isMobileOnly, isMobile } from 'react-device-detect';
 import { isMobile } from 'react-device-detect';
@@ -17,7 +17,7 @@ import { getUrlParam } from '../../helpers';
 function ReaderText({text}) {
 
     const initial = React.useRef(true);
-    // const [textHeight, setTextHeight] = useState(undefined);
+    const [textHeight, setTextHeight] = useState(undefined);
 
     const verseParam = Number(getUrlParam('verse'));
     const verseRef = React.useRef();
@@ -39,21 +39,17 @@ function ReaderText({text}) {
     );
 
 
-    // useEffect( () => {
-    //     if (isTablet) {
-    //         const height = window.innerHeight;
-    //         const width = window.innerWidth;
-    //         if (width > 1200) {
-    //             setTextHeight(height - 310);
-    //         } else {
-    //             if (height <= 992) {
-    //                 setTextHeight(height - 294);
-    //             } else {
-    //                 setTextHeight(height - 310);
-    //             }
-    //         }
-    //     }
-    // });
+    useEffect( () => {
+        // if (isTablet) {
+            const height = window.innerHeight;
+            const width = window.innerWidth;
+            if (width > 1200) {
+                setTextHeight(height - 310);
+            } else {
+                setTextHeight(height - 310);
+            }
+        // }
+    }, [window.innerWidth]); /* eslint-disable-line react-hooks/exhaustive-deps */
 
 
     return (
@@ -61,7 +57,7 @@ function ReaderText({text}) {
             id="readerText" 
             istablet="true"
             // istablet={isTablet ? "true" : "false"}
-            // style={textHeight ? {height: textHeight} : null}
+            style={textHeight ? {height: textHeight} : null}
             // ismobileonly={isMobileOnly ? "true" : "false"}
             // ismobile={isMobile ? "true" : "false"}
         >
