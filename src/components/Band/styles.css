@@ -60,7 +60,7 @@
 /* MOBILE PHONE */
 
 #band[ismobileonly="true"] {
-    padding: auto var(--margin);
+    padding: 12px var(--margin);
     position: fixed;
     z-index: 102;
     top: 64px;
