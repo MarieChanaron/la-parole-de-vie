@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { isMobileSafari, isTablet, isMobileOnly } from "react-device-detect";
+// import { isMobileSafari, isTablet, isMobileOnly } from "react-device-detect";
 
 // Styles
 import './styles.css';
@@ -19,9 +19,10 @@ function ResultPane({results, error, loading, nb}) {
 
     <div 
       id="resultPane" 
-      istablet={isTablet ? "true" : "false"}
-      ismobilesafari={isMobileSafari ? "true" : "false"}
-      ismobileonly={isMobileOnly ? "true" : "false"}
+      istablet="true"
+      // istablet={isTablet ? "true" : "false"}
+      // ismobilesafari={isMobileSafari ? "true" : "false"}
+      // ismobileonly={isMobileOnly ? "true" : "false"}
     >
 
       { 

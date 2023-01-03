@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { isMobileOnly } from "react-device-detect";
+// import { isMobileOnly } from "react-device-detect";
 
 // Style
 import "./styles.css";
@@ -15,7 +15,7 @@ function Grid({results}) {
     <div 
       id="grid" 
       isresult={results.length > 0 ? 'true' : 'false'} 
-      ismobileonly={isMobileOnly ? "true" : "false"}
+      // ismobileonly={isMobileOnly ? "true" : "false"}
     >
       
       {
