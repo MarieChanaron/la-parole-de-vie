@@ -40,9 +40,6 @@
     }
     #searchLoaderWrapper {
         margin-left: var(--margin);
-        width: calc(100vw - 2*var(--margin));
-    }
-    #resultPane[istablet="true"] #searchLoaderWrapper {
         width: calc(100% - 2*var(--margin));
     }
     #searchLoaderWrapper[isresult="false"] {
