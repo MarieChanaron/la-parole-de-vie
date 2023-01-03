@@ -47,10 +47,10 @@ function ReaderText({text}) {
     useEffect( () => {
         // if (isTablet) {
             window.addEventListener('orientationchange', reload);
-            ScreenOrientation.addEventListener('change', reload);
+            // ScreenOrientation.addEventListener('change', reload);
             return () => {
                 window.removeEventListener('orientationchange', reload);
-                ScreenOrientation.removeEventListener('change', reload);
+                // ScreenOrientation.removeEventListener('change', reload);
             }
         // }
     }, []); 
