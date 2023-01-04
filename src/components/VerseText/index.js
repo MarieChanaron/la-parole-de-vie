@@ -8,7 +8,7 @@ import './styles.css';
 import { cutString } from '../../helpers';
 
 
-function VerseText({text}) {
+function VerseText({text, selected}) {
 
     const array = cutString(text);
   
@@ -17,10 +17,26 @@ function VerseText({text}) {
     return (
         <>
             {
+                selected === "selected" ?
+                <>
+                    <span className='bracket'>&#91;</span>
+                    <span>&nbsp;</span>
+                </>
+                : null
+            }
+            {
                 array.map(
                     (item, index) => 
                         importantWords.includes(item) ? <span key={index} className='important'>{item}</span> : item
                 )
+            }
+            {
+                selected === "selected" ?
+                <>
+                    <span>&nbsp;</span>
+                    <span className='bracket'>&#93;</span>
+                </>
+                : null
             }
         </>
     )

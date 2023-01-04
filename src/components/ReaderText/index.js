@@ -70,29 +70,14 @@ function ReaderText({text}) {
                                 {verse.verseNb}
                             </span>
 
-                            <span>
-                                &nbsp;
-                            </span>
+                            <span>&nbsp;</span>
 
                             <p className='content'>
 
-                                <span className='bracket'>
-                                    { verse.verseNb === verseParam ? '[' : null }
-                                </span>
-
-                                <span>
-                                    { verse.verseNb === verseParam ? ' ' : null }
-                                </span>
-
-                                <VerseText text={verse.verseText} />
-
-                                <span>
-                                    { verse.verseNb === verseParam ? ' ' : null }
-                                </span>
-
-                                <span className='bracket'>
-                                    { verse.verseNb === verseParam ? ']' : null }
-                                </span>
+                                <VerseText 
+                                    text={verse.verseText} 
+                                    selected={verse.verseNb === verseParam && "selected"}
+                                />
 
                             </p>
 
