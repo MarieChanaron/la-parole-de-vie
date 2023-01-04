@@ -41,6 +41,9 @@ function HomeSearchPage() {
         }
         /* Do not show always the scrollbar on the body - auto by default */
         document.body.classList.remove('scroll');
+        /* Set the height of the viewport on first loading if the device is an Android phone - to prevent the page being crushed on opening the keyboard */
+        let viewportHeight = window.innerHeight;
+        document.documentElement.style.setProperty('--viewportHeight', `${viewportHeight}px`);
     }, []);
 
 
