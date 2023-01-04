@@ -33,7 +33,8 @@ function ReaderChapterTitle({book, chapter, className}) {
 
 ReaderChapterTitle.propTypes = {
   book: PropTypes.object, 
-  chapter: PropTypes.number
+  chapter: PropTypes.number,
+  className: PropTypes.string
 }
 
 export default ReaderChapterTitle;

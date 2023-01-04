@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { isMobileOnly, isMobileSafari, isFirefox } from 'react-device-detect';
 
 // Styles
@@ -26,6 +27,10 @@ function FirstQueryForm({height}) {
       </div>
     </>
   )
+}
+
+FirstQueryForm.propTypes = {
+  height: PropTypes.number
 }
 
 export default FirstQueryForm;

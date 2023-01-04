@@ -189,7 +189,9 @@ function NavigationButtons({setKeyword, loading, nb, display, formFocus}) {
 NavigationButtons.propTypes = {
   setKeyword: PropTypes.func, 
   loading: PropTypes.bool, 
-  nb: PropTypes.bool
+  nb: PropTypes.bool,
+  display: PropTypes.bool,
+  formFocus: PropTypes.bool
 }
 
 export default NavigationButtons;

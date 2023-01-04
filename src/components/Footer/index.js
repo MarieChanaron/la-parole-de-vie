@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { isMobileOnly } from 'react-device-detect';
 
 // Styles
@@ -30,10 +29,6 @@ function Footer() {
     
   )
 
-}
-
-Footer.propTypes = {
-  className: PropTypes.string
 }
 
 export default Footer;

@@ -78,7 +78,8 @@ function LightForm({boxShadow, setFormFocus}) {
 }
 
 LightForm.propTypes = {
-    boxShadow: PropTypes.bool
+    boxShadow: PropTypes.bool,
+    setFormFocus: PropTypes.func
 }
 
 export default LightForm;
