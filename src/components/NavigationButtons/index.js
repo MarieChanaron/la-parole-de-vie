@@ -16,6 +16,7 @@ function NavigationButtons({setKeyword, loading, nb, display, formFocus}) {
   const [visible, setVisible] = useState(false);
   const [order, setOrder] = useState(false);
   const [focus, setFocus] = useState(formFocus);
+  const [scrollPos, setScrollPos] = useState(); // To save the scroll position for mobile as the window moves on opening the virtual keyboard
 
 
   const initial = useRef(true);
@@ -111,9 +112,11 @@ function NavigationButtons({setKeyword, loading, nb, display, formFocus}) {
     if (isMobileOnly && isFirefox) {
       setFocus(false);
     }
+    window.scrollTo(0, scrollPos);
   }
 
   const handleFocus = event => {
+    setScrollPos(window.scrollY);
     event.target.setSelectionRange(0,value.length);
     if (isMobileOnly && isFirefox) {
       setFocus(true);
