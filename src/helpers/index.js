@@ -19,31 +19,35 @@ export const capitalizeFirstLetter = string => {
 // Highlight some words in a text
 export function cutString(string) {
 
-    const normalChar = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','é','è','ê','î','û','â','ô','ç','à','ù','-',"'"];
-    let array = [];
-    let word = '';
-
+    const separators = ['.',',',';',':','!','?',' '];
     const specialMarks = ['!','?',';'];
     const points = ['.','!','?'];
+    
+    let array = [];
+    let word = '';
 
     // I iterate through the string to find special characters (special characters are those that are not in the array above).
     // When a special character is found, I push the characters in the array and start a new array item.
   
     for (let i=0; i<string.length; i++) {
-      
-      if (normalChar.includes(string[i].toLowerCase())) { 
-        const char = points.includes(string[i-2]) ? string[i].toUpperCase() : string[i];
-        word = word + char;
+
+      let char;
+      if (points.includes(string[i-2])) {
+        char = string[i].toUpperCase();
       } else {
-        array.push(
-          word, 
-          specialMarks.includes(string[i]) ? `\u2009${string[i]}` : string[i],
-        );
-        word = '';
+        char = specialMarks.includes(string[i]) ? `\u2009${string[i]}` : string[i]
       }
-  
+      
+      if (separators.includes(string[i])) { 
+        array.push(word, char);
+        word = '';
+      } else {
+        word = word + char;
+      }
+    
     }
-    return array;
+
+  return array;
 }
 
 
