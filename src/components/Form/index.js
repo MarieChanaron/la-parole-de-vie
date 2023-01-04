@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { isFirefox, isMobileOnly } from "react-device-detect";
+import { isFirefox, isMobileOnly, isAndroid } from "react-device-detect";
 
 // Styles
 import "./styles.css";
@@ -34,7 +34,7 @@ function Form() {
             let value = inputRef.current.value.length > 0 ? inputRef.current.value : "vie éternelle";
             redirectToSearchUrl(translation, reference, value);
         }
-        if (isMobileOnly && isFirefox) {
+        if ((isMobileOnly && isFirefox) || isAndroid) {
             setTimeout( () => sendQuery(), 100 );
         } else {
             sendQuery();
@@ -84,7 +84,7 @@ function Form() {
                     id="icon" 
                     type="submit" 
                     value='' 
-                    onClick={() => isFirefox && isMobileOnly ? inputRef.current.blur() : undefined}
+                    onClick={() => (isMobileOnly && isFirefox) || isAndroid ? inputRef.current.blur() : undefined}
                 />
             </div>
 
