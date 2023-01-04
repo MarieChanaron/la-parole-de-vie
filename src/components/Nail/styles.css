@@ -65,6 +65,7 @@
         left: calc(100% - 39px);
         align-items: center;
         border-color: transparent;
+        box-shadow: -2px 1px 4px 2px RGBa(0, 0, 0, 0.05);
     }
 }
 

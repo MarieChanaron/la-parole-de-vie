@@ -97,5 +97,6 @@ img#tableOfContentIcon[ismobileonly="true"][position="right"] {
     img#tableOfContentIcon[ismobileonly="true"][position="right"] {
         left: calc(100% - 35px);
         border-color: transparent;
+        box-shadow: -2px 1px 4px 2px RGBa(0, 0, 0, 0.05);
     }
 }
