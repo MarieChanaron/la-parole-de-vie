@@ -59,7 +59,7 @@ function HomeSearchPage() {
             <Banner transparency='transparentBg' />
 
             <FirstQueryForm 
-                height={height-62} /* 62px is the height of the footer on mobile */
+                height={height-62} /* 62px is the height of the footer on mobile in portrait view */
             />
 
             <Footer />

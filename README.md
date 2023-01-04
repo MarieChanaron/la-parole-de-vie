@@ -1,10 +1,10 @@
 # La Parole de Vie
 
-CE PROJET EST ACTUELLEMENT EN COURS DE DEVELOPPEMENT
+CE PROJET EST ACTUELLEMENT EN COURS DE DEVELOPPEMENT / THIS PROJECT IS CURRENTLY BEING DEVELOPED.
 
 ## Description
 
-Il s'agit d'un projet personnel qui me tenait à coeur. Cette application a pour but principal d'aider les gens à méditer sur les versets bibliques.
+Cette application est un projet personnel. Elle a pour objectif d'aider à méditer sur les versets bibliques.
 
 ## Fonctionnalités
 
@@ -18,17 +18,15 @@ Le fait de cliquer sur un verset proposé dans la page de résultats nous ramèn
 
 ## Provenance des données
 
-Cette application web utilise l'[API Bible SuperSearch](https://www.biblesupersearch.com/)
+Cette application web utilise la base de données de l'[API Bible SuperSearch](https://www.biblesupersearch.com/)
 
 ## Traductions de la Bible
 
-Cette application propose les quatre traductions de la Bible en langue française, proposées par Bible SuperSearch :
-- La Bible Louis Segond (1910)
-- La Bible de l'Epée (Calvin)
-- la traduction du pasteur J-Fr Ostervald
-- La traduction du pasteur David Martin 
-
-J'ai constaté que la très grande majorité des applications bibliques utilisaient la Bible Louis Segond comme seule et unique traduction. J'apprécie beaucoup la Bible David Martin, d'une part pour la précision des mots choisis et par la beauté des tournures de l'époque, et d'autre part parce que cette traduction me permet de comprendre davantage le sens spirituel des versets. Je la propose ainsi comme traduction par défaut dans mon application. Le fait de proposer la traduction David Martin permet de la remettre au goût du jour alors qu'elle ne semble plus être éditée en format papier.
+Cette application propose quatre traductions de la Bible en langue française:
+- David Martin (traduction par défaut)
+- Louis Segond (1910)
+- La Bible de l'Epée
+- J-Fr Ostervald
 
 ## Technologie et dépendances
 
