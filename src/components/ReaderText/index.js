@@ -96,15 +96,16 @@ function ReaderText({text}) {
 
                             </p>
 
+                            {
+                                verse.verseNb === text.length
+                                ? <p id="divider">* * *</p>
+                                : null
+                            }
+
                         </div>
+
                 )
 
-            }
-
-            {
-                text.length > 0
-                ? <p id="divider">* * *</p>
-                : null
             }
 
         </div>
