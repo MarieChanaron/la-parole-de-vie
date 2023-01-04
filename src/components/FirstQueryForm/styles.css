@@ -28,7 +28,7 @@
 #firstQueryForm form label {
     color: white;
     display: inline-block;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(4px);
     padding-left: 4px;
     padding-right: 16px;
     padding-bottom: 2px;
