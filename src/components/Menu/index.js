@@ -56,7 +56,7 @@ function Menu() {
         alt="" 
         onClick={toggle} ref={burgerMenuRef} 
         ismobileonly={isMobileOnly ? "true" : "false"}
-        istablet="true"
+        istablet={isTablet ? "true" : "false"}
       />
       <div className={`buttons ${visible}`}>
         <Link to='/' onClick={reset}>
