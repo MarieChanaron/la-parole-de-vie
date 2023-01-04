@@ -31,7 +31,7 @@ Cette application propose quatre traductions de la Bible en langue française:
 ## Technologie et dépendances
 
 React version 18.2.0  
-npm create-react-app ***  
+npx create-react-app ***  
   
 react-device-detect :   
 npm install react-device-detect  

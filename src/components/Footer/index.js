@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-// import { isMobileOnly } from 'react-device-detect';
+import { isMobileOnly } from 'react-device-detect';
 
 // Styles
 import './styles.css';
@@ -14,7 +14,7 @@ function Footer() {
   return (
 
     <footer 
-      // ismobileonly={isMobileOnly ? "true" : "false"}
+      ismobileonly={isMobileOnly ? "true" : "false"}
     >
 
       <div className="col">
@@ -24,7 +24,7 @@ function Footer() {
 
       <a href="mailto:chanaronmarie@gmail.com" className="col">Contact</a>
 
-      <p className="col center">© 2022 ~ Tous droits réservés </p>
+      <p className="col center">© {new Date().getFullYear()} ~ Tous droits réservés </p>
 
     </footer>
     
