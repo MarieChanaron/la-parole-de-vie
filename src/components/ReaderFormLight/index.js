@@ -126,7 +126,7 @@ function ReaderFormLight({boxshadow}) {
       refChapter.current.value = chapter;
       refVerse.current.value = verse;
 
-    }, [book.shortname, chapter, refChapter, refVerse, verse]
+    }, [] /* eslint-disable-line react-hooks/exhaustive-deps */
   );
 
 
