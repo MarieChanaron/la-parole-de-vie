@@ -151,6 +151,9 @@
         animation: fadeIn;
         animation-duration: 1.3s;
     }
+    #divider {
+        display: block;
+    }
 }
 
 
