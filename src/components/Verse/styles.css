@@ -46,7 +46,7 @@
 
 
 @media (max-width: 1200px) {
-    .verse:hover{
+    .verse[isdesktop="true"]:hover{
         transform: scale(1.05);
     }
 }
