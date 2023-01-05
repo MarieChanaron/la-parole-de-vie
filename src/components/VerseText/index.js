@@ -27,7 +27,7 @@ function VerseText({text, selected}) {
             {
                 array.map(
                     (item, index) => 
-                        importantWords.includes(item) ? <span key={index} className='important'>{item}</span> : item
+                        importantWords.includes(item) ? <span key={index} className='important'>{item}</span> : <span>{item}</span>
                 )
             }
             {

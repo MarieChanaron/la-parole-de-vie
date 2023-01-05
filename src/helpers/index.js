@@ -20,7 +20,7 @@ export const capitalizeFirstLetter = string => {
 export function cutString(string) {
 
     const separators = ['.',',',';',':','!','?',' '];
-    const specialMarks = ['!','?',';'];
+    const specialMarks = ['!','?',';',':'];
     const points = ['.','!','?'];
     
     let array = [];
@@ -35,17 +35,24 @@ export function cutString(string) {
       if (points.includes(string[i-2])) {
         char = string[i].toUpperCase();
       } else {
-        char = specialMarks.includes(string[i]) ? `\u2009${string[i]}` : string[i]
+        char = specialMarks.includes(string[i]) ? `\u2009${string[i]}` : string[i] // Add a small non-breaking space before the character
       }
       
       if (separators.includes(string[i])) { 
-        array.push(word, char);
+        if (word.length > 0) {
+          array.push(word)
+        }
+        if (!(char === ' ' && specialMarks.includes(string[i+1]))) {
+          array.push(char);
+        }
         word = '';
       } else {
         word = word + char;
       }
     
     }
+  
+  console.log(array);
 
   return array;
 }
