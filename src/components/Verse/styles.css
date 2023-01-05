@@ -12,10 +12,13 @@
     animation-duration: 1s;
 }
 
+.verse:hover{
+    border-color: var(--verseAccentColor);
+}
+
 .verse[isdesktop="true"]:hover{
     transform: scale(1.07);
     transition: 0.2s ease-in-out;
-    border-color: var(--verseAccentColor);
 }
 
 .verse p:nth-child(2) {
