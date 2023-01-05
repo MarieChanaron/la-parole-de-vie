@@ -41,8 +41,11 @@ function NavigationButtons({setKeyword, loading, nb, display, formFocus}) {
         return;
       }
 
-      window.scrollTo(0,0);
-      scrollToTop();
+      if (isMobileOnly) {
+        window.scrollTo(0,0);
+      } else {
+        scrollToTop();
+      }
 
       const timer = setTimeout(
         () => {
