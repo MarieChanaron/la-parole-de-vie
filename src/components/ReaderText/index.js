@@ -27,7 +27,9 @@ function ReaderText({text}) {
         if (isMobile || (window.innerWidth <= 768 || window.innerHeight > 700)) {
             verseRef.current.scrollIntoView({block: yScroll, inline: xScroll});
         } else {
-            window.scrollTo(0,0);
+            if (!isMobile) {
+                window.scrollTo(0,0);
+            }
         }
     }
 
