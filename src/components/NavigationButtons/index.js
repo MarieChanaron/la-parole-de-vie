@@ -42,6 +42,7 @@ function NavigationButtons({setKeyword, loading, nb, display, formFocus}) {
       }
 
       window.scrollTo(0,0);
+      scrollToTop();
 
       const timer = setTimeout(
         () => {
@@ -71,7 +72,11 @@ function NavigationButtons({setKeyword, loading, nb, display, formFocus}) {
       window.scrollTo(0,0);
     }
 
-  }, [visible]);
+    if (!isMobileOnly && visible === false && value !=='') {
+      scrollToTop();
+    }
+
+  }, [visible]); /* eslint-disable-line react-hooks/exhaustive-deps */
 
 
   // Event handlers
@@ -112,7 +117,9 @@ function NavigationButtons({setKeyword, loading, nb, display, formFocus}) {
     if (isMobileOnly && isFirefox) {
       setFocus(false);
     }
-    window.scrollTo(0, scrollPos);
+    if (isMobileOnly) {
+      window.scrollTo(0, scrollPos);
+    }
   }
 
   const handleFocus = event => {
