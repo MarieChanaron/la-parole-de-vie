@@ -220,12 +220,3 @@ export const checkTranslation = value => {
   }
   return false;
 }
-
-
-export const deviceOrientation = () => {
-  if (window.screen.availHeight < window.screen.availWidth) {
-    return "landscape";
-  } else {
-    return "portrait";
-  }
-}
