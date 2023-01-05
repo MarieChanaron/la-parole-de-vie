@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { isDesktop } from "react-device-detect";
 
 // Styles
 import "./styles.css";
@@ -29,7 +30,12 @@ function Verse(props) {
 
 
   return (
-    <div id={id} className={`verse ${testament}`} onClick={handleClick}>
+    <div 
+      id={id} 
+      className={`verse ${testament}`} 
+      isdesktop={isDesktop ? "true" : "false"}
+      onClick={handleClick}
+    >
 
       <div className="text">
         <p><VerseText text={text} /></p>

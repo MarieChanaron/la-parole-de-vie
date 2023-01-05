@@ -12,7 +12,7 @@
     animation-duration: 1s;
 }
 
-.verse:hover{
+.verse[isdesktop="true"]:hover{
     transform: scale(1.07);
     transition: 0.2s ease-in-out;
     border-color: var(--verseAccentColor);
@@ -48,8 +48,8 @@
     }
 }
 
-/* @media (max-width: 768px) {
-    .verse:hover{
+@media (max-width: 768px) {
+    .verse[isdesktop="true"]:hover{
         transform: scale(1.0);
     }
-} */
+}
