@@ -96,7 +96,7 @@ function ReaderText({text}) {
 
                             {
                                 verse.verseNb === text.length
-                                ? <p id="divider">* * *</p>
+                                ? <p id="divider">* * *</p> // Inserted inside of the verse div to avoid as much as possible to see it alone on a new column
                                 : null
                             }
 

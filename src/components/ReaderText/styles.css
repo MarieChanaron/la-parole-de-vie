@@ -49,7 +49,8 @@
 
 #divider {
     text-align: center;
-    margin: 24px 0 16px 0;
+    padding: 24px 0 16px 0;
+    background-color: white;
 }
 
 #readerText .important {
