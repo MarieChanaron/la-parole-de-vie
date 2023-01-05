@@ -151,7 +151,7 @@
         animation: fadeIn;
         animation-duration: 1.3s;
     }
-    #divider {
+    #readerText[istablet="true"] #divider {
         display: block;
     }
 }
