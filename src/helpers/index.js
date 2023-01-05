@@ -51,8 +51,6 @@ export function cutString(string) {
       }
     
     }
-  
-  console.log(array);
 
   return array;
 }
