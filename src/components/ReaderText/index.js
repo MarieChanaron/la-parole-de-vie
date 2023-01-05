@@ -27,9 +27,7 @@ function ReaderText({text}) {
         if (isMobile || (window.innerWidth <= 768 || window.innerHeight > 700)) {
             verseRef.current.scrollIntoView({block: yScroll, inline: xScroll});
         } else {
-            if (!isMobile) {
-                window.scrollTo(0,0);
-            }
+            window.scrollTo(0,0);
         }
     }
 
@@ -58,8 +56,10 @@ function ReaderText({text}) {
             window.addEventListener('orientationchange', reload);
             return () => window.removeEventListener('orientationchange', reload);
         }
-        window.addEventListener('resize', scrollIntoText);
-        return () => window.removeEventListener('resize', scrollIntoText);
+        if (!isMobile) {
+            window.addEventListener('resize', scrollIntoText);
+            return () => window.removeEventListener('resize', scrollIntoText);
+        }
     }, []); 
 
 
