@@ -10,7 +10,7 @@
 }
 
 #readerChapterTitle h2 span {
-    font-family: 'Tangerine', 'Crimson Text', serif;
+    font-family: 'Tangerine', 'Crimson Text', 'Garamond', 'Times New Roman', Times, serif;
     font-size: 3.6rem;
 }
 
@@ -65,7 +65,7 @@
 }
 
 #readerChapterTitle[ismobileonly="true"] h2 span {
-    font-family: 'Crimson Text', serif !important;
+    font-family: 'Crimson Text', 'Garamond', 'Times New Roman', Times, serif !important;
     font-size: 2rem !important;
     line-height: 3.3rem !important;
 }

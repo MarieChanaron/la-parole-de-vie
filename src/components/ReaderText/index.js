@@ -21,17 +21,26 @@ function ReaderText({text}) {
     const verseRef = React.useRef();
 
 
+    const scrollIntoText = () => {
+        let xScroll = isMobile || (window.innerWidth > 1487 && window.innerWidth <= 1850) ? 'center' : 'nearest';
+        let yScroll = isMobile || window.innerWidth <= 768 ? 'center' : 'nearest'; 
+        if (isMobile || (window.innerWidth <= 768 || window.innerHeight > 700)) {
+            verseRef.current.scrollIntoView({block: yScroll, inline: xScroll});
+        } else {
+            window.scrollTo(0,0);
+        }
+    }
+
+
     useLayoutEffect(
         () => {
-            if (!verseParam) {
-                window.scrollTo(0,0);
-            } else {
+            if (verseParam) {
                 if (verseRef.current && initial) {
-                    if (isMobile || window.innerHeight > 700) {
-                        verseRef.current.scrollIntoView({block: 'center', inline: 'nearest'});
-                    }
+                    scrollIntoText();
                     initial.current = false;
                 }
+            } else {
+                window.scrollTo(0,0);
             }
         }
     );
@@ -47,6 +56,8 @@ function ReaderText({text}) {
             window.addEventListener('orientationchange', reload);
             return () => window.removeEventListener('orientationchange', reload);
         }
+        window.addEventListener('resize', scrollIntoText);
+        return () => window.removeEventListener('resize', scrollIntoText);
     }, []); 
 
 
