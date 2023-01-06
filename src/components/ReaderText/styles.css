@@ -49,14 +49,13 @@
 
 #divider {
     text-align: center;
-    padding: 24px 0 16px 0;
-    background-color: white;
+    margin: 24px 0 16px 0;
+    -webkit-column-break-before: avoid;
 }
 
 #readerText .important {
     font-size: 105%;
 }
-
 
 @keyframes fadeIn {
     from {opacity: 0;}
