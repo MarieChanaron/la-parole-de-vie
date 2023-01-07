@@ -12,7 +12,7 @@ function VerseText({text, selected}) {
 
     const array = cutString(text);
   
-    const importantWords = ['Dieu', 'DIEU', 'Jésus-Christ', 'JESUS-CHRIST', 'Jésus', 'JESUS', 'JÉSUS', 'Christ', 'CHRIST', "l'Eternel", "L'Eternel", "L'Éternel", "l'Éternel", 'Père', 'Fils', 'Saint-Esprit'];
+    const importantWords = ['Dieu', 'DIEU', 'Jésus-Christ', 'JESUS-CHRIST', 'Jésus', 'JESUS', 'JÉSUS', 'Christ', 'CHRIST', "l'Eternel", "L'Eternel", "L'Éternel", "l'Éternel", 'Saint-Esprit'];
 
     return (
         <>
