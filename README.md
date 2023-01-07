@@ -1,6 +1,7 @@
 # La Parole de Vie
 
-CE PROJET EST ACTUELLEMENT EN COURS DE DEVELOPPEMENT / THIS PROJECT IS CURRENTLY BEING DEVELOPED.
+Lien vers le projet / Link to the project:
+(https://la-parole-de-vie.net/)
 
 ## Description
 
