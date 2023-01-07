@@ -14,7 +14,7 @@ import {
 
 function LightForm({boxShadow, setFormFocus}) {
 
-    const [scrollPos, setScrollPos] = useState(); // To save the scroll position for mobile as the window moves on opening the virtual keyboard
+    // const [scrollPos, setScrollPos] = useState(); // To save the scroll position for mobile as the window moves on opening the virtual keyboard
   
     const refInput = React.createRef();
 
@@ -35,7 +35,7 @@ function LightForm({boxShadow, setFormFocus}) {
     );
 
     const handleFocus = event => {
-        setScrollPos(window.scrollY);
+        // setScrollPos(window.scrollY);
         event.target.setSelectionRange(0,refInput.current.value.length);
         if (isFirefox && isMobileOnly) {
             setFormFocus(true);
@@ -46,13 +46,13 @@ function LightForm({boxShadow, setFormFocus}) {
         if (isFirefox && isMobileOnly) {
             setFormFocus(false);
         }
-        if (isMobileOnly) {
-            const timeout = setTimeout(
-              () => window.scrollTo(0, scrollPos),
-              50 // add a delay so when the user clicks on a verse, the event handler of the click runs first
-            );
-            return () => clearTimeout(timeout);
-          }
+        // if (isMobileOnly) {
+        //     const timeout = setTimeout(
+        //       () => window.scrollTo(0, scrollPos),
+        //       50 // add a delay so when the user clicks on a verse, the event handler of the click runs first
+        //     );
+        //     return () => clearTimeout(timeout);
+        //   }
     }
 
     return(
