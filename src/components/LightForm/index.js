@@ -46,7 +46,13 @@ function LightForm({boxShadow, setFormFocus}) {
         if (isFirefox && isMobileOnly) {
             setFormFocus(false);
         }
-        window.scrollTo(0, scrollPos);
+        if (isMobileOnly) {
+            const timeout = setTimeout(
+              () => window.scrollTo(0, scrollPos),
+              100 // add a delay so when the user clicks on a verse, the event handler of the click runs first
+            );
+            return () => clearTimeout(timeout);
+          }
     }
 
     return(

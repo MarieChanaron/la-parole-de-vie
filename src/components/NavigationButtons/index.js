@@ -121,7 +121,11 @@ function NavigationButtons({setKeyword, loading, nb, display, formFocus}) {
       setFocus(false);
     }
     if (isMobileOnly) {
-      window.scrollTo(0, scrollPos);
+      const timeout = setTimeout(
+        () => window.scrollTo(0, scrollPos),
+        100 // add a delay so when the user clicks on a verse, the event handler of the click runs first
+      );
+      return () => clearTimeout(timeout);
     }
   }
 
