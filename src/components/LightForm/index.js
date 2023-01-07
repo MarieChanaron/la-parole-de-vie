@@ -1,6 +1,6 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
-import { isFirefox, isMobileOnly, isTablet } from "react-device-detect";
+import { isFirefox, isMobileOnly, isTablet, isAndroid } from "react-device-detect";
 
 // Styles
 import "./styles.css";
@@ -14,7 +14,7 @@ import {
 
 function LightForm({boxShadow, setFormFocus}) {
 
-    // const [scrollPos, setScrollPos] = useState(); // To save the scroll position for mobile as the window moves on opening the virtual keyboard
+    const [scrollPos, setScrollPos] = useState(); // To save the scroll position for mobile as the window moves on opening the virtual keyboard
   
     const refInput = React.createRef();
 
@@ -46,13 +46,13 @@ function LightForm({boxShadow, setFormFocus}) {
         if (isFirefox && isMobileOnly) {
             setFormFocus(false);
         }
-        // if (isMobileOnly) {
-        //     const timeout = setTimeout(
-        //       () => window.scrollTo(0, scrollPos),
-        //       50 // add a delay so when the user clicks on a verse, the event handler of the click runs first
-        //     );
-        //     return () => clearTimeout(timeout);
-        //   }
+        if (isMobileOnly && !isAndroid) {
+            const timeout = setTimeout(
+              () => window.scrollTo(0, scrollPos),
+              50 // add a delay so when the user clicks on a verse, the event handler of the click runs first
+            );
+            return () => clearTimeout(timeout);
+          }
     }
 
     return(

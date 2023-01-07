@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import PropTypes from "prop-types";
-import { isMobileOnly, isFirefox } from 'react-device-detect';
+import { isMobileOnly, isFirefox, isAndroid } from 'react-device-detect';
 
 // Styles
 import './styles.css';
@@ -16,7 +16,7 @@ function NavigationButtons({setKeyword, loading, nb, display, formFocus}) {
   const [visible, setVisible] = useState(false);
   const [order, setOrder] = useState(false);
   const [focus, setFocus] = useState(formFocus);
-  // const [scrollPos, setScrollPos] = useState(); // To save the scroll position for mobile as the window moves on opening the virtual keyboard
+  const [scrollPos, setScrollPos] = useState(); // To save the scroll position for mobile as the window moves on opening the virtual keyboard
 
 
   const initial = useRef(true);
@@ -120,13 +120,13 @@ function NavigationButtons({setKeyword, loading, nb, display, formFocus}) {
     if (isMobileOnly && isFirefox) {
       setFocus(false);
     }
-    // if (isMobileOnly) {
-    //   const timeout = setTimeout(
-    //     () => window.scrollTo(0, scrollPos),
-    //     50 // add a delay so when the user clicks on a verse, the event handler of the click runs first
-    //   );
-    //   return () => clearTimeout(timeout);
-    // }
+    if (isMobileOnly && !isAndroid) {
+      const timeout = setTimeout(
+        () => window.scrollTo(0, scrollPos),
+        50 // add a delay so when the user clicks on a verse, the event handler of the click runs first
+      );
+      return () => clearTimeout(timeout);
+    }
   }
 
   const handleFocus = event => {
