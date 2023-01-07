@@ -35,7 +35,9 @@ function LightForm({boxShadow, setFormFocus}) {
     );
 
     const handleFocus = event => {
-        setScrollPos(window.scrollY);
+        if (isMobileOnly && !isAndroid) {
+            setScrollPos(window.scrollY);
+        }
         event.target.setSelectionRange(0,refInput.current.value.length);
         if (isFirefox && isMobileOnly) {
             setFormFocus(true);

@@ -130,7 +130,9 @@ function NavigationButtons({setKeyword, loading, nb, display, formFocus}) {
   }
 
   const handleFocus = event => {
-    setScrollPos(window.scrollY);
+    if (isMobileOnly && !isAndroid) {
+      setScrollPos(window.scrollY);
+    }
     event.target.setSelectionRange(0,value.length);
     if (isMobileOnly && isFirefox) {
       setFocus(true);
