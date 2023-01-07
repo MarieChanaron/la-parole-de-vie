@@ -1,7 +1,7 @@
 # La Parole de Vie
 
-Lien vers le projet / Link to the project:
-(https://la-parole-de-vie.net/)
+Lien vers le projet / Link to the project :
+https://la-parole-de-vie.net/
 
 ## Description
 
