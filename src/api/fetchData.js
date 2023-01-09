@@ -21,7 +21,7 @@ export const fetchData = async(query, page) => {
     catch(error) {
         const result = {
             jsonResponse: {
-                errors: ["Le serveur ne renvoie pas de réponse... Veuillez vérifier votre connexion à internet."],
+                errors: [undefined],
                 results: []
             },
             error: ''

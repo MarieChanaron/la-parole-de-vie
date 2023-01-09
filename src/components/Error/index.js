@@ -4,17 +4,34 @@ import PropTypes from 'prop-types';
 // Styles
 import './styles.css';
 
+// Helper functions
+import { getUrlParam, findTranslation, findBookName, findBookId } from '../../helpers';
 
-function Error({error}) {
+
+function Error({error, page}) {
 
     const code = error.code;
     const description = error.description;
 
   return (
     <div id="error">
-        <h2>Erreur {code}</h2>
-        <p>{description[0]}</p>
-        { code === 400 ? <p>Veuillez saisir votre recherche différemment.</p> : null }
+
+      {
+        code === 400 && page === "search" ? 
+        <p>Le mot "{getUrlParam('value')}" n'existe pas dans la traduction {findTranslation(getUrlParam('translation'))}{getUrlParam('reference') === 'all' ? '.' : ` dans le livre "${findBookName(findBookId(getUrlParam('reference')))}".`} 
+        <br/>Veuillez modifier vos termes de recherche. 
+        <br/> Merci de noter que la recherche est sensible aux accents.
+        </p>
+        : code ? <p>Le serveur a rencontré un problème...</p> : <p>Le serveur n'a pas renvoyé de réponse. Veuillez vérifier votre connexion à internet.</p>
+      }
+
+      {
+        description[0] ? 
+        <p>Message renvoyé par le serveur :<br/>"
+        <span>{description[0]}</span>"</p>
+        : null
+      }
+      
     </div>
   )
 

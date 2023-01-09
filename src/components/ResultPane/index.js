@@ -28,7 +28,7 @@ function ResultPane({results, error, loading, nb}) {
         error 
         ? 
           <div id="searchErrorContainer">
-            <Error error={error} />
+            <Error error={error} page="search" />
           </div> 
         : null
       }
