@@ -38,7 +38,8 @@ function Error({error, page}) {
 }
 
 Error.propTypes = {
-  error: PropTypes.object
+  error: PropTypes.object,
+  page: PropTypes.string
 }
 
 export default Error;
