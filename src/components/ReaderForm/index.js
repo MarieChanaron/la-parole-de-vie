@@ -1,6 +1,6 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState} from "react";
 import PropTypes from "prop-types";
-import { isMobileOnly } from "react-device-detect";
+import { isMobileOnly, isFirefox } from "react-device-detect";
 
 // Styles
 import "./styles.css";
@@ -27,6 +27,16 @@ import {
 
 function ReaderForm({showForm, showTable, boxshadow}) {
 
+  const [focus, setFocus] = useState(false);
+
+  // Save form values
+  const refBook = React.createRef();
+  const refChapter = React.createRef();
+  const refTranslation = React.createRef();
+  const refVerse = React.createRef();
+  const refForm = React.createRef();
+
+
   // Retrieve book and chapter from the URL
   const book = getBook();
   const chapter = getChapter();
@@ -34,17 +44,9 @@ function ReaderForm({showForm, showTable, boxshadow}) {
   const verse = getUrlParam('verse');
 
 
-  // Save form values
-  const refBook = React.createRef();
-  const refChapter = React.createRef();
-  const refTranslation = React.createRef();
-  const refVerse = React.createRef();
-
-
   // Event handlers
 
-  const handleSubmit = event => {
-    event.preventDefault();
+  const submit = () => {
     const chapterRequest = refChapter.current.value;
     const bookShortname = refBook.current.value;
     const referenceRequest = chapterRequest ? `${bookShortname} ${chapterRequest}` : bookShortname;
@@ -54,6 +56,23 @@ function ReaderForm({showForm, showTable, boxshadow}) {
       referenceRequest,
       verseRequest
     );
+  }
+
+  const handleSubmit = event => {
+    event.preventDefault();
+    if (isFirefox && isMobileOnly) {
+      refForm.current.scrollTop = 0;
+      const timeout = setTimeout(
+        () => submit(), 100
+      );
+      return () => clearTimeout(timeout);
+    } else {
+      submit();
+    }
+  }
+
+  const handleFocus = () => {
+    setFocus(true);
   }
 
   // Reset values on click
@@ -69,13 +88,19 @@ function ReaderForm({showForm, showTable, boxshadow}) {
 
   // Data validation (on leaving focus = onBlur)
 
+  const removeFocus = () => {
+      setFocus(false);
+  }
+
   const checkChapterValidity = () => {
+    removeFocus();
     if (checkChapter(refChapter.current.value, refBook.current.value) === false) {
       refChapter.current.value = null;
     }
   }
 
   const checkVerseValidity = () => {
+    removeFocus();
     if (checkVerse(refVerse.current.value) === false) {
       refVerse.current.value = null;
     }
@@ -134,6 +159,25 @@ function ReaderForm({showForm, showTable, boxshadow}) {
     }, [] /* eslint-disable-line react-hooks/exhaustive-deps */
   );
 
+  useEffect( () => {
+    const form = refForm.current;
+    if (isFirefox && isMobileOnly) {
+      if (focus || form.offsetWidth > form.offsetHeight) {
+        const timeout = setTimeout( () => {
+          const val = form.scrollHeight - form.offsetHeight;
+          form.scrollTop = val;
+        }, 100);
+        return () => clearTimeout(timeout);
+      } else {
+        const timeout = setTimeout( () => {
+          form.scrollTop = 0;
+        }, 100);
+        return () => clearTimeout(timeout);
+      }
+    }
+  }, [focus]); /* eslint-disable-line react-hooks/exhaustive-deps */
+
+
   return (
 
     <form 
@@ -143,6 +187,7 @@ function ReaderForm({showForm, showTable, boxshadow}) {
       boxshadow={boxshadow}
       tabledisplayed={showTable ? 'true' : undefined}
       ismobileonly={isMobileOnly ? "true" : "false"}
+      ref={refForm}
     >
 
       <label htmlFor="translation">Traduction</label>
@@ -177,6 +222,7 @@ function ReaderForm({showForm, showTable, boxshadow}) {
           name="chapter"
           ref={refChapter}
           onClick={resetChapter}
+          onFocus={handleFocus}
           onBlur={checkChapterValidity} />
         <datalist id="chapters">
           { book ? addChapters(book.id) : null }
@@ -191,6 +237,7 @@ function ReaderForm({showForm, showTable, boxshadow}) {
           name="verse"
           ref={refVerse}
           onClick={resetVerse}
+          onFocus={handleFocus}
           onBlur={checkVerseValidity}
         />
         <datalist className="versesList" />
