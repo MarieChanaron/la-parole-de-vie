@@ -24,7 +24,7 @@ function ReaderText({text}) {
     const scrollIntoText = () => {
         let xScroll = isMobile || (window.innerWidth > 1487 && window.innerWidth <= 1850) ? 'center' : 'nearest';
         let yScroll = isMobile || window.innerWidth <= 768 ? 'center' : 'nearest'; 
-        if (isMobile || (window.innerWidth <= 768 || window.innerHeight > 700)) {
+        if (verseRef.current && (isMobile || (window.innerWidth <= 768 || window.innerHeight > 700))) {
             verseRef.current.scrollIntoView({block: yScroll, inline: xScroll});
         } else {
             window.scrollTo(0,0);
