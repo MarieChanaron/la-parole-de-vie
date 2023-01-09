@@ -121,6 +121,15 @@ export const findBookShortname = bookId => {
   }
 }
 
+export const findTranslation = value => {
+  const l = translations.length;
+  for (let i=0; i<l; i++) {
+    if (translations[i].value === value) {
+      return translations[i].label;
+    }
+  }
+}
+
 
 // Redirect the browser to the URL
 
