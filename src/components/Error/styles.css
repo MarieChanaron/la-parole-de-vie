@@ -3,33 +3,14 @@
     padding: 0 var(--margin);
 }
 
-#error h2 {
-    font-family: 'Tangerine', 'Crimson Text', serif;
-    font-weight: normal;
-    text-align: center;
-    font-size: 4.8rem;
-    margin-bottom: 16px;
+#error p:first-child {
+    margin-bottom: 24px;
 }
 
 #error p {
     text-align: center;
 }
 
-
-@media (max-width: 992px) {
-    #error h2 {
-        font-size: 4.4rem;
-    }
-}
-
-@media (max-width: 768px) {
-    #error h2 {
-        font-size: 4.2rem;
-    }
-}
-
-@media (max-width: 576px) {
-    #error h2 {
-        font-size: 4rem;
-    }
+#error p span {
+    font-style: italic;
 }
