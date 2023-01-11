@@ -1,6 +1,6 @@
 import React, { useLayoutEffect, useEffect } from 'react';
 import PropTypes from "prop-types";
-import { isTablet, isMobileOnly, isMobile } from 'react-device-detect';
+import { isTablet, isMobileOnly, isMobile, isFirefox } from 'react-device-detect';
 
 // Styles
 import './styles.css';
@@ -76,7 +76,7 @@ function ReaderText({text}) {
                     (verse, index) => 
                         <div   
                             key={index} 
-                            className={verse.verseNb === verseParam ? 'highlight' : null} 
+                            className={`${verse.verseNb === verseParam && 'highlight'} ${verse.verseNb === text.length && isFirefox && 'last-verse'}`} 
                             ref={verse.verseNb === verseParam ? verseRef : null} 
                         >
                             <span className='nb'>
@@ -94,16 +94,16 @@ function ReaderText({text}) {
 
                             </p>
 
+                            {
+                                verse.verseNb === text.length
+                                ? <p id="divider">* * *</p> // Inserted inside of the verse div to avoid to see it alone on a new column on Firefox
+                                : null
+                            }
+
                         </div>
 
                 )
 
-            }
-
-            {
-                text.length > 0
-                ? <p id="divider">* * *</p>
-                : null
             }
 
         </div>

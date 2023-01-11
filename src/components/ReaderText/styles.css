@@ -49,9 +49,15 @@
 
 #divider {
     text-align: center;
-    margin: 24px 0 16px 0;
-    -webkit-column-break-before: avoid;
+    padding: 24px 0 16px 0;
+    background-color: white;
+    -webkit-column-break-before: avoid; /* Webkit browsers */
 }
+
+.last-verse {
+    page-break-inside: avoid; /* Firefox */
+}
+
 
 #readerText .important {
     font-size: 105%;
