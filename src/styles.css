@@ -80,6 +80,8 @@ html, body, #root, #app {
 
 /* Scrollbars */
 
+/* Webkit browsers */
+
 body.scrollbar div::-webkit-scrollbar {
     width: 15px;
     height: 15px;
@@ -95,13 +97,13 @@ body.scrollbar div::-webkit-scrollbar-thumb {
 
 
 body.scrollbar #searchPane::-webkit-scrollbar-thumb, 
-body.scrollbar .tableOfContents::-webkit-scrollbar-thumb { /* L'ascenceur */
+body.scrollbar .tableOfContents::-webkit-scrollbar-thumb { /* (= l'ascenceur) */
     background-color: #A5BAC9;
     border: 1px solid #8fa7b8;
 }
 
 body.scrollbar #searchPane::-webkit-scrollbar-track-piece,
-body.scrollbar .tableOfcontents::-webkit-scrollbar-track-piece { /* La cage de l'ascenceur */
+body.scrollbar .tableOfcontents::-webkit-scrollbar-track-piece { /* (= la cage de l'ascenceur) */
     background-color: #DFE4E9;
 }
 
@@ -114,6 +116,18 @@ body.scrollbar #resultPane::-webkit-scrollbar-thumb {
 body.scrollbar #readerText::-webkit-scrollbar-track-piece, 
 body.scrollbar #resultPane::-webkit-scrollbar-track-piece {
     background-color: var(--verseBgColor);
+}
+
+/* Firefox */
+
+body.scrollbar {
+    scrollbar-color: #05020338 var(--verseBgColor);
+    scrollbar-width: 15px;
+}
+
+body.scrollbar .tableOfContents, 
+body.scrollbar #searchPane {
+    scrollbar-color: #A5BAC9 #DFE4E9;
 }
 
 
