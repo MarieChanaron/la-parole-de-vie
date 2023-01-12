@@ -18,7 +18,7 @@ function Error({error, page}) {
 
       {
         code === 400 && page === "search" ? 
-        <p>Le mot "{getUrlParam('value')}" n'existe pas dans la traduction {findTranslation(getUrlParam('translation'))}{getUrlParam('reference') === 'all' ? '.' : ` dans le livre "${findBookName(findBookId(getUrlParam('reference')))}".`} 
+        <p>L'expression "{getUrlParam('value')}" n'existe pas dans la traduction {findTranslation(getUrlParam('translation'))}{getUrlParam('reference') === 'all' ? '.' : ` dans le livre "${findBookName(findBookId(getUrlParam('reference')))}".`} 
         <br/>Veuillez modifier vos termes de recherche. 
         <br/> Merci de noter que la recherche est sensible aux accents.
         </p>
